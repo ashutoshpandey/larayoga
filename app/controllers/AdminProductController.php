@@ -2,38 +2,107 @@
 
 class AdminProductController extends BaseController
 {
-
     public function createProduct()
     {
         $id = Product::saveFormData(Input::except(array('_token')));
 
-        if (Input::get('picture_count')) {
+        if ($id > 0) {
 
-            $count = Input::get('picture_count');
+            if (Input::get('picture_count')) {
 
-            if ($count > 0) {
+                $count = Input::get('picture_count');
 
-                for ($i = 1; $i <= $count; $i++) {
-                    if (Input::hasFile('file' . $i) && Input::file('file' . $i)->isValid()) {
-                        $pic = Input::file('file' . $i)->getClientOriginalName();
-                        $destinationPath = public_path() . "/products/";
+                if ($count > 0) {
 
-                        $saved_file = date('Ymdhis') . "_" . $pic;
+                    for ($i = 1; $i <= $count; $i++) {
+                        if (Input::hasFile('file' . $i) && Input::file('file' . $i)->isValid()) {
+                            $pic = Input::file('file' . $i)->getClientOriginalName();
+                            $destinationPath = public_path() . "/products/";
 
-                        Input::file('file' . $i)->move($destinationPath, $saved_file);
+                            $saved_file = date('Ymdhis') . "_" . $pic;
 
-                        $productPic = ProductPicture();
+                            Input::file('file' . $i)->move($destinationPath, $saved_file);
 
-                        $productPic->product_id = $id;
-                        $productPic->filename = $pic;
-                        $productPic->saved_filename = $saved_file;
-                        $productPic->data = Input::get('data' . $i);
+                            $productPic = ProductPicture();
 
-                        $productPic->save();
+                            $productPic->product_id = $id;
+                            $productPic->filename = $pic;
+                            $productPic->saved_filename = $saved_file;
+                            $productPic->data = Input::get('data' . $i);
+
+                            $productPic->save();
+                        }
                     }
                 }
             }
         }
+        else
+            echo "cannot save product";
+    }
+
+    public function addProductToCategory()
+    {
+        $product_id = Input::get('product_id');
+        $category_id = Input::get('category_id');
+
+        if (isset($product_id) && is_int($product_id)) {
+
+            if (isset($category_id) && is_int($category_id)) {
+
+                $categoryProduct = CategoryProduct();
+
+                $categoryProduct->product_id = $product_id;
+                $categoryProduct->category_id = $category_id;
+
+                $categoryProduct->save();
+
+                echo "added";
+            }
+            else
+                echo "invalid category";
+        }
+        else
+            echo "invalid product";
+    }
+
+    public function removeProductFromCategory()
+    {
+        $product_id = Input::get('product_id');
+        $category_id = Input::get('category_id');
+
+        if (isset($product_id) && is_int($product_id)) {
+
+            if (isset($category_id) && is_int($category_id)) {
+
+                $categoryProduct = CategoryProduct::where('product_id', '=', $product_id)->where('category_id', '=', $category_id)->first();
+
+                if (isset($categoryProduct)) {
+                    $categoryProduct->delete();
+
+                    echo "removed";
+                }
+                else
+                    echo "not in category";
+            }
+            else
+                echo "invalid category";
+        }
+        else
+            echo "invalid product";
+    }
+
+    public function getProductCategories(){
+
+        $product_id = Input::get('product_id');
+
+        if (isset($product_id) && is_int($product_id)) {
+
+            $categories = CategoryProduct::where('product_id', '=', $product_id)->get();
+
+            return $categories;
+        }
+        else
+            echo "invalid product";
     }
 
     public function updateProduct()
@@ -72,9 +141,9 @@ class AdminProductController extends BaseController
 
                 $productPics = ProductPicture::where('product_id', '=', $id)->get();
 
-                if($productPics){
+                if ($productPics) {
 
-                    foreach($productPics as $productPic){
+                    foreach ($productPics as $productPic) {
 
                         $productPic->status = 'removed';
 
@@ -91,10 +160,64 @@ class AdminProductController extends BaseController
             echo "invalid";
     }
 
-    public function findProduct($id){
+    public function findProduct($id)
+    {
 
         $product = Product::find($id);
 
         return $product;
+    }
+
+    public function addAssociatedProduct()
+    {
+        $product_id = Input::get('product_id');
+        $associated_product_ids = Input::get('associated_product_ids'); // will be an array
+
+        if (isset($product_id) && is_int($product_id)) {
+
+            if (isset($associated_product_ids) && is_array($associated_product_ids)) {
+
+                foreach ($associated_product_ids as $associated_product_id) {
+
+                    $tempAssociatedProduct = AssociatedProduct::where('product_id', '=', $product_id)
+                        ->where('associated_product_id', '=', $associated_product_id)
+                        ->first();
+
+                    if (isset($tempAssociatedProduct))
+                        $tempAssociatedProduct->delete();
+                    else {
+                        $associatedProduct = AssociatedProduct();
+
+                        $associatedProduct->product_id = $product_id;
+                        $associatedProduct->associated_product_id = $associated_product_id;
+
+                        $associatedProduct->save();
+                    }
+                }
+            }
+            else
+                echo "no associated";
+        }
+        else
+            echo "invalid product";
+    }
+
+    public function removeAssociatedProduct($id)
+    {
+        if ($id && is_int($id)) {
+
+            $associatedProduct = AssociatedProduct::find($id);
+
+            if ($associatedProduct) {
+
+                $associatedProduct->delete();
+
+                echo "removed";
+            }
+            else
+                echo "not found";
+        }
+        else
+            echo "invalid";
     }
 }

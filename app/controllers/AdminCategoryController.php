@@ -11,7 +11,10 @@ class AdminCategoryController extends BaseController {
         if(!$parent_id)
             $parent_id = -1;
 
-        $existingCategory = Category::where('name', '=', $name)->where('parent_id', '=', $parent_id)->first();
+        $existingCategory = Category::where('name', '=', $name)
+                                    ->where('parent_id', '=', $parent_id)
+                                    ->where('status', '=', 'active')
+                                    ->first();
 
         if($existingCategory){
             echo "exists";
@@ -92,5 +95,30 @@ class AdminCategoryController extends BaseController {
 
             return "done";
         }
+    }
+
+    public function listCategories($id=''){
+
+        if(strlen($id)==0){
+            $categories = Category::where('parent_id', '=', -1)->where('status', '=', 'active')->get();
+
+            return $categories;
+        }
+        else if(isset($id) && is_int($id)){
+            $categories = Category::where('parent_id', '=', $id)->where('status', '=', 'active')->get();
+
+            return $categories;
+        }
+    }
+
+    public function listCategoriesProducts($id){
+
+        if(isset($id) && is_int($id)){
+            $products = Product::where('category_id', '=', $id)->where('status', '=', 'active')->get();
+
+            return $products;
+        }
+        else
+            return NULL;
     }
 }
