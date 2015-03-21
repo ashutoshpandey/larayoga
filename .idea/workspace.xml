@@ -8,13 +8,13 @@
     <file path="/ProductController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426214582977" ignored="false" />
     <file path="/PromoController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426212356985" ignored="false" />
     <file path="/CartController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426214504736" ignored="false" />
-    <file path="/RewardPointsController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426213776863" ignored="false" />
+    <file path="/RewardPointsController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426876271212" ignored="false" />
     <file path="/CheckoutController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426213793965" ignored="false" />
     <file path="/AuthenticationController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426215157299" ignored="false" />
     <file path="/AdminReportController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426213833534" ignored="false" />
     <file path="/AdminPromoController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426213840004" ignored="false" />
-    <file path="/AdminProductController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426731852748" ignored="false" />
-    <file path="/AdminCategoryController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426731146760" ignored="false" />
+    <file path="/AdminProductController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426790651038" ignored="false" />
+    <file path="/AdminCategoryController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426876414998" ignored="false" />
     <file path="/CategoryController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426214548529" ignored="false" />
     <file path="/Product.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426646611139" ignored="false" />
     <file path="/ProductPicture.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426648144088" ignored="false" />
@@ -23,6 +23,7 @@
     <file path="/common.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426732240115" ignored="false" />
     <file path="/cart.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426732265952" ignored="false" />
     <file path="/authentication.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426732507659" ignored="false" />
+    <file path="/PreorderProduct.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1426790592926" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,48 +43,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AuthenticationController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/AuthenticationController.php">
+      <file leaf-file-name="basic_table.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/basic_table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1029" selection-end="1029" vertical-scroll-proportion="-29.4">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminCategoryController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/AdminCategoryController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="581" selection-end="581" vertical-scroll-proportion="-5.6">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminProductController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/AdminProductController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="0" selection-start="3106" selection-end="3106" vertical-scroll-proportion="-70.666664">
-              <folding>
-                <marker date="1426732547365" expanded="true" signature="2917:3049" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="authentication.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/js/authentication.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="335" selection-end="335" vertical-scroll-proportion="0.39252338">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cart.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/cart.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0">
+            <state line="24" column="16" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.6199262">
               <folding />
             </state>
           </provider>
@@ -99,22 +62,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/AdminReportController.php" />
-        <option value="$PROJECT_DIR$/app/controllers/AdminPromoController.php" />
         <option value="$PROJECT_DIR$/app/controllers/CartController.php" />
         <option value="$PROJECT_DIR$/app/controllers/CategoryController.php" />
         <option value="$PROJECT_DIR$/app/controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/app/controllers/AuthenticationController.php" />
         <option value="$PROJECT_DIR$/app/models/Product.php" />
         <option value="$PROJECT_DIR$/app/models/ProductPicture.php" />
-        <option value="$PROJECT_DIR$/app/controllers/AdminCategoryController.php" />
         <option value="$PROJECT_DIR$/app/models/CategoryPicture.php" />
         <option value="$PROJECT_DIR$/app/models/CategoryProduct.php" />
         <option value="$PROJECT_DIR$/app/models/AssociatedProduct.php" />
-        <option value="$PROJECT_DIR$/app/controllers/AdminProductController.php" />
         <option value="$PROJECT_DIR$/public/js/common.js" />
         <option value="$PROJECT_DIR$/public/js/cart.js" />
         <option value="$PROJECT_DIR$/public/js/authentication.js" />
+        <option value="$PROJECT_DIR$/app/models/PreorderProduct.php" />
+        <option value="$PROJECT_DIR$/app/controllers/AdminProductController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/AdminCategoryController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/RewardPointsController.php" />
       </list>
     </option>
   </component>
@@ -187,10 +150,6 @@
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -203,6 +162,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -274,6 +237,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="larayoga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="larayoga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -305,11 +290,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="Configurable.PHP" />
     <property name="last_opened_file_path" value="C:/cakephp-cakephp-4b9e390" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp1.8\htdocs\larayoga\public" />
+      <recent name="C:\xampp1.8\htdocs\larayoga\app\views\admin" />
       <recent name="C:\xampp1.8\htdocs\larayoga\app\models" />
       <recent name="C:\xampp1.8\htdocs\larayoga\app\controllers" />
     </key>
@@ -320,6 +307,13 @@
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <list size="0" />
@@ -334,19 +328,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="7" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2596154" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26869658" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -417,110 +411,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/CartController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="8" selection-start="260" selection-end="260" vertical-scroll-proportion="0.43220338" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="8" selection-start="166" selection-end="166" vertical-scroll-proportion="0.22881356" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/CategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="8" selection-start="152" selection-end="152" vertical-scroll-proportion="0.22881356" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="56" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/ProductPicture.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="247" selection-end="247" vertical-scroll-proportion="-8.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/AdminCategoryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="581" selection-end="581" vertical-scroll-proportion="-5.6">
+        <state line="96" column="9" selection-start="2434" selection-end="2434" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/AssociatedProduct.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="253" selection-end="253" vertical-scroll-proportion="0.30508474">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/includes/cart.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/includes/footer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/includes/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="42" selection-start="1219" selection-end="1219" vertical-scroll-proportion="0.9509346">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/cart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/CategoryProduct.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="44" selection-start="182" selection-end="182" vertical-scroll-proportion="0.1779661">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdminProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="0" selection-start="3106" selection-end="3106" vertical-scroll-proportion="-70.666664">
-          <folding>
-            <marker date="1426732547365" expanded="true" signature="2917:3049" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/AuthenticationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1029" selection-end="1029" vertical-scroll-proportion="-29.4">
+        <state line="48" column="0" selection-start="1112" selection-end="1112" vertical-scroll-proportion="-15.766666">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/authentication.js">
+    <entry file="file://$PROJECT_DIR$/public/css/authenticate.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="335" selection-end="335" vertical-scroll-proportion="0.39252338">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/men.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/women.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/listing.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/product.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/cart.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/listing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/men.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/women.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/checkout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/checkout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/basic_table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="16" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.6199262">
           <folding />
         </state>
       </provider>

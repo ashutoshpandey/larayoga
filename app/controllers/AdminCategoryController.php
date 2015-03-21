@@ -97,24 +97,28 @@ class AdminCategoryController extends BaseController {
         }
     }
 
-    public function listCategories($id=''){
+    public function listCategories($id='', $page=1, $records=20){
+
+        $skip_records = ($page-1)*20;
 
         if(strlen($id)==0){
-            $categories = Category::where('parent_id', '=', -1)->where('status', '=', 'active')->get();
+            $categories = Category::where('parent_id', '=', -1)->where('status', '=', 'active')->take($records)->skip($skip_records)->get();
 
             return $categories;
         }
         else if(isset($id) && is_int($id)){
-            $categories = Category::where('parent_id', '=', $id)->where('status', '=', 'active')->get();
+            $categories = Category::where('parent_id', '=', $id)->where('status', '=', 'active')->take($records)->skip($skip_records)->get();
 
             return $categories;
         }
     }
 
-    public function listCategoriesProducts($id){
+    public function listCategoriesProducts($id, $page=1, $records=20){
+
+        $skip_records = ($page-1)*20;
 
         if(isset($id) && is_int($id)){
-            $products = Product::where('category_id', '=', $id)->where('status', '=', 'active')->get();
+            $products = Product::where('category_id', '=', $id)->where('status', '=', 'active')->take($records)->skip($skip_records)->get();
 
             return $products;
         }

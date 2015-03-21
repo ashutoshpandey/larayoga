@@ -220,4 +220,42 @@ class AdminProductController extends BaseController
         else
             echo "invalid";
     }
+
+    public function setPreorderProduct()
+    {
+        $product_id = Input::get('product_id');
+
+        if (isset($product_id) && is_int($product_id)) {
+
+            $date_value = Input::get('date_value');
+
+            $preorderProduct = PreorderProduct();
+
+            $preorderProduct->product_id = $product_id;
+            $preorderProduct->date_value = $date_value;
+
+            $preorderProduct->save();
+        }
+        else
+            echo "invalid product";
+    }
+
+    public function removePreOrderProduct($id)
+    {
+        if ($id && is_int($id)) {
+
+            $preorderProduct = PreorderProduct::find($id);
+
+            if ($preorderProduct) {
+
+                $preorderProduct->delete();
+
+                echo "removed";
+            }
+            else
+                echo "not found";
+        }
+        else
+            echo "invalid";
+    }
 }
