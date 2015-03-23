@@ -1,0 +1,351 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    border: 0 none;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+body {
+    color: #2f2f2f;
+    font: 12px/1.55 gothambook, Arial, Helvetica, sans-serif !important;
+    text-align: center;
+}
+
+.wrapper {
+    margin: 0 auto;
+    min-width: 100%;
+}
+
+.page {
+    background: none repeat scroll 0 0 #fff;
+    display: block;
+    min-width: 1007px;
+    position: relative;
+}
+
+.clearer:after, .header-container:after, .header-container .top-container:after, .header:after, .header .quick-access:after, #nav:after, .main:after, .footer:after, .footer-container .bottom-container:after, .col-main:after, .col2-set:after, .col3-set:after, .col3-layout .product-options-bottom .price-box:after, .col4-set:after, .search-autocomplete li:after, .block .block-content:after, .block .actions:after, .block li.item:after, .block-poll li:after, .block-layered-nav .currently li:after, .page-title:after, .products-grid:after, .products-list li.item:after, .box-account .box-head:after, .dashboard .box .box-title:after, .box-reviews li.item:after, .box-tags li.item:after, .pager:after, .sorter:after, .ratings:after, .add-to-box:after, .add-to-cart:after, .product-essential:after, .product-collateral:after, .product-view .product-img-box .more-views ul:after, .product-view .box-tags .form-add:after, .product-view .product-shop .short-description:after, .product-view .box-description:after, .product-options .options-list li:after, .product-options-bottom:after, .product-review:after, .cart:after, .cart-collaterals:after, .cart .crosssell li.item:after, .opc .step-title:after, .checkout-progress:after, .multiple-checkout .place-order:after, .group-select li:after, .form-list li:after, .form-list .field:after, .buttons-set:after, .page-print .print-head:after, .advanced-search-summary:after, .gift-messages-form .item:after, .send-friend .form-list li p:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+
+.main-content {
+    float: left;
+    width: 100%;
+    font-size: 0;
+}
+
+.left-content {
+    float: left;
+    width: 67%;
+    position: left;
+}
+
+.slide-content {
+    display: block;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+    width: 100%;
+}
+
+.slide-content {
+    z-index: 10;
+}
+
+.slide-content > div h4.small-text {
+    border-bottom: 1px solid #fff;
+    font-family: gothambold;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: normal;
+    margin: auto auto 2.05499%;
+    padding-bottom: 8px;
+    width: 50%;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.slide-content > div {
+    height: 100%;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.slide-content {
+    top: 33%;
+    color: #fff;
+}
+
+.slide-content h4 {
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    display: inline-block;
+    margin: 16px 0;
+    padding: 7px 0;
+    text-align: center;
+    width: 50%;
+}
+
+.slide-content h3 {
+    font-size: 40px;
+    line-height: 43px;
+    margin: 0;
+}
+
+.slide-content h2 {
+    font-family: AvantGardeGothicITCW01X;
+    font-size: 40px;
+    line-height: 43px;
+}
+
+.slide-content p.large-text span {
+    font-family: AvantGardeGothicITCW01X;
+    font-size: 40px;
+    line-height: 43px;
+}
+
+.shopnow {
+    background: none repeat scroll 0 0 #c03;
+    color: #fff;
+    display: inline-block;
+    font: 11px/37px gothammedium;
+    height: 37px;
+    margin: 37px 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 116px;
+}
+
+.right-content {
+    width: 33%;
+    float: left;
+}
+
+.learn-more {
+    background: url("../img/home/goldbg.png") 0 0 no-repeat;
+    width: 100%;
+}
+
+.bleed {
+    background: url("../img/home/mcolorbg2.jpg") 0 0 no-repeat;
+}
+
+.streamling {
+    background: url("../img/home/reel.jpg") 0 0 no-repeat;
+}
+
+.ctext {
+    color: #fff;
+    font-family: AvantGardeGothicITCW01B;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    padding: 91.2px 0;
+    width: 100%;
+    font-size: 30px;
+    line-height: 38px;
+}
+
+.bleed .bleed-text {
+    padding: 60px 0 !important;
+}
+
+.learn-more span {
+    display: block;
+}
+
+.learn-more span a, a.more {
+    border-bottom: 1px solid #c03;
+    color: #fff;
+    font: 11px/19px gothambook;
+    text-decoration: none;
+    margin: 30px 0 0;
+    padding: 0 0 3px;
+}
+
+.bleed .icon-store li {
+    margin: 10% 0 11% 5%;
+    padding: 0;
+}
+
+.icon-store > ul {
+    float: left;
+}
+
+.icon-store li {
+    float: left;
+    height: 45px;
+    list-style: none outside none;
+    padding: 14px 0 92px 22px;
+    width: 43%;
+}
+
+.icon-store li img {
+    max-width: 90px;
+    width: 60%;
+}
+
+.icon-store li > span .iconstxt {
+    color: #555;
+    display: block;
+    font: 11px/15px gothambook;
+    margin: 10px auto auto;
+    text-transform: uppercase;
+}
+
+.icon-store {
+    background: none repeat scroll 0 0 #fff;
+    float: left;
+
+    position: relative;
+    z-index: 9999;
+}
+
+.icon-store li span span {
+
+    width: 73%;
+}
+
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+    bottom: 10px !important;
+}
+
+.left-content img {
+    width: 100%;
+    height: auto;
+}
+
+.clearfix:after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.bx-wrapper .bx-viewport {
+    border: 0;
+    left: 0;
+}
+
+.bx-wrapper {
+    margin: 0;
+}
+
+.factory-part {
+    position: relative;
+}
+
+.factory-part p.large-text span {
+    color: #fff;
+    font-family: AvantGardeGothicITCW01B;
+    font-size: 19px;
+    font-weight: normal;
+    line-height: 39px;
+}
+
+.namaskar {
+    position: relative;
+}
+
+.namaskar a {
+    color: #555;
+    left: 174px;
+    position: absolute;
+    top: 280px;
+}
+
+.map {
+    position: relative;
+}
+
+.map > div {
+    position: absolute;
+    top: 12.994%;
+}
+
+.slides > li {
+    position: relative;
+    z-index: 9;
+}
+
+.slides li > div {
+    position: absolute;
+}
+
+.flexslider {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+.flex-control-nav {
+    bottom: 22px;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.flex-direction-nav a {
+    height: 33px !important;
+    cursor: pointer;
+    z-index: 15;
+    position: absolute;
+    top: 50%;
+    width: 32px !important;
+
+}
+
+.flex-direction-nav a.prev {
+    background: url("../img/home/prev.png") 0 0 no-repeat;
+    left: 0;
+}
+
+.flex-direction-nav a.next {
+    background: url("../img/home/next.png") 0 0 no-repeat;
+    right: 0;
+}
+
+.flex-control-nav a {
+    color: #fff;
+    height: 8px;
+    width: 8px;
+    text-indent: -999px;
+    border-radius: 15px;
+    background: #ccc;
+}
+
+.flex-control-nav li {
+    display: inline-block;
+    margin: 0 8px;
+}
+
+.flex-control-nav a.active, .flex-control-nav a:hover {
+    backgound: red;
+}
+
+.band {
+    height: 334px;
+    position: relative;
+}
+
+.flex-control-nav a {
+    position: absolute;
+    bottom: 0;
+}
+
+.flex-control-nav a.active, .flex-control-nav a:hover {
+    background: #c03;
+}

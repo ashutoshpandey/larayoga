@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+//Route::get('/', function()
+//{
+//	return View::make('hello');
+//});
+
+Route::get('/', 'StaticController@index');
+Route::get('/women', 'StaticController@women');
+Route::get('/men', 'StaticController@men');
 
 Route::get('/admin', 'AdminController@index');
 

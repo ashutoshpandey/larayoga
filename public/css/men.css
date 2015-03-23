@@ -1,0 +1,444 @@
+
+body {
+    color: #2f2f2f;
+    font: 12px/1.55 gothambook, Arial, Helvetica, sans-serif !important;
+    text-align: center;
+}
+
+.wrapper {
+    margin: 0 auto;
+    min-width: 100%;
+}
+
+.page {
+    background: none repeat scroll 0 0 #fff;
+    display: block;
+    min-width: 1007px;
+    position: relative;
+    z-index: 2;
+}
+
+a {
+    text-decoration: none;
+    color: #555;
+}
+
+.clearfix:after, .clearfix {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+
+.main-content {
+    float: left;
+    width: 100%;
+}
+
+.Category-banner {
+    min-width: 960px;
+    width: 100%;
+}
+
+.banner {
+    background: #fafafa;
+
+    position: relative;
+    width: 100%;
+    z-index: 9999;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.Category-banner .banner-text {
+    color: #fff;
+
+    margin: auto;
+    overflow: hidden;
+    font: 36px/40px itcavantgardepromd;
+    position: absolute;
+
+    text-transform: uppercase;
+    top: 26%;
+    right: 4%;
+    text-align: center;
+    width: 27%;
+    z-index: 9;
+}
+
+.Category-banner.Category-banner-men .banner-text {
+    color: #fff;
+    font: 36px/40px itcavantgardepromd;
+    margin: auto;
+    overflow: hidden;
+    position: absolute;
+    left: 4%;
+    text-align: center;
+    text-transform: uppercase;
+    top: 26%;
+    width: 40%;
+    z-index: 9;
+}
+
+.Category-banner .banner-text p {
+    margin-top: 0;
+}
+
+.sign-up {
+    padding: 8.5px 3.90625%;
+}
+
+.surprice-text {
+    text-align: left;
+    font: 14px/19px gothambook;
+    color: #555;
+}
+
+.surprice-text > a {
+    background: none repeat scroll 0 0 #c03;
+    color: #fff;
+    display: inline-block;
+    font: 11px/28px gothammedium;
+    height: 28px;
+    margin: 0 8px 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 80px;
+}
+
+.new-collection {
+    background-color: #f3f3f4;
+    padding: 1% 0 19px;
+    position: relative;
+    z-index: 1;
+}
+
+.arrival {
+    box-sizing: border-box;
+    padding: 0 0 0 3.90625%;
+    text-transform: uppercase;
+    text-align: left !important;
+}
+
+.arrival h2 span {
+    font-size: 40px;
+    line-height: 43px;
+    color: #555;
+    font-family: ITCAvantGardeProMd;
+    font-weight: normal;
+    font-size: 40px;
+    margin-right: 20px;
+}
+
+.arrival h2 span.shop-new a {
+    border-bottom: 1px solid #c03;
+    font-family: gothambook;
+    font-size: 11px;
+    line-height: 15px;
+    padding-bottom: 3px;
+    vertical-align: middle;
+    font-weight: normal;
+}
+
+ul.list-5 {
+    display: none;
+}
+
+ul.list-4 li {
+    width: 22.5% !important;
+}
+
+ul.list-5 li {
+    width: 18% !important;
+}
+
+ul.new-list li {
+    display: inline-block;
+    height: auto;
+    margin-top: 30px;
+    vertical-align: top;
+    width: 20%;
+}
+
+ul.new-list li img {
+    box-sizing: border-box;
+    margin: auto;
+    min-width: 180px;
+    padding: 0;
+    width: 100%;
+}
+
+.product-detail {
+    padding: 50px 0 10px;
+    margin-top: 19px;
+}
+
+.product-detail span {
+    color: #666;
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-family: gothambook;
+}
+
+.prd-name {
+    font-family: gothambold !important;
+}
+
+.bottom-strip {
+    background: none repeat scroll 0 0 #fff;
+    bottom: 0;
+    height: 120px;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.featured-product {
+    overflow: hidden;
+    position: relative;
+    font-size: 0;
+}
+
+.fp-left .top-left {
+    height: 330px;
+    background: #871621;
+    position: relative;
+}
+
+.cursive-text {
+    position: absolute;
+    top: 99px;
+    width: 100%;
+}
+
+.cursive-text p {
+    font-size: 28px;
+    line-height: 32px;
+    color: #fff;
+    display: block;
+    font-family: FreightTextProBook-Italic;
+    font-weight: normal;
+    letter-spacing: -1px;
+    line-height: normal;
+    margin: 0 auto 14px;
+    width: 85%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.cursive-text span {
+    border-top: 1px solid #fff;
+    font-family: gothambook;
+    color: #fff;
+    padding: 10px 52px 0;
+    display: inline-block;
+    font-family: gothambold;
+    font-size: 11px;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.fp-right {
+    position: relative;
+    width: 67%;
+    padding-left: 33%;
+}
+
+.block-content {
+    position: absolute;
+    top: 233px;
+    width: 68%;
+}
+
+.block-content span {
+    color: #fff;
+    display: inline-block;
+    font-family: gothambold;
+    font-size: 11px;
+    line-height: normal;
+    border-bottom: 1px solid #fff;
+    padding: 0 0 10px;
+    width: 292px;
+    text-transform: uppercase;
+}
+
+.block-content h4 {
+    font-size: 40px;
+    line-height: 43px;
+    color: #fff;
+    display: block;
+    font-family: ITCAvantGardeProMd;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+
+    margin: 14px 0 31px;
+    text-transform: uppercase;
+}
+
+.shop-button {
+    background: none repeat scroll 0 0 #c03;
+    color: #fff;
+    display: inline-block;
+    font: 11px/37px gothammedium;
+    height: 37px;
+
+    text-align: center;
+    text-transform: uppercase;
+    width: 116px;
+}
+
+.featured-product .top-left {
+    background: #871621;
+    width: 33%;
+    position: absolute;
+    top: 0;
+    height: 50%;
+}
+
+.featured-product .bottom-left {
+    width: 33.5%;
+    position: absolute;
+    top: 50%;
+}
+
+.featured-color .fc-left {
+    padding-right: 33.5% !important;
+    position: relative;
+    width: 66.5%;
+}
+
+.featured-color {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.featured-color .fc-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 33.5%;
+}
+
+.featured-color .fc-bottom {
+    background: #5a0a5f;
+    height: 50%;
+    position: absolute;
+    top: 49.2%;
+    right: 0;
+    width: 33.5%;
+}
+
+.featured-color-men .fc-bottom {
+    background: #7c7f65;
+}
+
+.banner-text .learn-more {
+    border-bottom: 1px solid #c03;
+    color: #fff;
+    font: 11px/19px gothambook;
+    margin: 30px 0 0;
+    padding: 0 0 3px;
+}
+
+.fc-bottom .cursive-text span {
+    padding: 8px 15px 0;
+}
+
+/*******************************************************category-page-men*******************************/
+/*************mens****/
+.Category-banner-men #monsoon-banner {
+    bottom: 20%;
+    position: absolute;
+    text-align: center;
+    width: 57%;
+}
+
+.Category-banner-men #monsoon-banner .slide-over-text {
+    box-sizing: border-box;
+    height: 100%;
+    left: 0;
+    padding: 80px 77px !important;
+    top: 0;
+    font-family: "AvantGardeGothicITCW01D";
+    font-size: 40px;
+    line-height: 43px;
+    margin: 0;
+    width: 100%;
+}
+
+.Category-banner-men #monsoon-banner .slide-over-text .light {
+    color: #555;
+    font-family: "AvantGardeGothicITCW01X";
+    font-size: 40px;
+    line-height: 43px;
+    margin: 0;
+}
+
+.Category-banner-men #monsoon-banner .slide-over-text .learn-more {
+    border-bottom: 1px solid #c03;
+    color: #fff;
+    display: inline-block;
+    font: 11px/19px gothambook;
+    margin: 55px 0 0 !important;
+    padding: 0 0 3px;
+    text-align: center;
+}
+
+.Category-banner-men #monsoon-banner .slide-over-text p {
+    margin: 0;
+}
+
+ul.icon-box {
+    display: table;
+    height: 50%;
+    padding: 8.5% 1.7% 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+}
+
+ul.icon-box li {
+    box-sizing: border-box;
+    float: left;
+    height: 100%;
+    margin: 0 0 20px 8%;
+    vertical-align: middle;
+    width: 38%;
+}
+
+ul.icon-box li > span {
+    color: #555;
+    display: block;
+    font: 11px/15px gothambook;
+    margin: 10px auto auto;
+    text-transform: uppercase;
+}
+
+ul.icon-box li img {
+    max-width: 90px;
+    width: 60%;
+}
+
+.block-content span.aurum {
+    display: inline !important;
+    font-family: AvantGardeGothicITCW01X !important;
+    font-size: 40px;
+    line-height: 43px;
+    border-bottom: none;
+}
+
+.Category-banner-men, .Category-banner .banner-text p.light {
+    font-family: "AvantGardeGothicITCW01X";
+}

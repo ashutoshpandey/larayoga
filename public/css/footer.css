@@ -1,0 +1,75 @@
+.footer{
+    display: inline-block;
+    margin: 0 auto 30px;
+    padding:60px 8px;
+    box-sizing: border-box;
+    width:100%;
+    word-wrap: break-word;
+}
+.footer .side-logo{
+    float: left;
+    width: 33%;
+}
+.footer .side-logo .logo{float:left;}
+.footer-right{float: right;margin: 27px 0 0;
+    width: 67%;}
+.footer-right .first-list{width:100%;}
+.footer-right .first-list > li{ margin-bottom: 10px;
+    max-width: 348px;
+    display: inline-block;
+    min-height: 133px;
+    text-align: left;
+    vertical-align: top;
+    width: 33%;}
+.footer-right .social-icons li a{
+    display: inline-block;
+    height: 21px;
+    margin-top: 5px;
+    width: 12px;
+    background: url("../img/footer/fb-icon.png") 0 0 no-repeat;
+}
+
+.footer-right .social-icons li a.twtr-icon{width:25px; background: url("../img/footer/tw-icon.png") 0 0 no-repeat;}
+
+.footer-right .social-icons li a.insta-icon{width:21px; background: url("../img/footer/insta-icon.png") 0 0 no-repeat;}
+
+.footer-right .social-icons li a.pin-icon{width:25px;background: url("../img/footer/pin-icon.png")  0 0 no-repeat;}
+.footer-right .social-icons li a:hover{background: url("../img/footer/fb-icon-ovr.png")  0 0 no-repeat;}
+.footer-right .social-icons li a.twtr-icon:hover{background: url("../img/footer/tw-icon-ovr.png")  0 0 no-repeat;}
+.footer-right .social-icons li a.insta-icon:hover{background: url("../img/footer/insta-icon-ovr.png")  0 0 no-repeat;}
+.footer-right .social-icons li a.pin-icon:hover{background: url("../img/footer/pin-icon-ovr.png")  0 0 no-repeat;}
+
+.footer-right .social-icons li{
+    display: inline-block;
+    margin: 0 3px;}
+
+.footer-right .first-list > li a{
+    color: #555;
+    font-size: 11px;
+}
+.footer-right .first-list > li a:hover, div.copy-privacy-likes ul li a:hover {
+    color: #c03;
+}
+.footer-right .privacy ul{text-align:left;}
+.footer-right .privacy li,.privacy li a{
+    color: #555;
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: top;
+    text-align:left;
+}
+.footer-right .topmenulinks li a {
+    font-family:gothamlight,gothambook;
+    font-size:11px;
+}
+.footer-right .bold-heading {
+    font-family: gothambold !important;
+    color:#000;
+}
+.footer-right .chat-status{font-style: italic;}
+.footer-right .first-list li{color:#555;cursor:pointer;}
+.footer-right .first-list li:hover{  color: #c03;}
+.footer-right .privacy li:hover, .privacy li a:hover{color: #c03;}
+.footer-right .privacy li img{cursor:pointer;}
+
+
