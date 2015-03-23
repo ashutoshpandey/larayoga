@@ -15,3 +15,13 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('/admin', 'AdminController@index');
+
+Route::get('/create-product', 'AdminProductController@createProduct');
+Route::get('/manage-products', 'AdminProductController@manageProducts');
+Route::get('/import-products', 'AdminProductController@importProducts');
+
+Route::get('/create-category', 'AdminCategoryController@createCategory');
+Route::get('/manage-categories', 'AdminCategoryController@manageCategories');
+Route::get('/category-products', 'AdminCategoryController@categoryProducts');

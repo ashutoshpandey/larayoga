@@ -2,7 +2,11 @@
 
 class AdminProductController extends BaseController
 {
-    public function createProduct()
+    public function createProduct(){
+        return View::make('admin.product.createproduct');
+    }
+
+    public function saveProduct()
     {
         $id = Product::saveFormData(Input::except(array('_token')));
 
@@ -38,6 +42,14 @@ class AdminProductController extends BaseController
         }
         else
             echo "cannot save product";
+    }
+
+    public function manageProducts(){
+        return View::make('admin.product.manageproducts');
+    }
+
+    public function importProducts(){
+        return View::make('admin.product.importproducts');
     }
 
     public function addProductToCategory()

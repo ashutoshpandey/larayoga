@@ -2,6 +2,18 @@
 
 class AdminCategoryController extends BaseController {
 
+    public function createCategory(){
+        return View::make('admin.category.createcategory');
+    }
+
+    public function manageCategories(){
+        return View::make('admin.category.managecategories');
+    }
+
+    public function categoryProducts(){
+        return View::make('admin.category.categoryproducts');
+    }
+
     public function addCategory(){
         $name = Input::get('name');
         $url_key = Input::get('url_key');
