@@ -215,6 +215,7 @@ MAIN CONTENT
         <label>Quantity</label>
         <input type="text" name="quantity"/>
 
+
         <label>Price</label>
         <input type="text" name="price"/>
 

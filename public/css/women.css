@@ -242,13 +242,13 @@ ul.new-list li img {
 .fp-right {
     position: relative;
     width: 67%;
-    padding-left: 33%;
+    float:right;
 }
 
 .block-content {
     position: absolute;
     top: 233px;
-    width: 68%;
+    width: 100%;
 }
 
 .block-content span {
@@ -325,7 +325,7 @@ ul.new-list li img {
     background: #5a0a5f;
     height: 50%;
     position: absolute;
-    top: 49.2%;
+    top: 50%;
     right: 0;
     width: 33.5%;
 }
