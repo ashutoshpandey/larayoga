@@ -109,7 +109,7 @@ class AdminCategoryController extends BaseController {
         }
     }
 
-    public function listCategories($id='', $page=1, $records=20){
+    public function loadCategories($id='', $page=1, $records=20){
 
         $skip_records = ($page-1)*20;
 
@@ -123,18 +123,5 @@ class AdminCategoryController extends BaseController {
 
             return $categories;
         }
-    }
-
-    public function listCategoriesProducts($id, $page=1, $records=20){
-
-        $skip_records = ($page-1)*20;
-
-        if(isset($id) && is_int($id)){
-            $products = Product::where('category_id', '=', $id)->where('status', '=', 'active')->take($records)->skip($skip_records)->get();
-
-            return $products;
-        }
-        else
-            return NULL;
     }
 }

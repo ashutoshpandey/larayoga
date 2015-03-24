@@ -11,8 +11,8 @@
 
     {{HTML::style(asset("/public/css/bootstrap.css"))}}
     {{HTML::style(asset("/public/font-awesome/css/font-awesome.css"))}}
-    {{HTML::style(asset("/public/css/header.css"))}}
-    {{HTML::style(asset("/public/css/home.css"))}}
+    {{HTML::style(asset("/public/css/header_footer.css"))}}
+    {{HTML::style(asset("/public/css/women.css"))}}
     {{HTML::style(asset("/public/css/footer.css"))}}
     {{HTML::style(asset("/public/css/fonts.css"))}}
 
@@ -33,7 +33,7 @@
 
       <!--main content start-->
       <section id="main-content">
-        &nbsp;
+          @include('includes.women.buckets')
       </section>
       <!--main content end-->
 

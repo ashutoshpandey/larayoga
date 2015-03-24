@@ -15,7 +15,6 @@ body {
     display: block;
     min-width: 1007px;
     position: relative;
-    z-index: 2;
 }
 
 a {
@@ -45,10 +44,8 @@ a {
 
 .banner {
     background: #fafafa;
-
     position: relative;
     width: 100%;
-    z-index: 9999;
 }
 
 .banner img {
@@ -228,11 +225,6 @@ ul.new-list li img {
     line-height: normal;
     margin: 0 auto 14px;
     width: 85%;
-}
-
-img {
-    width: 100%;
-    height: auto;
 }
 
 .cursive-text span {

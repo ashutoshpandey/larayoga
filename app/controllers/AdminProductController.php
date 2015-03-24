@@ -39,9 +39,11 @@ class AdminProductController extends BaseController
                     }
                 }
             }
+
+            echo "saved";
         }
         else
-            echo "cannot save product";
+            echo "error";
     }
 
     public function manageProducts(){
@@ -117,6 +119,19 @@ class AdminProductController extends BaseController
             echo "invalid product";
     }
 
+    public function categoryProducts($category_id, $page=1, $records=20){
+
+        $skip_records = ($page-1)*20;
+
+        if(isset($id) && is_int($id)){
+            $products = Product::where('category_id', '=', $category_id)->where('status', '=', 'active')->take($records)->skip($skip_records)->get();
+
+            return $products;
+        }
+        else
+            return NULL;
+    }
+
     public function updateProduct()
     {
         $id = Input::get('id');
@@ -174,7 +189,6 @@ class AdminProductController extends BaseController
 
     public function findProduct($id)
     {
-
         $product = Product::find($id);
 
         return $product;

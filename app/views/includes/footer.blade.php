@@ -10,26 +10,26 @@
                 <div class="first-list">
                     <li>
                         <ul>
-                            <li><a href="/women">SHOP WOMEN</a></li>
-                            <li><a href="/mens">SHOP MEN</a></li>
+                            <li>{{HTML::link('/women', 'SHOP WOMEN')}}</li>
+                            <li>{{HTML::link('/men', 'SHOP MEN')}}</li>
                             <li>&nbsp;</li>
-                            <li><a href="http://yogasmoga.com/help#size-chart">SIZE CHARTS</a></li>
-                            <li><a href="http://yogasmoga.com/help#product-care">PRODUCT CARE</a></li>
+                            <li>{{HTML::link('/help#size-chart', 'SIZE CHARTS')}}</li>
+                            <li>{{HTML::link('/help#product-care', 'PRODUCT CARE')}}</li>
                         </ul>
                     </li>
                     <li>
                         <ul>
-                            <li><a href="/our-story">YS STORY</a></li>
-                            <li><a href="/ys-fabric-tech">YS TECH</a></li>
-                            <li><a href="/smogi-bucks">SMOGI BUCKS</a></li>
-                            <li><a href="/namaskar">NAMASKÁR FOUNDATION</a></li>
+                            <li>{{HTML::link('/our-story', 'YS STORY')}}</li>
+                            <li>{{HTML::link('/fabric-story', 'YS TECH')}}</li>
+                            <li>{{HTML::link('/smogi-bucks', 'SMOGI BUCKS')}}</li>
+                            <li>{{HTML::link('/namaskar', 'NAMASKÁR FOUNDATION')}}</li>
                         </ul>
                     </li>
                     <li>
                         <ul>
-                            <li><a href="http://yogasmoga.com/customer/account/index">MY ACCOUNT</a></li>
-                            <li><a href="http://yogasmoga.com/gift_of_ys">GIFT CARD</a></li>
-                            <li><a href="http://yogasmoga.com/sales/order/history">TRACK MY ORDER</a></li>
+                            <li>{{HTML::link('/customer/account', 'MY ACCOUNT')}}</li>
+                            <li>{{HTML::link('/gift', 'GIFT CARD')}}</li>
+                            <li>{{HTML::link('/track-order', 'TRACK MY ORDER')}}</li>
                         </ul>
                     </li>
                 </div>
@@ -43,7 +43,7 @@
                                 {{HTML::image(asset("/public/img/footer/offline.png"), "Offline", array("class"=>"online-status-icon"))}}
                                 <span
                                     class="chat-status"> online now</span></li>
-                            <li><a href="http://yogasmoga.com/help#faq">FAQ</a></li>
+                            <li>{{HTML::link('/help#faq', 'FAQ')}}</li>
                         </ul>
                     </li>
                     <li>

@@ -134,15 +134,18 @@ ul {
 
 .learn-more {
     background: url("../img/home/goldbg.png") 0 0 no-repeat;
+    background-size: cover;
     width: 100%;
 }
 
 .bleed {
     background: url("../img/home/mcolorbg2.jpg") 0 0 no-repeat;
+    background-size: cover;
 }
 
 .streamling {
     background: url("../img/home/reel.jpg") 0 0 no-repeat;
+    background-size: cover;
 }
 
 .ctext {
