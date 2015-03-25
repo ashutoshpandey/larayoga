@@ -157,7 +157,7 @@ class AdminProductController extends BaseController
     {
         $id = Input::get('id');
 
-        if ($id && is_int($id)) {
+        if (isset($id)) {
 
             $product = Product::find($id);
 
@@ -283,5 +283,23 @@ class AdminProductController extends BaseController
         }
         else
             echo "invalid";
+    }
+
+    public function loadAllProducts(){
+
+        $page = Input::get('page');
+        $count = Input::get('count');
+
+        if(!isset($page))
+            $page = 1;
+
+        if(!isset($count))
+            $count = 20;
+
+        $skip = ($page-1)*20;
+
+        $products = Product::where('status', '=', 'active')->take($count)->skip($skip)->get();
+
+        return $products;
     }
 }

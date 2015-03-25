@@ -41,6 +41,7 @@ Route::get('/manage-products', 'AdminProductController@manageProducts');
 Route::get('/import-products', 'AdminProductController@importProducts');
 Route::get('/category-products', 'AdminProductController@categoryProducts');
 Route::get('/find-product', 'AdminProductController@findProduct');
+Route::get('/load-all-products', 'AdminProductController@loadAllProducts');
 
 Route::get('/create-category', 'AdminCategoryController@createCategory');
 Route::post('/save-category', 'AdminCategoryController@saveCategory');
