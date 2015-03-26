@@ -1,17 +1,5 @@
 var currentCategoryId;          // for displaying products from categories
 
-function editProduct(id){
-
-    var data = 'id=' + id;
-
-    jsonCall('find-product', 'get', data, editProductNow);
-}
-
-function editProductNow(result){
-
-    $("button[name='updateproduct']").click(updateProduct);
-}
-
 // for removing single product
 function removeProduct(id){
 
@@ -48,20 +36,6 @@ function removeProductFromList(productId){
 // for removing product when displayed in list
 function productRemovedFromList(result){
     loadProductsFromCategory(currentCategoryId);
-}
-
-function updateProduct(){
-
-    if(isValidProductForm()){
-
-        var formData = $(".frmproductupdate").serialize();
-
-        ajaxCall('update-product', 'post', formData, productUpdated);
-    }
-}
-
-function productUpdated(result){
-
 }
 
 function loadProductsFromCategory(id, page){

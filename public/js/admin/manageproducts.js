@@ -73,7 +73,7 @@ function generateProductGrid(products){
         row.SKU = product.sku;
         row.Name = product.name;
         row.Quantity = product.quantity;
-        row.Action = "<span class='lnkedit' rel='" + product.id + "'>Edit</span> &nbsp;&nbsp; <span class='lnkremove' rel='" + product.id + "'>Remove</span>";
+        row.Action = "<a href='edit-product/" + product.id + "'>Edit</span> &nbsp;&nbsp; <span class='lnkremove' rel='" + product.id + "'>Remove</span>";
 
         rows.push(row);
     }
@@ -84,18 +84,6 @@ function generateProductGrid(products){
     };
 
     return data;
-}
-
-function editProduct(id){
-
-    var data = 'id=' + id;
-
-    jsonCall('find-product', 'get', data, editProductNow);
-}
-
-function editProductNow(result){
-
-    $("button[name='updateproduct']").click(updateProduct);
 }
 
 // for removing single product
@@ -134,20 +122,6 @@ function removeProductFromList(productId){
 // for removing product when displayed in list
 function productRemovedFromList(result){
     loadAllProducts(1);
-}
-
-function updateProduct(){
-
-    if(isValidProductForm()){
-
-        var formData = $(".frmproductupdate").serialize();
-
-        ajaxCall('update-product', 'post', formData, productUpdated);
-    }
-}
-
-function productUpdated(result){
-
 }
 
 function loadProductsFromCategory(id, page){

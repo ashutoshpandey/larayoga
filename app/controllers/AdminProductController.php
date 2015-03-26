@@ -2,6 +2,13 @@
 
 class AdminProductController extends BaseController
 {
+    public function __construct(){
+
+        $this->beforeFilter(function(){
+            View::share('root', URL::to('/'));
+        });
+    }
+
     public function createProduct(){
         return View::make('admin.product.createproduct');
     }
@@ -132,11 +139,27 @@ class AdminProductController extends BaseController
             return NULL;
     }
 
+    public function editProduct($id){
+
+        if(isset($id)){
+
+            $product = Product::find($id);
+
+            if($product){
+                Session::put('edit_product_id', $id);
+
+                return View::make('admin.product.editproduct')->with('product', $product);
+            }
+            else
+                return Redirect::to('manage-products');
+        }
+    }
+
     public function updateProduct()
     {
-        $id = Input::get('id');
+        $id = Session::get('edit_product_id');
 
-        if ($id && is_int($id)) {
+        if ($id) {
 
             $product = Product::find($id);
 
