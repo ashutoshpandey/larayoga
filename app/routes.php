@@ -33,6 +33,8 @@ Route::get('/namaskar', 'StaticController@namaskar');
 
 Route::get('/admin', 'AdminController@index');
 
+/*********************** admin product urls ************************/
+
 Route::get('/create-product', 'AdminProductController@createProduct');
 Route::post('/save-product', 'AdminProductController@saveProduct');
 Route::get('/edit-product/{id}', 'AdminProductController@editProduct');
@@ -44,6 +46,8 @@ Route::get('/category-products', 'AdminProductController@categoryProducts');
 Route::get('/find-product', 'AdminProductController@findProduct');
 Route::get('/load-all-products', 'AdminProductController@loadAllProducts');
 
+/*********************** admin category urls ************************/
+
 Route::get('/create-category', 'AdminCategoryController@createCategory');
 Route::post('/save-category', 'AdminCategoryController@saveCategory');
 Route::post('/update-category', 'AdminCategoryController@updateCategory');
@@ -53,4 +57,20 @@ Route::get('/import-categories', 'AdminCategoryController@importCategories');
 Route::get('/load-categories', 'AdminCategoryController@loadCategories');
 Route::get('/find-category', 'AdminCategoryController@findCategory');
 
+
+/*********************** customer urls ************************/
+
+Route::get('/create-customer', 'CustomerController@createCustomer');
+
+
+/*********************** cart urls ************************/
+
+Route::get('/add-to-cart', 'CartController@addToCustomer');
+Route::get('/remove-from-cart', 'CartController@removeFromCustomer');
+Route::get('/get-cart-count', 'CartController@getCartCount');
+
+
+/*********************** cart urls ************************/
+
+Route::get('/create-order', 'OrderController@createCustomer');
 

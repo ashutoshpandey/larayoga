@@ -16,6 +16,15 @@ class Customer extends Eloquent{
 	 */
 	protected $hidden = array('password');
 
+    protected $fillable = array('first_name', 'last_name', 'gender', 'email');
+
+    protected $rules = array(
+        'first_name' => 'required|min:2|alpha',
+        'email' => 'required|email|unique:customers',
+        'password' => 'required|between:8,12|confirmed',
+        'password_confirmation' => 'required|between:8,12'
+    );
+
 	/**
 	 * Get the unique identifier for the user.
 	 *

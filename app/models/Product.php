@@ -19,6 +19,8 @@ class Product extends Eloquent {
 	 */
     protected $hidden = array();
 
+    public static $rules = array('name' => 'required|min:3');
+
     public static function saveFormData($data)
     {
         $id = DB::table('products')->insertGetId($data);

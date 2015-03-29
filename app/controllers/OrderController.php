@@ -4,7 +4,7 @@ class OrderController extends BaseController {
 
     public function createOrder(){
 
-        Order::saveFormData(Input::except(array('_token')));
+        Order::saveFormData(Input::all());
 
         return 'created';
     }

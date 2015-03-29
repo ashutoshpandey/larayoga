@@ -15,42 +15,47 @@ class AdminProductController extends BaseController
 
     public function saveProduct()
     {
-        $id = Product::saveFormData(Input::except(array('_token')));
+        $validator = Validator::make(Input::all(), Product::$rules);
 
-        if ($id > 0) {
+        if($validator->passes()){
 
-            if (Input::get('picture_count')) {
+            $id = Product::saveFormData(Input::all());
 
-                $count = Input::get('picture_count');
+            if ($id > 0) {
 
-                if ($count > 0) {
+                if (Input::get('picture_count')) {
 
-                    for ($i = 1; $i <= $count; $i++) {
-                        if (Input::hasFile('file' . $i) && Input::file('file' . $i)->isValid()) {
-                            $pic = Input::file('file' . $i)->getClientOriginalName();
-                            $destinationPath = public_path() . "/products/";
+                    $count = Input::get('picture_count');
 
-                            $saved_file = date('Ymdhis') . "_" . $pic;
+                    if ($count > 0) {
 
-                            Input::file('file' . $i)->move($destinationPath, $saved_file);
+                        for ($i = 1; $i <= $count; $i++) {
+                            if (Input::hasFile('file' . $i) && Input::file('file' . $i)->isValid()) {
+                                $pic = Input::file('file' . $i)->getClientOriginalName();
+                                $destinationPath = public_path() . "/products/";
 
-                            $productPic = ProductPicture();
+                                $saved_file = date('Ymdhis') . "_" . $pic;
 
-                            $productPic->product_id = $id;
-                            $productPic->filename = $pic;
-                            $productPic->saved_filename = $saved_file;
-                            $productPic->data = Input::get('data' . $i);
+                                Input::file('file' . $i)->move($destinationPath, $saved_file);
 
-                            $productPic->save();
+                                $productPic = ProductPicture();
+
+                                $productPic->product_id = $id;
+                                $productPic->filename = $pic;
+                                $productPic->saved_filename = $saved_file;
+                                $productPic->data = Input::get('data' . $i);
+
+                                $productPic->save();
+                            }
                         }
                     }
                 }
-            }
 
-            echo "saved";
+                echo "saved";
+            }
+            else
+                echo "error";
         }
-        else
-            echo "error";
     }
 
     public function manageProducts(){
@@ -143,7 +148,7 @@ class AdminProductController extends BaseController
 
         if(isset($id)){
 
-            $product = Product::find($id);
+            $product = ProductHelper::getProduct($id);
 
             if($product){
                 Session::put('edit_product_id', $id);
