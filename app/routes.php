@@ -68,6 +68,7 @@ Route::get('/create-customer', 'CustomerController@createCustomer');
 Route::get('/add-to-cart', 'CartController@addToCustomer');
 Route::get('/remove-from-cart', 'CartController@removeFromCustomer');
 Route::get('/get-cart-count', 'CartController@getCartCount');
+Route::get('/get-cart', 'CartController@getCart');
 
 
 /*********************** cart urls ************************/

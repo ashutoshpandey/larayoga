@@ -8,6 +8,8 @@
             $cart[] = $row;
 
             $this->saveCart($cart);
+
+            return $this->getCartCount();
         }
 
         public function saveCart($cart){

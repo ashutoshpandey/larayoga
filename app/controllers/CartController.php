@@ -21,7 +21,12 @@ class CartController extends BaseController {
 
         $cartHelper = new CartHelper();
 
-        $cartHelper->insertInCart($newRow);
+        $count = $cartHelper->insertInCart($newRow);
+
+        if($count>0)
+            echo json_encode(array('message' => 'added', 'count' => $count));
+        else
+            echo json_encode(array('message'=>'error', 'count' => 0));
     }
 
     public function removeFromCart($rowId){
@@ -54,6 +59,18 @@ class CartController extends BaseController {
         }
         else
             echo 'invalid';
+    }
+
+    public function getCart(){
+
+        $cartHelper = new CartHelper();
+
+        $cart = $cartHelper->getCart();
+
+        if($cart!=null)
+            echo json_encode(array('count' => count($cart), 'rows' => $cart));
+        else
+            echo json_encode(array('count' => 0));
     }
 
     public function getCartCount(){
