@@ -2,25 +2,25 @@
 
 class AuthenticationController extends BaseController {
 
-    public function isValidUser(){
+    public function isValidCustomer(){
         $email = Input::get('email');
         $password = Input::get('password');
 
-        $User = User::where('email', '=', $email)
+        $customer = Customer::where('email', '=', $email)
             ->where('password','=',$password)->first();
 
-        if(is_null($User))
+        if(is_null($customer))
             return "invalid";
         else{
-            Session::put('User_id', $User->id);
+            Session::put('customer', $customer->id);
 
             return "correct";
         }
     }
 
-    public function isDuplicateUser($email)
+    public function isDuplicateCustomer($email)
     {
-        $user = User::where('email', '=', $email)->first();
+        $user = Customer::where('email', '=', $email)->first();
 
         return is_null($user) ? "no" : "yes";
     }

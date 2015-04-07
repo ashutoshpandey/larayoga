@@ -3,14 +3,14 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Order extends Eloquent {
+class Category extends Eloquent {
 
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'orders';
+	protected $table = 'categories';
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -19,10 +19,17 @@ class Order extends Eloquent {
 	 */
     protected $hidden = array();
 
+    public static $rules = array('name' => 'required|min:3');
+
     public static function saveFormData($data)
     {
-        $id = DB::table('orders')->insertGetId($data);
+        $id = DB::table('categories')->insertGetId($data);
 
         return $id;
+    }
+
+    public static function updateFormData($data)
+    {
+        return DB::table('categories')->update($data);
     }
 }

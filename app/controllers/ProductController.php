@@ -2,8 +2,10 @@
 
 class ProductController extends BaseController {
 
-    public function getProduct(){
+    public function product(){
+        $id = Input::get('id');
 
+        echo "id = " . $id;
     }
 
     public function getProductsFromCategory(){

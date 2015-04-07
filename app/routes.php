@@ -16,17 +16,8 @@
 //	return View::make('hello');
 //});
 
-Route::get('/', 'StaticController@index');
-Route::get('/women', 'StaticController@women');
-Route::get('/men', 'StaticController@men');
-
-Route::get('/our-story', 'StaticController@ourStory');
-Route::get('/fabric-story', 'StaticController@fabricStory');
-Route::get('/gift', 'StaticController@gift');
-Route::get('/smogi-bucks', 'StaticController@smogiBucks');
-Route::get('/track-order', 'StaticController@trackOrder');
-Route::get('/namaskar', 'StaticController@namaskar');
-
+Route::get('/product', 'ProductController@product');
+Route::get('/category', 'CategoryController@category');
 
 
 /*********************** admin urls ************************/
@@ -62,7 +53,6 @@ Route::get('/find-category', 'AdminCategoryController@findCategory');
 
 Route::get('/create-customer', 'CustomerController@createCustomer');
 
-
 /*********************** cart urls ************************/
 
 Route::get('/add-to-cart', 'CartController@addToCustomer');
@@ -75,3 +65,24 @@ Route::get('/get-cart', 'CartController@getCart');
 
 Route::get('/create-order', 'OrderController@createCustomer');
 
+/*********************** authentication urls ************************/
+
+Route::get('/is-valid-customer', 'AuthenticationController@isValidCustomer');
+Route::get('/is-duplicate-customer', 'AuthenticationController@isDuplicateCustomer');
+Route::get('/logout', 'AuthenticationController@logout');
+
+
+
+/***************** yogasmoga urls ****************/
+Route::get('/women', 'StaticController@women');
+Route::get('/men', 'StaticController@men');
+Route::get('/our-story', 'StaticController@ourStory');
+Route::get('/fabric-story', 'StaticController@fabricStory');
+Route::get('/gift', 'StaticController@gift');
+Route::get('/smogi-bucks', 'StaticController@smogiBucks');
+Route::get('/track-order', 'StaticController@trackOrder');
+Route::get('/namaskar', 'StaticController@namaskar');
+
+
+/***************** dynamic route at the bottom ****************/
+Route::get('/{data}', 'StaticController@index');

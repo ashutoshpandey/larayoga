@@ -3,54 +3,24 @@
 class StaticController extends BaseController
 {
 
-    public function index()
+    public function index($url_key)
     {
-        return View::make('index');
-    }
+        $productHelper = new ProductHelper();
 
-    public function men()
-    {
-        return View::make('men');
-    }
+        $product = $productHelper->getProductByUrl($url_key);
+        if ($product){
+            return View::make('data.product')->with('product', $product);
+        }
+        else {
+            $categoryHelper = new CategoryHelper();
 
-    public function women()
-    {
-        return View::make('women');
-    }
+            $category = $categoryHelper->getCategoryByUrl($url_key);
 
-    public function ourStory()
-    {
-        return View::make('ourstory');
+            if ($category){
+                return View::make('data.category')->with('category', $category);
+            }
+            else
+                return View::make('static.page_not_found');
+        }
     }
-
-    public function fabricStory()
-    {
-        return View::make('fabricstory');
-    }
-
-    public function gift()
-    {
-        return View::make('gift');
-    }
-
-    public function smogiBucks()
-    {
-        return View::make('smogibucks');
-    }
-
-    public function trackOrder()
-    {
-        return View::make('trackorder');
-    }
-
-    public function namaskar()
-    {
-        return View::make('namaskar');
-    }
-
-    public function help()
-    {
-        return View::make('help');
-    }
-
 }
