@@ -3,7 +3,12 @@
 class AdminCategoryController extends BaseController {
 
     public function createCategory(){
-        return View::make('admin.category.createcategory');
+
+        $categoryHelper = new CategoryHelper();
+
+        $category_tree = $categoryHelper->getCategoryTree();
+
+        return View::make('admin.category.createcategory')->with('category_tree', $category_tree);
     }
 
     public function manageCategories(){

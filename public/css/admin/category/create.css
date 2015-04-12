@@ -1,0 +1,36 @@
+#tree ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#tree ul ul{display: none;}
+
+#tree ul li{
+    background-image: url('open.gif');
+    background-position: 0 1px;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    cursor: pointer;
+}
+#tree ul li.folder a {
+    background-image: url('closed.gif');
+}
+
+#tree ul a {
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+}
+ul#tree a:hover {
+    text-decoration: underline;
+}
+
+.selected-category{
+    font-weight: bold;
+    color: red;
+}
+.non-selected-category{
+    font-weight: normal;
+    color: black;
+}

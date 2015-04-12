@@ -11,6 +11,10 @@ class OrderController extends BaseController {
         if($cart!=null){
 
             $amount = 0;
+            foreach($cart as $item)
+                $amount = $amount + $item['price'] * $item['quantity'];
+
+            $net_amount = $amount;
 
             $oneRewardPointCost = 0;
             $rewardPoint = RewardPoint::first();
@@ -21,6 +25,8 @@ class OrderController extends BaseController {
 
             if(isset($rewardPointsUsed)){
                 $rewardPointDeduction = $rewardPointsUsed * $oneRewardPointCost;
+
+                $net_amount = $amount - $rewardPointDeduction;
             }
             else{
                 $rewardPointDeduction = 0;
@@ -34,6 +40,18 @@ class OrderController extends BaseController {
                 $minimum_amount = $promoCode->minimum_amount;
                 $start_date = $promoCode->start_date;
                 $end_date = $promoCode->end_date;
+
+                $start_date_value = date('Y-m-d', strtotime($start_date));
+                $end_date_value = date('Y-m-d', strtotime($end_date));
+
+                $date = date('Y-m-d');
+
+                $isPromoDateValid = $date >= $start_date_value && $date <= $end_date_value;
+
+                if($net_amount >= $minimum_amount && $isPromoDateValid){
+                    $promo_discount_deduction = $net_amount * $promo_code_value / 100;
+                    $net_amount = $net_amount - $promo_discount_deduction;
+                }
             }
             else{
                 $promo_code_used = '';
@@ -45,6 +63,7 @@ class OrderController extends BaseController {
             $order->customer_id = Session::get('customer');
 
             $order->amount = $amount;
+            $order->net_amount = $net_amount;
 
             $order->reward_points_used = $rewardPointsUsed;
             $order->reward_point_deduction = $rewardPointDeduction;
@@ -55,6 +74,7 @@ class OrderController extends BaseController {
             $order->create_at = date('Y-m-d h:i:s');
             $order->updated_at = date('Y-m-d h:i:s');
 
+            echo json_encode(array('message' => 'created'));
         }
         else
             echo json_encode(array('message' => 'empty cart'));
@@ -70,6 +90,8 @@ class OrderController extends BaseController {
 
             if ($order)
                 echo json_encode($order);
+            else
+                return null;
         }
         else
             return null;

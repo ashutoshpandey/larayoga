@@ -1,30 +1,3 @@
-function createCategory(){
-    ajaxCall('create-category', 'get', '', createCategoryNow);
-}
-
-function createCategoryNow(result){
-
-    $("button[name='createcategory']").click(saveCategory);
-}
-
-function isValidCategoryForm(){
-
-}
-
-function saveCategory(){
-
-    if(isValidCategoryForm()){
-
-        var formData = $(".frmcategoryupdate").serialize();
-
-        ajaxCall('save-category', 'post', formData, categoryAdded);
-    }
-}
-
-function categoryAdded(result){
-
-}
-
 function editCategory(id){
 
     var data = 'id=' + id;
