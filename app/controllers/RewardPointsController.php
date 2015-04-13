@@ -60,21 +60,68 @@ class RewardPointsController extends BaseController {
             echo "invalid product";
     }
 
-    public function getRewardPoints($id)
+    public function getRewardPoints($customer_id)
     {
-        if ($id && is_int($id)) {
+        if (isset($customer_id)) {
 
-            $rewardPoint = RewardPoint::where('customer_id', '=', $id)->first();
+            $customer = Customer::where('customer_id', '=', $customer_id)->first();
 
-            if ($rewardPoint) {
+            if ($customer) {
 
-                echo json_encode($rewardPoint);
+                $current_reward_points = $customer->reward_points;
+
+                $reward_points_earned = $this->getRewardPointsEarned($customer_id);
+                $reward_points_spent = $this->getRewardPointsSpent($customer_id);
+
+                if($current_reward_points != $reward_points_earned - $reward_points_spent || $reward_points_spent > $reward_points_earned){
+                    return -1; //error, reward points calculation mismatch
+                }
+                else
+                    echo $current_reward_points;
             }
             else
                 echo -1;
         }
         else
             echo -1;
+    }
+
+    public function getRewardPointsEarned($customer_id)
+    {
+        if ($customer_id) {
+
+            $rewardPoints = RewardPointEarned::where('customer_id', '=', $customer_id)->get();
+
+            if ($rewardPoints) {
+
+                $total = 0;
+                foreach($rewardPoints as $rewardPoint)
+                    $total += $rewardPoint->points;
+            }
+            else
+                return 0;
+        }
+        else
+            return -1;
+    }
+
+    public function getRewardPointsSpent($customer_id)
+    {
+        if ($customer_id) {
+
+            $rewardPoints = RewardPointSpent::where('customer_id', '=', $customer_id)->get();
+
+            if ($rewardPoints) {
+
+                $total = 0;
+                foreach($rewardPoints as $rewardPoint)
+                    $total += $rewardPoint->points;
+            }
+            else
+                return 0;
+        }
+        else
+            return -1;
     }
 
     public function listRewardPoints($id, $page=1, $records=20)

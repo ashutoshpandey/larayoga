@@ -19,6 +19,17 @@
             Session::put('cart', $cart);
         }
 
+        public function getCartTotal(){
+
+            $cart = $this->getCart();
+
+            $amount = 0;
+            foreach($cart as $item)
+                $amount = $amount + $item['price'] * $item['quantity'];
+
+            return $amount;
+        }
+
         public function getCart(){
 
             $cart = Session::get('cart');
