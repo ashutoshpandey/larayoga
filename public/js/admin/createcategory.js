@@ -24,7 +24,33 @@ $(document).ready(function(){
         e.stopPropagation();
     });
 
+    $('#tree li').click(function(){
+        var id = $(this).attr('rel');
+
+        loadCategory(id);
+    });
+
     $('#tree').find('li').first().addClass('selected-category');
+
+    $('#ifr').load(function(){
+
+        $('.msg').html('');
+
+        var result = $('#ifr').contents().find('body').html();
+
+        categoryAdded(result);
+    });
+
+    $("input[name='btncreatenew']").click(function(){
+        $('#frmcategory').find("input[type='text']").val('');
+        $('#frmcategory').find("input[type='file']").val('');
+        $('#frmcategory').find("textarea").val('');
+
+        $("input[name='btncreatecategory']").attr('rel', 'create');
+        $("input[name='btncreatecategory']").val('Create Category');
+
+        $('.msg').html('');
+    });
 });
 
 function isValidCategoryForm(){
@@ -35,18 +61,58 @@ function saveCategory(){
 
     if(isValidCategoryForm()){
 
-        var category = $('.selected-category').attr('rel');
+        var action = $("input[name='btncreatecategory']").attr('rel');
 
-        $("input[name='category']").val(category);
-        alert(category);
-        return;
+        if(action=='create'){
 
-        var formData = $(".frmcreatecategory").serialize();
+            $("#frmcategory").attr('action', 'save-category');
 
-        ajaxCall('save-category', 'post', formData, categoryAdded);
+            var parent_id = $('.selected-category').attr('rel');
+
+            $("input[name='parent_id']").val(parent_id);
+
+            $('.msg').html('Creating category, please wait');
+
+            return true;
+        }
+        else if(action=='update'){
+
+            $("#frmcategory").attr('action', 'update-category');
+
+            $('.msg').html('Updating category, please wait');
+
+            return true;
+        }
     }
+    else
+        return false;
 }
 
 function categoryAdded(result){
+    $('#frmcategory').find("input[type='text']").val('');
+    $('#frmcategory').find("input[type='file']").val('');
+    $('#frmcategory').find("textarea").val('');
 
+    $("input[name='btncreatecategory']").attr('rel', 'create');
+    $("input[name='btncreatecategory']").val('Create Category');
+}
+
+function loadCategory(id){
+    var data = 'id=' + id;
+
+    jsonCall('find-category', 'get', data, showCategoryData);
+}
+
+function showCategoryData(category){
+
+    if(category!=null){
+
+        $("input[name='name']").val(category.name);
+        $("input[name='url_key']").val(category.url_key);
+        $("textarea[name='description']").val(category.description);
+        $("#category_image").show().attr('src', 'public/images/categories/' + category.image_saved_name);
+
+        $("input[name='btncreatecategory']").attr('rel', 'update');
+        $("input[name='btncreatecategory']").val('Update Category');
+    }
 }

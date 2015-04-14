@@ -19,7 +19,7 @@ class AdminCategoryController extends BaseController {
         return View::make('admin.category.categoryproducts');
     }
 
-    public function addCategory(){
+    public function saveCategory(){
         $name = Input::get('name');
         $url_key = Input::get('url_key');
         $description = Input::get('description');
@@ -37,21 +37,43 @@ class AdminCategoryController extends BaseController {
             echo "exists";
         }
         else{
-            $category = new Category;
+            if (Input::file('image')->isValid()) {
+                $destinationPath = 'public/images/categories'; // upload path
+                $image_name = Input::file('image')->getClientOriginalName();
+                $extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
+                $image_saved_name = microtime(true) . $extension; // renameing image
 
-            $category->name = $name;
-            $category->url_key = $url_key;
-            $category->description = $description;
-            $category->parent_id = $parent_id;
+                Input::file('image')->move($destinationPath, $image_saved_name); // uploading file to given path
 
-            $category->status = "active";
-            $category->created_at = date("Y-m-d h:i:s");
-            $category->updated_at = date("Y-m-d h:i:s");
+                $category = new Category;
 
-            $category->save();
+                $category->name = $name;
+                $category->url_key = $url_key;
+                $category->description = $description;
+                $category->parent_id = $parent_id;
+                $category->image_name = $image_name;
+                $category->image_saved_name = $image_saved_name;
 
-            echo "done";
+                $category->status = "active";
+                $category->created_at = date("Y-m-d h:i:s");
+                $category->updated_at = date("Y-m-d h:i:s");
+
+                $category->save();
+
+                echo "done";
+            }
         }
+    }
+
+    public function findCategory(){
+        $id = Input::get('id');
+
+        $category = Category::find($id);
+
+        if($category)
+            return $category;
+        else
+            return null;
     }
 
     public function updateCategory(){

@@ -212,7 +212,8 @@
                                 {{$category_tree}}
                           </div>
                           <div class="col-lg-9">
-                            <form class="frmcreatecategory">
+                            <input type="submit" name="btncreatenew" value="Create New"/>
+                            <form id='frmcategory' action='save-category' method='post' enctype='multipart/form-data' target='ifr' onsubmit='return saveCategory()'>
                                 <div class="formrow">
                                     Name
                                     <input type="text" name="name"/>
@@ -222,10 +223,25 @@
                                     <input type="text" name="url_key"/>
                                 </div>
                                 <div class="formrow">
-                                    <input type="button" name="btncreatecategory" value="Create Category"/>
+                                    Image
+                                    <input type="file" name="image"/>
                                 </div>
-                                <input type='hidden' name='category'/>
+                                <div class="formrow">
+                                    Description
+                                    <textarea name="description"></textarea>
+                                </div>
+                                <div class="formrow">
+                                    <img id='category_image'/>
+                                </div>
+                                <div class="formrow">
+                                    <input type="submit" name="btncreatecategory" value="Create Category" rel='create'/>
+                                </div>
+                                <div class='formrow'>
+                                    <span class='msg'></span>
+                                </div>
+                                <input type='hidden' name='parent_id'/>
                             </form>
+                            <iframe id='ifr' name='ifr' style='width:1px;height:1px;visibility: hidden'></iframe>
                           </div>
                       </div>
 
@@ -255,7 +271,7 @@
   {{HTML::script(asset("/public/js/jquery.nicescroll.js"))}}
   {{HTML::script(asset("/public/js/common-scripts.js"))}}
 
-  {{HTML::script(asset("/public/js/common.js"))}}
+  {{HTML::script(asset("/public/js/site/common.js"))}}
   {{HTML::script(asset("/public/js/admin/createcategory.js"))}}
 
   </body>

@@ -34,3 +34,7 @@ ul#tree a:hover {
     font-weight: normal;
     color: black;
 }
+
+#category_image{display: none;}
+
+.msg{color: red;}
