@@ -1,3 +1,11 @@
+.formrow{
+    margin-bottom: 15px;
+}
+
+.selected-navigation-menu{ color: white !important; }
+
+.lnkremove{ cursor: pointer; color: red; }
+
 #tree ul{
     list-style: none;
     margin: 0;
@@ -7,14 +15,11 @@
 #tree ul ul{display: none;}
 
 #tree ul li{
-    background-image: url('open.gif');
+    background-image: url('closed.gif');
     background-position: 0 1px;
     background-repeat: no-repeat;
     padding-left: 20px;
     cursor: pointer;
-}
-#tree ul li.folder a {
-    background-image: url('closed.gif');
 }
 
 #tree ul a {

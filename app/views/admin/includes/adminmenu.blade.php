@@ -25,15 +25,15 @@
                 </ul>
             </li>
 
-            <li class="sub-menu">
+            <li class="sub-menu category-menu">
                 <a href="javascript:;" >
                     <i class="fa fa-cogs"></i>
                     <span>Category</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="create-category">Create</a></li>
-                    <li><a  href="manage-categories">Manage</a></li>
-                    <li><a  href="category-products">Products</a></li>
+                    <li class='create-category'><a  href="create-category">Create</a></li>
+                    <li class='manage-categories'><a  href="manage-categories">Manage</a></li>
+                    <li class='category-products'><a  href="category-products">Products</a></li>
                 </ul>
             </li>
             <li class="sub-menu">

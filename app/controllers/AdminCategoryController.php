@@ -4,11 +4,16 @@ class AdminCategoryController extends BaseController {
 
     public function createCategory(){
 
+        return View::make('admin.category.createcategory');
+    }
+
+    public function getCategoryTree(){
+
         $categoryHelper = new CategoryHelper();
 
         $category_tree = $categoryHelper->getCategoryTree();
 
-        return View::make('admin.category.createcategory')->with('category_tree', $category_tree);
+        return View::make('admin.category.tree')->with('category_tree', $category_tree);
     }
 
     public function manageCategories(){
@@ -37,6 +42,11 @@ class AdminCategoryController extends BaseController {
             echo "exists";
         }
         else{
+            $category = new Category;
+
+            $category->image_name = Constants::$CATEGORY_DEFAULT_IMAGE;
+            $category->image_saved_name = Constants::$CATEGORY_DEFAULT_IMAGE;
+
             if (Input::file('image')->isValid()) {
                 $destinationPath = 'public/images/categories'; // upload path
                 $image_name = Input::file('image')->getClientOriginalName();
@@ -45,23 +55,22 @@ class AdminCategoryController extends BaseController {
 
                 Input::file('image')->move($destinationPath, $image_saved_name); // uploading file to given path
 
-                $category = new Category;
-
-                $category->name = $name;
-                $category->url_key = $url_key;
-                $category->description = $description;
-                $category->parent_id = $parent_id;
                 $category->image_name = $image_name;
                 $category->image_saved_name = $image_saved_name;
-
-                $category->status = "active";
-                $category->created_at = date("Y-m-d h:i:s");
-                $category->updated_at = date("Y-m-d h:i:s");
-
-                $category->save();
-
-                echo "done";
             }
+
+            $category->name = $name;
+            $category->url_key = $url_key;
+            $category->description = $description;
+            $category->parent_id = $parent_id;
+
+            $category->status = "active";
+            $category->created_at = date("Y-m-d h:i:s");
+            $category->updated_at = date("Y-m-d h:i:s");
+
+            $category->save();
+
+            echo "done";
         }
     }
 
@@ -84,6 +93,18 @@ class AdminCategoryController extends BaseController {
         if(is_null($category))
             return "invalid";
         else{
+            if (Input::file('image')->isValid()) {
+                $destinationPath = 'public/images/categories'; // upload path
+                $image_name = Input::file('image')->getClientOriginalName();
+                $extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
+                $image_saved_name = intval(microtime(true)) . '.' . $extension; // renameing image
+
+                Input::file('image')->move($destinationPath, $image_saved_name); // uploading file to given path
+
+                $category->image_name = $image_name;
+                $category->image_saved_name = $image_saved_name;
+            }
+
             $name = Input::get('name');
             $url_key = Input::get('url_key');
             $description = Input::get('description');
@@ -96,7 +117,7 @@ class AdminCategoryController extends BaseController {
 
             $category->save();
 
-            return "done";
+            return "done:" . $image_saved_name;
         }
     }
 
@@ -132,21 +153,28 @@ class AdminCategoryController extends BaseController {
 
             $category->save();
 
-            return "done";
+            return "removed";
         }
     }
 
-    public function loadCategories($id='', $page=1, $records=20){
+    public function loadCategories(){
 
-        $skip_records = ($page-1)*20;
+        $parent_id = Input::get('parent_id');
+        $page = Input::get('page');
+        $records_to_pick = Input::get('count');
 
-        if(strlen($id)==0){
-            $categories = Category::where('parent_id', '=', -1)->where('status', '=', 'active')->take($records)->skip($skip_records)->get();
+        if(!isset($records))
+            $records = 20;
+
+        $skip_records = ($page-1)*$records;
+
+        if(strlen($parent_id)==0){
+            $categories = Category::where('parent_id', '=', -1)->where('status', '=', 'active')->take($records_to_pick)->skip($skip_records)->get();
 
             return $categories;
         }
-        else if(isset($id) && is_int($id)){
-            $categories = Category::where('parent_id', '=', $id)->where('status', '=', 'active')->take($records)->skip($skip_records)->get();
+        else if(isset($parent_id)){
+            $categories = Category::where('parent_id', '=', $parent_id)->where('status', '=', 'active')->take($records_to_pick)->skip($skip_records)->get();
 
             return $categories;
         }

@@ -12,7 +12,7 @@ class CategoryHelper{
     }
 
     public function getAllCategories(){
-        return Category::all();
+        return Category::where('status', '=', 'active')->get();
     }
 
     public function getCategoryTree(){
@@ -39,7 +39,7 @@ class CategoryHelper{
     function makeTreeItems($a) {
         $out = '';
         foreach($a as $item) {
-            $out .= "<li rel='" . $item["id"] . "'>";
+            $out .= "<li rel='" . $item["id"] . "' name='" . $item["name"] . "'>";
             $out .= $item['name'];
             if(array_key_exists('childs', $item)) {
                 $out .= $this->makeTree($item['childs']);

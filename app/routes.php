@@ -47,7 +47,7 @@ Route::get('/manage-categories', 'AdminCategoryController@manageCategories');
 Route::get('/import-categories', 'AdminCategoryController@importCategories');
 Route::get('/load-categories', 'AdminCategoryController@loadCategories');
 Route::get('/find-category', 'AdminCategoryController@findCategory');
-
+Route::get('/admin-category-tree', 'AdminCategoryController@getCategoryTree');
 
 /*********************** customer urls ************************/
 
