@@ -242,7 +242,7 @@
 
   {{HTML::script(asset("/public/js/site/common.js"))}}
   {{HTML::script(asset("/public/js/site/admin/common.js"))}}
-  {{HTML::script(asset("/public/js/site/admin/managecategories.js"))}}
+  {{HTML::script(asset("/public/js/site/admin/category/managecategories.js"))}}
 
   </body>
 </html>

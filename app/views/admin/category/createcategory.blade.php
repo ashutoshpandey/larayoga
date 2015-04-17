@@ -282,7 +282,7 @@ MAIN CONTENT
 {{HTML::script(asset("/public/js/common-scripts.js"))}}
 
 {{HTML::script(asset("/public/js/site/common.js"))}}
-{{HTML::script(asset("/public/js/site/admin/createcategory.js"))}}
+{{HTML::script(asset("/public/js/site/admin/category/createcategory.js"))}}
 
 </body>
 </html>

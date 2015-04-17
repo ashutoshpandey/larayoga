@@ -148,6 +148,7 @@ class AdminCategoryController extends BaseController {
             return "invalid";
         else{
             $category->status = "removed";
+            $category->updated_type = "Category removed";
 
             $category->updated_at = date("Y-m-d h:i:s");
 
@@ -178,5 +179,30 @@ class AdminCategoryController extends BaseController {
 
             return $categories;
         }
+    }
+
+    public function updateCategoryGridOrder(){
+
+        $category_sort_data = Input::get('category_sort_data');
+
+        $ar_category_sort_data = explode(',', $category_sort_data);
+
+        foreach($ar_category_sort_data as $data){
+            $ar_data = explode(':', $data);
+
+            $id = $ar_data[0];
+            $sort_order = $ar_data[1];
+
+            $category = Category::find($id);
+            if($category){
+                $category->sort_order = $sort_order;
+                $category->updated_at = date("Y-m-d h:i:s");
+                $category->update_type = "Sort order updated";
+
+                $category->save();
+            }
+        }
+
+        echo "updated";
     }
 }

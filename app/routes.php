@@ -44,6 +44,7 @@ Route::post('/save-category', 'AdminCategoryController@saveCategory');
 Route::post('/update-category', 'AdminCategoryController@updateCategory');
 Route::get('/remove-category', 'AdminCategoryController@removeCategory');
 Route::get('/manage-categories', 'AdminCategoryController@manageCategories');
+Route::get('/update-category-grid-order', 'AdminCategoryController@updateCategoryGridOrder');
 Route::get('/import-categories', 'AdminCategoryController@importCategories');
 Route::get('/load-categories', 'AdminCategoryController@loadCategories');
 Route::get('/find-category', 'AdminCategoryController@findCategory');

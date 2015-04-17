@@ -21,9 +21,17 @@ function categoriesLoaded(categories){
     if(categories!=undefined && categories.length>0){
 
         $('#categorylist').WATable({
+            filter: true,
             data: generateCategoryGrid(categories),
             pageSizes: [20,50,100]  //Set custom pageSizes. Leave empty array to hide button.
         });
+
+        var update_grid_button = "<input type='button' name='btn_update_grid' value='Update Grid'/>";
+        var update_grid_message = "<span class='update_grid message'></span>";
+
+        $('#categorylist').append(update_grid_button);
+
+        $("input[name='btn_update_grid']").click(updateCategoryGrid);
 
         $(".lnkremove").click(function(){
             var id = $(this).attr('rel');
@@ -34,6 +42,27 @@ function categoriesLoaded(categories){
     }
     else
         $("#categorylist").html("<h3 class='nocategories'>No categories available</h3>");
+}
+
+function updateCategoryGrid(){
+
+    var str = 'category_sort_data=';
+
+    $("input[name='sort_order']").each(function(){
+        var category_id = $(this).attr('rel');
+        var sort_order = $(this).val();
+
+        str = str + category_id + ':' + sort_order + ',';
+    });
+
+    if(str.substr(str.length-1,1)==',')
+        str = str.substr(0, str.length-1);
+
+    ajaxCall('update-category-grid-order', 'get', str, categoryGridUpdated);
+}
+
+function categoryGridUpdated(result){
+
 }
 
 function generateCategoryGrid(categories){
@@ -79,7 +108,7 @@ function generateCategoryGrid(categories){
         row.Url_Key = category.url_key;
         row.Description = category.description;
         row.BelongsTo = category.parent_id;
-        row.Sort_Order = "<input type='text' name='sort_order' class='sort_order' maxlength='2' value='" + category.sort_order + "'/>";
+        row.Sort_Order = "<input type='text' name='sort_order' rel='" + category.id + "' class='sort_order' maxlength='2' value='" + category.sort_order + "'/>";
         row.Action = "<a href='edit-category/" + category.id + "'>Edit</a> &nbsp;&nbsp; <span class='lnkremove' rel='" + category.id + "'>Remove</span>";
 
         rows.push(row);
