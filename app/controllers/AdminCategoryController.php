@@ -211,4 +211,88 @@ class AdminCategoryController extends BaseController {
 
         echo "updated";
     }
+
+    public function updateProductGridOrder(){
+
+        $product_sort_data = Input::get('product_sort_data');
+
+        $ar_product_sort_data = explode(',', $product_sort_data);
+
+        foreach($ar_product_sort_data as $data){
+            $ar_data = explode(':', $data);
+
+            $id = $ar_data[0];
+            $sort_order = $ar_data[1];
+
+            $product = Product::find($id);
+            if($product){
+                $product->sort_order = $sort_order;
+                $product->updated_at = date("Y-m-d h:i:s");
+                $product->update_type = "Sort order updated";
+
+                $product->save();
+            }
+        }
+
+        echo "updated";
+    }
+
+    public function updateProductsInCategory(){
+
+        $product_ids = Input::get('product_ids');
+        $category_id = Input::get('category_id');
+
+        if(isset($category_id)){
+
+            if(isset($product_ids)){
+
+                $ar_product_ids = explode(',', $product_ids);
+
+                foreach($ar_product_ids as $data){
+                    $ar_data = explode(':', $data);
+
+                    $id = $ar_data[0];
+                    $status = $ar_data[1];
+
+                    $product = Product::find($id);
+
+                    if($product){
+                        $categoryProduct = CategoryProduct::where('category_id', '=', $category_id)->where('product_id', '=', $product->id)->first();
+                        if($categoryProduct){
+
+                            if($status==='remove')
+                                $categoryProduct->delete();
+                            else{
+                                // we can't be here with value 'add'
+                            }
+                        }
+                        else if($status==='add'){
+                            $categoryProduct = new CategoryProduct();
+
+                            $categoryProduct->product_id = $product->id;
+                            $categoryProduct->category_id = $category_id;
+                            $categoryProduct->updated_at = date("Y-m-d h:i:s");
+                            $categoryProduct->update_type = "Product added in category";
+
+                            $categoryProduct->save();
+                        }
+                    }
+                    else{
+                        echo "Invalid product";
+                        break;
+                    }
+                }
+
+                echo "updated";
+            }
+            else
+                echo "No products passed";
+        }
+        else
+            echo "Category not selected";
+    }
+
+    public function categoryProducts(){
+        return View::make('admin.category.categoryproducts');
+    }
 }

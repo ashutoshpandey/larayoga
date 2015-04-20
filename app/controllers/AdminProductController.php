@@ -346,34 +346,16 @@ class AdminProductController extends BaseController
 
         if($category_id==-1)
             $products = Product::where('status', '=', 'active')->take($count)->skip($skip)->get();
-        else
-            $products = Product::where('status', '=', 'active')->where('category_id', '=', $category_id)->take($count)->skip($skip)->get();
-
-        return $products;
-    }
-
-    public function updateProductGridOrder(){
-
-        $product_sort_data = Input::get('product_sort_data');
-
-        $ar_product_sort_data = explode(',', $product_sort_data);
-
-        foreach($ar_product_sort_data as $data){
-            $ar_data = explode(':', $data);
-
-            $id = $ar_data[0];
-            $sort_order = $ar_data[1];
-
-            $product = Product::find($id);
-            if($product){
-                $product->sort_order = $sort_order;
-                $product->updated_at = date("Y-m-d h:i:s");
-                $product->update_type = "Sort order updated";
-
-                $product->save();
-            }
+        else{
+            $products = Product::whereHas('categories', function($q) use ($category_id)
+            {
+                $q->where('category_id', $category_id);
+            })->where('status', 'active')
+                ->take($count)
+                ->skip($skip)
+                ->get();
         }
 
-        echo "updated";
+        return $products;
     }
 }

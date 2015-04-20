@@ -1,9 +1,6 @@
 var action;
-var root;
 
 $(document).ready(function(){
-
-    root = $('#root').attr('rel');
 
     initializeLeftMenu();
 

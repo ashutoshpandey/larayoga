@@ -19,9 +19,9 @@
                     <span>Product</span>
                 </a>
                 <ul class="sub">
-                    <li class='create-product'><a  href="{{$root}}/create-product">Create</a></li>
-                    <li class='manage-products'><a  href="{{$root}}/manage-products">Manage</a></li>
-                    <li class='import-products'><a  href="{{$root}}/import-products">Import</a></li>
+                    <li class='create-product'><a href="{{$root}}/create-product">Create</a></li>
+                    <li class='manage-products'><a href="{{$root}}/manage-products">Manage</a></li>
+                    <li class='import-products'><a href="{{$root}}/import-products">Import</a></li>
                 </ul>
             </li>
 
@@ -42,9 +42,9 @@
                     <span>Extra Pages</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="{{$root}}/blank.html">Blank Page</a></li>
-                    <li><a  href="{{$root}}/login.html">Login</a></li>
-                    <li><a  href="{{$root}}/lock_screen.html">Lock Screen</a></li>
+                    <li><a href="{{$root}}/blank.html">Blank Page</a></li>
+                    <li><a href="{{$root}}/login.html">Login</a></li>
+                    <li><a href="{{$root}}/lock_screen.html">Lock Screen</a></li>
                 </ul>
             </li>
             <li class="sub-menu">

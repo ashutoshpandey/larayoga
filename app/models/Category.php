@@ -32,4 +32,8 @@ class Category extends Eloquent {
     {
         return DB::table('categories')->update($data);
     }
+
+    public function products() {
+        return $this->belongsToMany('Product', 'category_products', 'product_id', 'category_id');
+    }
 }

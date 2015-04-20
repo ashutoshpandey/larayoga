@@ -16,7 +16,8 @@
     {{HTML::style(asset("/public/lineicons/style.css"))}}
     {{HTML::style(asset("/public/css/style.css"))}}
     {{HTML::style(asset("/public/css/style-responsive.css"))}}
-    {{HTML::style(asset("/public/css/product/create.css"))}}
+    {{HTML::style(asset("/public/css/site/admin/common.css"))}}
+    {{HTML::style(asset("/public/css/site/admin/product/create.css"))}}
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -191,7 +192,7 @@ TOP BAR CONTENT & NOTIFICATIONS
 MAIN SIDEBAR MENU
 *********************************************************************************************************************************************************** -->
 <!--sidebar start-->
-@include('includes.adminmenu')
+@include('admin.includes.adminmenu')
 <!--sidebar end-->
 
 <!-- **********************************************************************************************************************************************************
@@ -202,7 +203,10 @@ MAIN CONTENT
 <section class="wrapper">
 
 <div class="row">
-<div class="col-lg-9 main-chart">
+    <div class="col-lg-3" id="tree">
+    </div>
+
+    <div class="col-lg-9 main-chart">
 
 
     <form class="frmcreateproduct">
@@ -257,8 +261,8 @@ RIGHT SIDEBAR CONTENT
 {{HTML::script(asset("/public/js/jquery.nicescroll.js"))}}
 {{HTML::script(asset("/public/js/common-scripts.js"))}}
 
-{{HTML::script(asset("/public/js/common.js"))}}
-{{HTML::script(asset("/public/js/admin/createproduct.js"))}}
+{{HTML::script(asset("/public/js/site/common.js"))}}
+{{HTML::script(asset("/public/js/site/admin/product/createproduct.js"))}}
 
 </body>
 </html>

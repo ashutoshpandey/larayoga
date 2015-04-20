@@ -16,6 +16,7 @@
     {{HTML::style(asset("/public/css/style.css"))}}
     {{HTML::style(asset("/public/css/style-responsive.css"))}}
     {{HTML::style(asset("/public/css/jquery.dataTables.css"))}}
+    {{HTML::style(asset("/public/css/site/admin/common.css"))}}
     {{HTML::style(asset("/public/css/site/admin/product/manage.css"))}}
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -200,9 +201,15 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
+              <div class="col-lg-3" id="tree">
+              </div>
+
+              <div class="col-lg-9 main-chart">
 
               <div id="productlist"></div>
 
+                  </div>
+              <div class='clearfix'></div>
           </section>
       </section>
 

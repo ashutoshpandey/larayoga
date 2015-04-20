@@ -1,7 +1,8 @@
 $(document).ready(function(){
 
     initializeLeftMenu();
-    loadProducts(1, -1);
+
+    getCategoryTree(showTree);
 });
 
 function loadProducts(page, category_id){
@@ -39,32 +40,6 @@ function productsLoaded(products){
     }
     else
         $("#productlist").html("<h3 class='noproducts'>No products available</h3>");
-}
-
-function isValidProductForm(){
-    return true;
-}
-
-function updateProduct(){
-
-    if(isValidProductForm()){
-
-        var id = $('.selected-product').attr('rel');
-
-        $("input[name='id']").val(id);
-
-        $('.msg').html('Updating product, please wait');
-
-        return true;
-    }
-    else
-        return false;
-}
-
-function productUpdated(result){
-
-    if(result.indexOf('done')>-1){
-    }
 }
 
 function getProductTable(products){
@@ -130,4 +105,60 @@ function updateProductGrid(){
 
 function productGridUpdated(result){
 
+}
+
+
+function showTree(result){
+    $('#tree').html(result);
+
+    bindTreeEvents();
+
+    var category_id = $('.selected-category').attr('rel');
+
+    loadProducts(1, category_id);
+}
+function bindTreeEvents(){
+
+    // fix: removing 'ul' with no 'li'
+    $('#tree').find('ul').each(function(){
+        if($(this).children().length==0)
+            $(this).remove();
+        else
+            $(this).addClass('folder');
+    });
+
+    // fix: removing 'ul' with no 'li'
+    $('#tree').find('li').each(function(){
+        if($(this).children().length==0)
+            $(this).css('background-image', "url('" + root + "/public/css/site/admin/category/child.gif')");
+    });
+
+    $('.folder > li').click(function(e){
+        $('#tree').find('li').removeClass('selected-category');
+
+        if($(this).find('ul').length>0){
+            $(this).find(">:first-child").toggle();
+
+            var background = $(this).css('background-image');
+
+            if(background.indexOf('closed')>-1)
+                $(this).css('background-image', "url('" + root + "/public/css/site/admin/category/open.gif')");
+            else
+                $(this).css('background-image', "url('" + root + "/public/css/site/admin/category/closed.gif')");
+        }
+
+        $(this).removeClass('non-selected-category');
+        $(this).addClass('selected-category');
+        $(this).children().addClass('non-selected-category');
+
+        e.stopPropagation();
+    });
+
+    $('#tree').find('li').first().addClass('selected-category');
+
+    $('#tree').find('li').click(function(){
+        var category_id = $('.selected-category').attr('rel');
+
+        loadProducts(1, category_id);
+    });
 }

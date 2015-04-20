@@ -1,9 +1,4 @@
-var action;
-var root;
-
 $(document).ready(function(){
-
-    root = $('#root').attr('rel');
 
     initializeLeftMenu();
 
@@ -125,6 +120,6 @@ function bindTreeEvents(){
 }
 
 function initializeLeftMenu(){
-    $('.category-menu > a').click();
-    $('.create-category > a').addClass('selected-navigation-menu');
+    $('.product-menu > a').click();
+    $('.create-product > a').addClass('selected-navigation-menu');
 }
