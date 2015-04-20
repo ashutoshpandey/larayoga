@@ -20,10 +20,6 @@ class AdminCategoryController extends BaseController {
         return View::make('admin.category.managecategories');
     }
 
-    public function categoryProducts(){
-        return View::make('admin.category.categoryproducts');
-    }
-
     public function saveCategory(){
         $name = Input::get('name');
         $url_key = Input::get('url_key');
@@ -83,6 +79,16 @@ class AdminCategoryController extends BaseController {
             return $category;
         else
             return null;
+    }
+
+    public function editCategory($id){
+
+        $category = Category::find($id);
+
+        if($category)
+            return View::make('admin.category.editcategory')->with('category', $category)->with('found', true);
+        else
+            return View::make('admin.category.editcategory')->with('found', false);
     }
 
     public function updateCategory(){

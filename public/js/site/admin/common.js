@@ -1,3 +1,3 @@
 function getCategoryTree(callback){
-    ajaxCall('admin-category-tree','get','',callback);
+    ajaxCall(root + '/admin-category-tree','get','',callback);
 }

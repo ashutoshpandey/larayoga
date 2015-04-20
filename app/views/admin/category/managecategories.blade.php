@@ -16,6 +16,7 @@
     {{HTML::style(asset("/public/lineicons/style.css"))}}
     {{HTML::style(asset("/public/css/style.css"))}}
     {{HTML::style(asset("/public/css/style-responsive.css"))}}
+    {{HTML::style(asset("/public/css/jquery.dataTables.css"))}}
 
     {{HTML::style(asset("/public/css/site/admin/common.css"))}}
     {{HTML::style(asset("/public/css/site/admin/category/manage.css"))}}
@@ -238,7 +239,7 @@
   {{HTML::script(asset("/public/js/jquery.scrollTo.min.js"))}}
   {{HTML::script(asset("/public/js/jquery.nicescroll.js"))}}
   {{HTML::script(asset("/public/js/common-scripts.js"))}}
-  {{HTML::script(asset("/public/js/jquery.watable.js"))}}
+  {{HTML::script(asset("/public/js/jquery.dataTables.min.js"))}}
 
   {{HTML::script(asset("/public/js/site/common.js"))}}
   {{HTML::script(asset("/public/js/site/admin/common.js"))}}

@@ -211,21 +211,22 @@ MAIN CONTENT
         <div class="row">
             <div class="col-lg-9 main-chart">
 
+                <?php if($found){ ?>
+
                 <div class="row">
                     <div class="col-lg-3" id="tree">
                     </div>
                     <div class="col-lg-9">
 
-                        <h4>Parent category : <span class='sp_parent_category'></span></h4>
-                        <form id='frmcategory' action='save-category' method='post' enctype='multipart/form-data'
-                              target='ifr' onsubmit='return saveCategory()'>
+                        <form id='frmcategory' action='{{$root}}/update-category' method='post' enctype='multipart/form-data'
+                              target='ifr' onsubmit='return updateCategory()'>
                             <div class="formrow">
                                 Name
-                                <input type="text" name="name"/>
+                                <input type="text" name="name" value="{{$category->name}}"/>
                             </div>
                             <div class="formrow">
                                 URL Key
-                                <input type="text" name="url_key"/>
+                                <input type="text" name="url_key" value="{{$category->url_key}}"/>
                             </div>
                             <div class="formrow">
                                 Image
@@ -233,13 +234,13 @@ MAIN CONTENT
                             </div>
                             <div class="formrow">
                                 Description
-                                <textarea name="description"></textarea>
+                                <textarea name="description">{{$category->description}}</textarea>
                             </div>
                             <div class="formrow">
-                                <img id='category_image'/>
+                                <img id='category_image' src="{{$root}}/public/images/categories/{{$category->image_saved_name}}"/>
                             </div>
                             <div class="formrow">
-                                <input type="submit" name="btncreatecategory" value="Create Category" rel='create'/>
+                                <input type="submit" name="btnupdatecategory" value="Update Category" rel='create'/>
                             </div>
                             <div class='formrow'>
                                 <span class='msg'></span>
@@ -250,6 +251,12 @@ MAIN CONTENT
                         <iframe id='ifr' name='ifr' style='width:1px;height:1px;visibility: hidden'></iframe>
                     </div>
                 </div>
+
+                <?php } else { ?>
+
+                    <div class="row"><h3>Invalid category!</h3></div>
+
+                <?php } ?>
 
             </div>
             <!-- /col-lg-9 END SECTION MIDDLE -->
@@ -281,7 +288,7 @@ MAIN CONTENT
 
 {{HTML::script(asset("/public/js/site/common.js"))}}
 {{HTML::script(asset("/public/js/site/admin/common.js"))}}
-{{HTML::script(asset("/public/js/site/admin/category/createcategory.js"))}}
+{{HTML::script(asset("/public/js/site/admin/category/editcategory.js"))}}
 
 </body>
 </html>

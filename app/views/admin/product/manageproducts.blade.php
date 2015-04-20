@@ -15,8 +15,8 @@
     {{HTML::style(asset("/public/lineicons/style.css"))}}
     {{HTML::style(asset("/public/css/style.css"))}}
     {{HTML::style(asset("/public/css/style-responsive.css"))}}
-    {{HTML::style(asset("/public/css/watable.css"))}}
-    {{HTML::style(asset("/public/css/product/manage.css"))}}
+    {{HTML::style(asset("/public/css/jquery.dataTables.css"))}}
+    {{HTML::style(asset("/public/css/site/admin/product/manage.css"))}}
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -191,7 +191,7 @@
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
       <!--sidebar start-->
-      @include('includes.adminmenu')
+      @include('admin.includes.adminmenu')
       <!--sidebar end-->
       
       <!-- **********************************************************************************************************************************************************
@@ -215,15 +215,16 @@
 
   {{HTML::script(asset("/public/js/jquery-1.10.2.js"))}}
   {{HTML::script(asset("/public/js/bootstrap.min.js"))}}
-  {{HTML::script(asset("/public/js/jquery.watable.js"))}}
 
   {{HTML::script(asset("/public/js/jquery.dcjqaccordion.2.7.js"))}}
   {{HTML::script(asset("/public/js/jquery.scrollTo.min.js"))}}
   {{HTML::script(asset("/public/js/jquery.nicescroll.js"))}}
   {{HTML::script(asset("/public/js/common-scripts.js"))}}
+  {{HTML::script(asset("/public/js/jquery.dataTables.min.js"))}}
 
-  {{HTML::script(asset("/public/js/common.js"))}}
-  {{HTML::script(asset("/public/js/admin/manageproducts.js"))}}
+  {{HTML::script(asset("/public/js/site/common.js"))}}
+  {{HTML::script(asset("/public/js/site/admin/common.js"))}}
+  {{HTML::script(asset("/public/js/site/admin/product/manageproducts.js"))}}
 
   </body>
 </html>

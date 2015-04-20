@@ -1,5 +1,7 @@
 #productlist{margin: 10px;}
 
+.sort_order{ width: 30px; padding: 5px; }
+
 .lnkedit, .lnkremove{cursor: pointer; color: red;}
 
 h3.noproducts{

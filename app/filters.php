@@ -13,7 +13,12 @@
 
 App::before(function($request)
 {
-	//
+    // If you use this line of code then it'll be available in any view
+    // as $site_settings but you may also use app('site_settings') as well
+
+    $root = Request::root();
+
+    View::share('root', $root);
 });
 
 

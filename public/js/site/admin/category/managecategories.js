@@ -2,6 +2,8 @@ var currentCategoryId;          // for displaying categories from categories
 
 $(function(){
 
+   initializeLeftMenu();
+
    getCategoryTree(showTree);
 
    loadCategories(1, -1);
@@ -20,11 +22,17 @@ function categoriesLoaded(categories){
 
     if(categories!=undefined && categories.length>0){
 
-        $('#categorylist').WATable({
-            filter: true,
-            data: generateCategoryGrid(categories),
-            pageSizes: [20,50,100]  //Set custom pageSizes. Leave empty array to hide button.
-        });
+        var categoryTable = getCategoryTable(categories);
+
+        $("#categorylist").html(categoryTable);
+
+        $("#table_category").dataTable();
+
+//        $('#categorylist').WATable({
+//            filter: true,
+//            data: generateCategoryGrid(categories),
+//            pageSizes: [20,50,100]  //Set custom pageSizes. Leave empty array to hide button.
+//        });
 
         var update_grid_button = "<input type='button' name='btn_update_grid' value='Update Grid'/>";
         var update_grid_message = "<span class='update_grid message'></span>";
@@ -58,68 +66,48 @@ function updateCategoryGrid(){
     if(str.substr(str.length-1,1)==',')
         str = str.substr(0, str.length-1);
 
-    ajaxCall('update-category-grid-order', 'get', str, categoryGridUpdated);
+    ajaxCall('update-category-grid-order', 'post', str, categoryGridUpdated);
 }
 
 function categoryGridUpdated(result){
 
 }
 
-function generateCategoryGrid(categories){
+function getCategoryTable(categories){
 
-    var cols = {
-        Name: {
-            index: 1,
-            sortOrder: "asc",
-            tooltip: "Name of category"
-        },
-        Url_Key: {
-            index: 2,
-            sortOrder: "asc",
-            tooltip: "URL Key"
-        },
-        Description: {
-            index: 3,
-            sortOrder: "asc",
-            tooltip: "Description"
-        },
-        BelongsTo: {
-            index: 4,
-            sortOrder: "asc",
-            tooltip: "Belongs to"
-        },
-        Sort_Order: {
-            index: 5
-        },
-        Action: {
-            index: 6
-        }
-    };
+    var table = '<table id="table_category"><thead>';
 
-    var rows = [];
+    table += '<tr>';
+
+    table += '<td>Id</td>';
+    table += '<td>Name</td>';
+    table += '<td>Url Key</td>';
+    table += '<td>Sorting</td>';
+    table += '<td>Action</td>';
+
+    table += '</tr>';
+
+    table += '</thead><tbody>';
 
     for(var i=0; i< categories.length; i++){
 
-        var row = {};
+        table += '<tr>';
 
         var category = categories[i];
 
-        row.Name = category.name;
-        row.Url_Key = category.url_key;
-        row.Description = category.description;
-        row.BelongsTo = category.parent_id;
-        row.Sort_Order = "<input type='text' name='sort_order' rel='" + category.id + "' class='sort_order' maxlength='2' value='" + category.sort_order + "'/>";
-        row.Action = "<a href='edit-category/" + category.id + "'>Edit</a> &nbsp;&nbsp; <span class='lnkremove' rel='" + category.id + "'>Remove</span>";
+        table += '<td>' + category.id + '</td>';
+        table += "<td title='" + category.description + "'>" + category.name + "</td>";
+        table += '<td>' + category.url_key + '</td>';
 
-        rows.push(row);
+        table += "<td><input type='text' name='sort_order' rel='" + category.id + "' class='sort_order' maxlength='2' value='" + category.sort_order + "'/></td>";
+        table += "<td><a href='edit-category/" + category.id + "'>Edit</a> &nbsp;&nbsp; <span class='lnkremove' rel='" + category.id + "'>Remove</span></td>";
+
+        table += '</tr>';
     }
 
-    var data = {
-        cols: cols,
-        rows: rows
-    };
+    table += '</tbody></table>'
 
-    return data;
+    return table;
 }
 
 // for removing single category
@@ -202,7 +190,7 @@ function bindTreeEvents(){
     // fix: removing 'ul' with no 'li'
     $('#tree').find('li').each(function(){
         if($(this).children().length==0)
-            $(this).css('background-image', "url('public/css/admin/category/child.gif')");
+            $(this).css('background-image', "url('public/css/site/admin/category/child.gif')");
     });
 
     $('#tree li').click(function(){
@@ -233,4 +221,9 @@ function bindTreeEvents(){
     });
 
     $('#tree').find('li').first().addClass('selected-category');
+}
+
+function initializeLeftMenu(){
+    $('.category-menu > a').click();
+    $('.manage-categories > a').addClass('selected-navigation-menu');
 }

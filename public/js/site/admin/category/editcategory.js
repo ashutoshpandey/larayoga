@@ -1,17 +1,12 @@
 var action;
-var root;
 
 $(document).ready(function(){
-
-    root = $('#root').attr('rel');
 
     initializeLeftMenu();
 
     getCategoryTree(showTree);
 
-    $('#category_image').hide();
-
-    $("input[name='btncreatecategory']").click(saveCategory);
+    $('#category_image').show();
 
     $('#ifr').load(function(){
 
@@ -19,21 +14,7 @@ $(document).ready(function(){
 
         var result = $('#ifr').contents().find('body').html();
 
-        categoryAdded(result);
-    });
-
-    $("input[name='btncreatenew']").click(function(){
-        $('#frmcategory').find("input[type='text']").val('');
-        $('#frmcategory').find("input[type='file']").val('');
-        $('#frmcategory').find("textarea").val('');
-
-        $("input[name='btncreatecategory']").attr('rel', 'create');
-        $("input[name='btncreatecategory']").val('Create Category');
-
-        $('#category_image').attr('src', '');
-        $('#category_image').hide();
-
-        $('.msg').html('');
+        categoryUpdated(result);
     });
 });
 
@@ -41,17 +22,15 @@ function isValidCategoryForm(){
     return true;
 }
 
-function saveCategory(){
+function updateCategory(){
 
     if(isValidCategoryForm()){
 
-        $("#frmcategory").attr('action', 'save-category');
+        var id = $('.selected-category').attr('rel');
 
-        var parent_id = $('.selected-category').attr('rel');
+        $("input[name='id']").val(id);
 
-        $("input[name='parent_id']").val(parent_id);
-
-        $('.msg').html('Creating category, please wait');
+        $('.msg').html('Updating category, please wait');
 
         return true;
     }
@@ -59,20 +38,37 @@ function saveCategory(){
         return false;
 }
 
-function categoryAdded(result){
+function categoryUpdated(result){
 
-    $('#frmcategory').find("input[type='text']").val('');
-    $('#frmcategory').find("input[type='file']").val('');
-    $('#frmcategory').find('textarea').val('');
+    if(result.indexOf('done')>-1){
+        var ar = result.split(':');
 
-    $("input[name='btncreatecategory']").attr('rel', 'create');
-    $("input[name='btncreatecategory']").val('Create Category');
+        var image_name = ar[1];         //   done:abc.jpg
 
-    getCategoryTree(showTree);
+        $('#category_image').attr('src', root + '/public/images/categories/' + image_name);
+
+        getCategoryTree(showTree);
+    }
 }
 
-function setParentCategoryText(){
-    $('.sp_parent_category').text($('.selected-category').attr('name'));
+function loadCategory(id){
+    var data = 'id=' + id;
+
+    jsonCall(root + '/find-category', 'get', data, showCategoryData);
+}
+
+function showCategoryData(category){
+
+    if(category!=null){
+
+        $("input[name='name']").val(category.name);
+        $("input[name='url_key']").val(category.url_key);
+        $("textarea[name='description']").val(category.description);
+        $("#category_image").show().attr('src', root + '/public/images/categories/' + category.image_saved_name);
+
+        $("input[name='btncreatecategory']").attr('rel', 'update');
+        $("input[name='btncreatecategory']").val('Update Category');
+    }
 }
 
 function showTree(result){
@@ -96,6 +92,12 @@ function bindTreeEvents(){
             $(this).css('background-image', "url('" + root + "/public/css/site/admin/category/child.gif')");
     });
 
+    $('#tree li').click(function(){
+        var id = $(this).attr('rel');
+
+        loadCategory(id);
+    });
+
     $('.folder > li').click(function(e){
         $('#tree').find('li').removeClass('selected-category');
 
@@ -114,17 +116,13 @@ function bindTreeEvents(){
         $(this).addClass('selected-category');
         $(this).children().addClass('non-selected-category');
 
-        setParentCategoryText();
-
         e.stopPropagation();
     });
 
     $('#tree').find('li').first().addClass('selected-category');
-
-    setParentCategoryText();
 }
 
 function initializeLeftMenu(){
     $('.category-menu > a').click();
-    $('.create-category > a').addClass('selected-navigation-menu');
+    $('.manage-categories > a').addClass('selected-navigation-menu');
 }

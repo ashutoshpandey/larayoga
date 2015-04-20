@@ -131,12 +131,26 @@ class AdminProductController extends BaseController
             echo "invalid product";
     }
 
-    public function categoryProducts($category_id, $page=1, $records=20){
+    public function categoryProducts(){
+        return View::make('admin.category.categoryproducts');
+    }
+
+    public function getCategoryProducts(){
+
+        $category_id = Input::get('category_id');
+        $page = Input::get('category_id');
+        $records_to_pick = Input::get('count');
+
+        if(isset($page))
+            $page = 1;
+
+        if(isset($records_to_pick))
+            $records_to_pick = 20;
 
         $skip_records = ($page-1)*20;
 
         if(isset($id) && is_int($id)){
-            $products = Product::where('category_id', '=', $category_id)->where('status', '=', 'active')->take($records)->skip($skip_records)->get();
+            $products = Product::where('category_id', '=', $category_id)->where('status', '=', 'active')->take($records_to_pick)->skip($skip_records)->get();
 
             return $products;
         }
@@ -313,10 +327,11 @@ class AdminProductController extends BaseController
             echo "invalid";
     }
 
-    public function loadAllProducts(){
+    public function loadProducts(){
 
         $page = Input::get('page');
         $count = Input::get('count');
+        $category_id = Input::get('category_id');
 
         if(!isset($page))
             $page = 1;
@@ -324,10 +339,41 @@ class AdminProductController extends BaseController
         if(!isset($count))
             $count = 20;
 
+        if(!isset($category_id))
+            $category_id = -1;
+
         $skip = ($page-1)*20;
 
-        $products = Product::where('status', '=', 'active')->take($count)->skip($skip)->get();
+        if($category_id==-1)
+            $products = Product::where('status', '=', 'active')->take($count)->skip($skip)->get();
+        else
+            $products = Product::where('status', '=', 'active')->where('category_id', '=', $category_id)->take($count)->skip($skip)->get();
 
         return $products;
+    }
+
+    public function updateProductGridOrder(){
+
+        $product_sort_data = Input::get('product_sort_data');
+
+        $ar_product_sort_data = explode(',', $product_sort_data);
+
+        foreach($ar_product_sort_data as $data){
+            $ar_data = explode(':', $data);
+
+            $id = $ar_data[0];
+            $sort_order = $ar_data[1];
+
+            $product = Product::find($id);
+            if($product){
+                $product->sort_order = $sort_order;
+                $product->updated_at = date("Y-m-d h:i:s");
+                $product->update_type = "Sort order updated";
+
+                $product->save();
+            }
+        }
+
+        echo "updated";
     }
 }

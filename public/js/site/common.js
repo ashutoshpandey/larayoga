@@ -1,3 +1,9 @@
+var root;
+
+$(function(){
+    root = $('#root').attr('rel');
+});
+
 function ajaxCall(url, type, data, callback){
 
     if(data!=null){

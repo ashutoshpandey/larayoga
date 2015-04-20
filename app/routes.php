@@ -33,18 +33,20 @@ Route::post('/update-product', 'AdminProductController@updateProduct');
 Route::get('/remove-product', 'AdminProductController@removeProduct');
 Route::get('/manage-products', 'AdminProductController@manageProducts');
 Route::get('/import-products', 'AdminProductController@importProducts');
-Route::get('/category-products', 'AdminProductController@categoryProducts');
+Route::get('/get-category-products', 'AdminProductController@getCategoryProducts');
 Route::get('/find-product', 'AdminProductController@findProduct');
-Route::get('/load-all-products', 'AdminProductController@loadAllProducts');
+Route::get('/load-products', 'AdminProductController@loadProducts');
+Route::post('/update-product-grid-order', 'AdminProductController@updateProductGridOrder');
 
 /*********************** admin category urls ************************/
 
 Route::get('/create-category', 'AdminCategoryController@createCategory');
 Route::post('/save-category', 'AdminCategoryController@saveCategory');
+Route::get('/edit-category/{id}', 'AdminCategoryController@editCategory');
 Route::post('/update-category', 'AdminCategoryController@updateCategory');
 Route::get('/remove-category', 'AdminCategoryController@removeCategory');
 Route::get('/manage-categories', 'AdminCategoryController@manageCategories');
-Route::get('/update-category-grid-order', 'AdminCategoryController@updateCategoryGridOrder');
+Route::post('/update-category-grid-order', 'AdminCategoryController@updateCategoryGridOrder');
 Route::get('/import-categories', 'AdminCategoryController@importCategories');
 Route::get('/load-categories', 'AdminCategoryController@loadCategories');
 Route::get('/find-category', 'AdminCategoryController@findCategory');
