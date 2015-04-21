@@ -28,12 +28,6 @@ function categoriesLoaded(categories){
 
         $("#table_category").dataTable();
 
-//        $('#categorylist').WATable({
-//            filter: true,
-//            data: generateCategoryGrid(categories),
-//            pageSizes: [20,50,100]  //Set custom pageSizes. Leave empty array to hide button.
-//        });
-
         var update_grid_button = "<input type='button' name='btn_update_grid' value='Update Grid'/>";
         var update_grid_message = "<span class='update_grid message'></span>";
 
@@ -75,7 +69,7 @@ function categoryGridUpdated(result){
 
 function getCategoryTable(categories){
 
-    var table = '<table id="table_category"><thead>';
+    var table = '<table id="table_category display"><thead>';
 
     table += '<tr>';
 

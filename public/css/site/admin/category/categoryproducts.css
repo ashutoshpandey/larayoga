@@ -1,1 +1,4 @@
 .sort_order{ width: 30px; padding: 5px; }
+
+input[name='btn_add_to_category']{ margin-right: 10px; }
+input[name='btn_update_grid']{ margin-right: 10px; }

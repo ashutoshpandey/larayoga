@@ -356,6 +356,8 @@ class AdminProductController extends BaseController
                 ->get();
         }
 
+        print_r($products);
+
         return $products;
     }
 }

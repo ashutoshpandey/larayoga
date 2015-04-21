@@ -42,7 +42,7 @@ function productsLoaded(products){
 
         $("#table_product").dataTable();
 
-        var add_to_category_button = "<input type='button' name='btn_add_to_category' value='Add Selected To Category' style='margin-right: 10px'/>";
+        var add_to_category_button = "<input type='button' name='btn_add_to_category' value='Add Products To Category'/>";
         var update_grid_button = "<input type='button' name='btn_update_grid' value='Update Sort Order'/>";
         var update_grid_message = "<span class='update_grid message'></span>";
 
@@ -110,7 +110,7 @@ function productGridUpdated(result){
 
 function getProductTable(products){
 
-    var table = '<table id="table_product"><thead>';
+    var table = '<table id="table_product" class="dataTable display"><thead>';
 
     table += '<tr>';
 
