@@ -4,7 +4,10 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.1.*"
+		"laravel/framework": "4.1.*",
+        "maatwebsite/excel": "~2.0.0",
+        "stripe/stripe-php" : "dev-master",
+        "fzaninotto/faker" : "dev-master"
 	},
 	"autoload": {
 		"classmap": [
@@ -30,10 +33,6 @@
 			"php artisan key:generate"
 		]
 	},
-    "require" : {
-        "stripe/stripe-php" : "dev-master",
-        "fzaninotto/faker" : "dev-master"
-    },
 	"config": {
 		"preferred-install": "dist"
 	},

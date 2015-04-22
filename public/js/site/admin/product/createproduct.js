@@ -4,9 +4,7 @@ $(document).ready(function(){
 
     getCategoryTree(showTree);
 
-    $('#category_image').hide();
-
-    $("input[name='btncreatecategory']").click(saveCategory);
+    $("input[name='btncreateproduct']").click(saveProduct);
 
     $('#ifr').load(function(){
 
@@ -14,39 +12,25 @@ $(document).ready(function(){
 
         var result = $('#ifr').contents().find('body').html();
 
-        categoryAdded(result);
-    });
-
-    $("input[name='btncreatenew']").click(function(){
-        $('#frmcategory').find("input[type='text']").val('');
-        $('#frmcategory').find("input[type='file']").val('');
-        $('#frmcategory').find("textarea").val('');
-
-        $("input[name='btncreatecategory']").attr('rel', 'create');
-        $("input[name='btncreatecategory']").val('Create Category');
-
-        $('#category_image').attr('src', '');
-        $('#category_image').hide();
-
-        $('.msg').html('');
+        productAdded(result);
     });
 });
 
-function isValidCategoryForm(){
+function isValidProductForm(){
     return true;
 }
 
-function saveCategory(){
+function saveProduct(){
 
-    if(isValidCategoryForm()){
+    if(isValidProductForm()){
 
-        $("#frmcategory").attr('action', 'save-category');
+        var category_id = $('.selected-category').attr('rel');
 
-        var parent_id = $('.selected-category').attr('rel');
+        $('#frmproduct').attr('action', root + '/save-product');
 
-        $("input[name='parent_id']").val(parent_id);
+        $("input[name='category_id']").val(category_id);
 
-        $('.msg').html('Creating category, please wait');
+        $('.msg').html('Creating product, please wait');
 
         return true;
     }
@@ -54,20 +38,15 @@ function saveCategory(){
         return false;
 }
 
-function categoryAdded(result){
+function productAdded(result){
 
-    $('#frmcategory').find("input[type='text']").val('');
-    $('#frmcategory').find("input[type='file']").val('');
-    $('#frmcategory').find('textarea').val('');
-
-    $("input[name='btncreatecategory']").attr('rel', 'create');
-    $("input[name='btncreatecategory']").val('Create Category');
-
-    getCategoryTree(showTree);
+    $('#frmproduct').find("input[type='text']").val('');
+    $('#frmproduct').find("input[type='file']").val('');
+    $('#frmproduct').find('textarea').val('');
 }
 
-function setParentCategoryText(){
-    $('.sp_parent_category').text($('.selected-category').attr('name'));
+function setSelectedCategoryText(){
+    $('.sp_parent_product').text($('.selected-product').attr('name'));
 }
 
 function showTree(result){
@@ -92,7 +71,7 @@ function bindTreeEvents(){
     });
 
     $('.folder > li').click(function(e){
-        $('#tree').find('li').removeClass('selected-category');
+        $('#tree').find('li').removeClass('selected-product');
 
         if($(this).find('ul').length>0){
             $(this).find(">:first-child").toggle();
@@ -109,14 +88,14 @@ function bindTreeEvents(){
         $(this).addClass('selected-category');
         $(this).children().addClass('non-selected-category');
 
-        setParentCategoryText();
+        setSelectedCategoryText();
 
         e.stopPropagation();
     });
 
     $('#tree').find('li').first().addClass('selected-category');
 
-    setParentCategoryText();
+    setSelectedCategoryText();
 }
 
 function initializeLeftMenu(){

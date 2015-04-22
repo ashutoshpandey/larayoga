@@ -16,6 +16,7 @@
 //	return View::make('hello');
 //});
 
+Route::get('/', 'HomeController@index');
 Route::get('/product', 'ProductController@product');
 Route::get('/category', 'CategoryController@category');
 
@@ -23,6 +24,7 @@ Route::get('/category', 'CategoryController@category');
 /*********************** admin urls ************************/
 
 Route::get('/admin', 'AdminController@index');
+Route::get('/admin-logout', 'AdminController@logout');
 
 /*********************** admin product urls ************************/
 
