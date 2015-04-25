@@ -38,6 +38,9 @@ Route::get('/import-products', 'AdminProductController@importProducts');
 Route::post('/upload-products', 'AdminProductController@uploadProducts');
 Route::get('/find-product', 'AdminProductController@findProduct');
 Route::get('/load-products', 'AdminProductController@loadProducts');
+Route::get('/associate-products', 'AdminProductController@associateProducts');
+Route::get('/similar-products', 'AdminProductController@similarProducts');
+Route::get('/package-products', 'AdminProductController@packageProducts');
 
 /*********************** admin category urls ************************/
 

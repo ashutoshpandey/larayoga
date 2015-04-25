@@ -34,9 +34,9 @@
                     <li class='create-product'><a href="{{$root}}/create-product">Create</a></li>
                     <li class='manage-products'><a href="{{$root}}/manage-products">Manage</a></li>
                     <li class='import-products'><a href="{{$root}}/import-products">Import</a></li>
-                    <li class='associate-products'><a href="{{$root}}/import-products">Associate</a></li>
-                    <li class='similar-products'><a href="{{$root}}/import-products">Similar</a></li>
-                    <li class='package-products'><a href="{{$root}}/import-products">Package</a></li>
+                    <li class='associate-products'><a href="{{$root}}/associate-products">Associate</a></li>
+                    <li class='similar-products'><a href="{{$root}}/similar-products">Similar</a></li>
+                    <li class='package-products'><a href="{{$root}}/package-products">Package</a></li>
                 </ul>
             </li>
 

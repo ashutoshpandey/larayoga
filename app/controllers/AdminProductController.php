@@ -36,26 +36,6 @@ class AdminProductController extends BaseController
 
             $status = $status=="yes" ? "active" : "inactive";
 
-//            $product = new Product();
-//
-//            $product->name = $name;
-//            $product->sku = $sku;
-//            $product->quantity = $quantity;
-//            $product->price = $price;
-//            $product->special_price = $special_price;
-//            $product->pre_order = $pre_order;
-//            $product->url_key = $url_key;
-//            $product->description = $description;
-//            $product->page_title = $page_title;
-//            $product->custom_json_data = $custom_json_data;
-//            $product->header_data = $header_data;
-//            $product->status = $status;
-//            $product->created_at = date('Y-m-d h:i:s');
-//            $product->updated_at = date('Y-m-d h:i:s');
-//            $product->update_type = 'created';
-//
-//            $product->save();
-
             $product = Product::create(
                 array(
                     'name' => $name,
@@ -103,7 +83,7 @@ class AdminProductController extends BaseController
     }
 
     public function similarProducts(){
-        return View::make('admin.product.import');
+        return View::make('admin.product.similar');
     }
 
     public function associateProducts(){

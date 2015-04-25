@@ -9,23 +9,10 @@
 
     <title>YOGASMOGA Create Category</title>
 
-    <!-- Bootstrap core CSS -->
-    {{HTML::style(asset("/public/css/bootstrap.css"))}}
-    {{HTML::style(asset("/public/font-awesome/css/font-awesome.css"))}}
-    {{HTML::style(asset("/public/css/zabuto_calendar.css"))}}
-    {{HTML::style(asset("/public/lineicons/style.css"))}}
-    {{HTML::style(asset("/public/css/style.css"))}}
-    {{HTML::style(asset("/public/css/style-responsive.css"))}}
-    {{HTML::style(asset("/public/css/site/admin/common.css"))}}
+    @include('admin.includes.common_css')
     {{HTML::style(asset("/public/css/site/admin/category/create.css"))}}
 
-    {{HTML::script(asset("/public/js/jquery-1.10.2.js"))}}
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    @include('admin.includes.common_js_top')
 </head>
 
 <body>
@@ -42,7 +29,7 @@ TOP BAR CONTENT & NOTIFICATIONS
 MAIN SIDEBAR MENU
 *********************************************************************************************************************************************************** -->
 <!--sidebar start-->
-@include('admin.includes.adminmenu')
+@include('admin.includes.menu')
 <!--sidebar end-->
 
 <!-- **********************************************************************************************************************************************************
@@ -135,15 +122,7 @@ MAIN CONTENT
 <!--footer end-->
 </section>
 
-{{HTML::script(asset("/public/js/bootstrap.min.js"))}}
-
-{{HTML::script(asset("/public/js/jquery.dcjqaccordion.2.7.js"))}}
-{{HTML::script(asset("/public/js/jquery.scrollTo.min.js"))}}
-{{HTML::script(asset("/public/js/jquery.nicescroll.js"))}}
-{{HTML::script(asset("/public/js/common-scripts.js"))}}
-
-{{HTML::script(asset("/public/js/site/common.js"))}}
-{{HTML::script(asset("/public/js/site/admin/common.js"))}}
+@include('admin.includes.common_js_bottom')
 {{HTML::script(asset("/public/js/site/admin/category/createcategory.js"))}}
 
 </body>
