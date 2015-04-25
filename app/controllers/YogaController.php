@@ -1,6 +1,6 @@
 <?php
 
-class StaticController extends BaseController
+class YogaController extends BaseController
 {
     public function men()
     {

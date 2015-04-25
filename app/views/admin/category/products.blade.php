@@ -20,7 +20,7 @@
     {{HTML::style(asset("/public/css/jquery.dataTables.css"))}}
 
     {{HTML::style(asset("/public/css/site/admin/common.css"))}}
-    {{HTML::style(asset("/public/css/site/admin/category/categoryproducts.css"))}}
+    {{HTML::style(asset("/public/css/site/admin/category/products.css"))}}
 
     {{HTML::script(asset("/public/js/jquery-1.10.2.js"))}}
 
@@ -254,7 +254,7 @@ MAIN CONTENT
 
 {{HTML::script(asset("/public/js/site/common.js"))}}
 {{HTML::script(asset("/public/js/site/admin/common.js"))}}
-{{HTML::script(asset("/public/js/site/admin/category/categoryproducts.js"))}}
+{{HTML::script(asset("/public/js/site/admin/category/products.js"))}}
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 .formrow{
     margin-bottom: 15px;
 }
+.formrow textarea{ width: 50%; }
 
 .selected-navigation-menu{ color: white !important; }
 

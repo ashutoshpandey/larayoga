@@ -35,7 +35,7 @@ Route::post('/update-product', 'AdminProductController@updateProduct');
 Route::get('/remove-product', 'AdminProductController@removeProduct');
 Route::get('/manage-products', 'AdminProductController@manageProducts');
 Route::get('/import-products', 'AdminProductController@importProducts');
-Route::get('/get-category-products', 'AdminProductController@getCategoryProducts');
+Route::post('/upload-products', 'AdminProductController@uploadProducts');
 Route::get('/find-product', 'AdminProductController@findProduct');
 Route::get('/load-products', 'AdminProductController@loadProducts');
 
@@ -51,6 +51,7 @@ Route::post('/update-category-grid-order', 'AdminCategoryController@updateCatego
 Route::post('/update-product-grid-order', 'AdminCategoryController@updateProductGridOrder');
 Route::post('/update-products-in-category', 'AdminCategoryController@updateProductsInCategory');
 Route::get('/category-products', 'AdminCategoryController@categoryProducts');
+Route::get('/get-category-products', 'AdminCategoryController@getCategoryProducts');
 Route::get('/import-categories', 'AdminCategoryController@importCategories');
 Route::get('/load-categories', 'AdminCategoryController@loadCategories');
 Route::get('/find-category', 'AdminCategoryController@findCategory');

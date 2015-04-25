@@ -56,6 +56,7 @@
 
                 <div class="col-lg-9 main-chart">
 
+                    <div id='category_to_add'></div>
 
                     <form id="frmproduct" target="ifr" method="post">
 
@@ -96,7 +97,7 @@
 
                         <div class='formrow'>
                             <label>Special Price</label>
-                            <input type="text" name="specialprice"/>
+                            <input type="text" name="special_price"/>
 
                             <div class='clearfix'></div>
                         </div>
@@ -110,8 +111,8 @@
 
                         <div class='formrow'>
                             <label>Pre-Order?</label>
-                            <input type="radio" name="preorder" value="no" checked="checked"/>No &nbsp;
-                            <input type="radio" name="preorder" value="yes"/>Yes
+                            <input type="radio" name="pre_order" value="no" checked="checked"/>No &nbsp;
+                            <input type="radio" name="pre_order" value="yes"/>Yes
 
                             <div class='clearfix'></div>
                         </div>
@@ -137,11 +138,20 @@
                             <div class='clearfix'></div>
                         </div>
 
+                        <div class='formrow'>
+                            <label>Active</label>
+                            <input type="radio" name="status" value="no" checked="checked"/>No &nbsp;
+                            <input type="radio" name="status" value="yes"/>Yes
+
+                            <div class='clearfix'></div>
+                        </div>
+
                         <label>&nbsp;</label>
                         <input type='submit' name='btncreateproduct' value='Create Product'/>
                         <input type='hidden' name='category_id'/>
                     </form>
-                    <iframe name='ifr' id='ifr' style="visibility: hidden;"></iframe>
+                    <iframe name='ifr' id='ifr' style="visibility: hidden; width:1px; height:1px;"></iframe>
+                    <div class='message'></div>
                 </div>
                 <!-- /col-lg-9 END SECTION MIDDLE -->
 

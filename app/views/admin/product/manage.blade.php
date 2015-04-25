@@ -206,7 +206,13 @@
 
               <div class="col-lg-9 main-chart">
 
-              <div id="productlist"></div>
+              <div>
+                  <input type='radio' name='active_filter' value='active' checked="checked"/> Active &nbsp;&nbsp;
+                  <input type='radio' name='active_filter' value='inactive'/> Inactive
+              </div>
+
+
+                  <div id="productlist"></div>
 
                   </div>
               <div class='clearfix'></div>
@@ -231,7 +237,7 @@
 
   {{HTML::script(asset("/public/js/site/common.js"))}}
   {{HTML::script(asset("/public/js/site/admin/common.js"))}}
-  {{HTML::script(asset("/public/js/site/admin/product/manageproducts.js"))}}
+  {{HTML::script(asset("/public/js/site/admin/product/manage.js"))}}
 
   </body>
 </html>

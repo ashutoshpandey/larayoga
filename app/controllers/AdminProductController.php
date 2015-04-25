@@ -10,27 +10,168 @@ class AdminProductController extends BaseController
     }
 
     public function createProduct(){
-        return View::make('admin.product.createproduct');
+        return View::make('admin.product.create');
     }
 
     public function saveProduct()
     {
-        $validator = Validator::make(Input::all(), Product::$rules);
+        $input = Input::except('btncreateproduct');
+
+        $validator = Validator::make($input, Product::$rules);
 
         if($validator->passes()){
 
-            $id = Product::saveFormData(Input::all());
+            $name = Input::get('name');
+            $sku = Input::get('sku');
+            $quantity = Input::get('quantity');
+            $price = Input::get('price');
+            $special_price = Input::get('special_price');
+            $pre_order = Input::get('pre_order');
+            $url_key = Input::get('url_key');
+            $description = Input::get('description');
+            $page_title = Input::get('page_title');
+            $custom_json_data = Input::get('custom_json_data');
+            $header_data = Input::get('header_data');
+            $status = Input::get('status');
+
+            $status = $status=="yes" ? "active" : "inactive";
+
+//            $product = new Product();
+//
+//            $product->name = $name;
+//            $product->sku = $sku;
+//            $product->quantity = $quantity;
+//            $product->price = $price;
+//            $product->special_price = $special_price;
+//            $product->pre_order = $pre_order;
+//            $product->url_key = $url_key;
+//            $product->description = $description;
+//            $product->page_title = $page_title;
+//            $product->custom_json_data = $custom_json_data;
+//            $product->header_data = $header_data;
+//            $product->status = $status;
+//            $product->created_at = date('Y-m-d h:i:s');
+//            $product->updated_at = date('Y-m-d h:i:s');
+//            $product->update_type = 'created';
+//
+//            $product->save();
+
+            $product = Product::create(
+                array(
+                    'name' => $name,
+                    'sku' => $sku,
+                    'quantity' => $quantity,
+                    'price' => $price,
+                    'special_price' => $special_price,
+                    'pre_order' => $pre_order,
+                    'url_key' => $url_key,
+                    'description' => $description,
+                    'page_title' => $page_title,
+                    'custom_json_data' => $custom_json_data,
+                    'header_data' => $header_data,
+                    'status' => $status,
+                    'created_at' => date('Y-m-d h:i:s'),
+                    'updated_at' => date('Y-m-d h:i:s'),
+                    'update_type' => 'created'
+                )
+            );
+
+            $category_id = Input::get('category_id');
+
+            $categoryPassed = isset($category_id);
+
+            if($categoryPassed){
+
+                $category = Category::find($category_id);
+
+                if(isset($category))
+                    $this->associateProductToCategory($product->id, $category_id);
+            }
+
+            echo 'saved';
         }
         else
             echo "validation failed";
     }
 
     public function manageProducts(){
-        return View::make('admin.product.manageproducts');
+        return View::make('admin.product.manage');
     }
 
     public function importProducts(){
-        return View::make('admin.product.importproducts');
+        return View::make('admin.product.import');
+    }
+
+    public function similarProducts(){
+        return View::make('admin.product.import');
+    }
+
+    public function associateProducts(){
+        return View::make('admin.product.associate');
+    }
+
+    public function packageProducts(){
+        return View::make('admin.product.package');
+    }
+
+    public function uploadProducts(){
+
+        $file_uploaded = false;
+
+        if (Input::file('file')->isValid()) {
+            $destinationPath = 'public/product_uploads/'; // upload path
+            $file_name = Input::file('file')->getClientOriginalName();
+            $extension = Input::file('file')->getClientOriginalExtension(); // getting image extension
+            $file_saved_name = intval(microtime(true)) . '.' . $extension; // renameing image
+
+            $file_path = $destinationPath . $file_saved_name;
+
+            Input::file('file')->move($destinationPath, $file_saved_name); // uploading file to given path
+
+            $file_uploaded = true;
+        }
+
+        if($file_uploaded){
+            $objPHPExcel = PHPExcel_IOFactory::load($file_path);
+
+            $rows = $objPHPExcel->getActiveSheet()->toArray(null, null, true, true);
+
+            // get column names
+            $xlsFields = isset($rows[1]) ? $rows[1] : array();
+
+            if(!empty($xlsFields)) unset($rows[1]);
+
+            // remove key from key/value pair
+            foreach($xlsFields as $field)
+                $fields[] = strtolower($field);
+
+            $productHelper = new ProductHelper();
+
+            // start reading rows
+            $productCount = 0;
+
+            foreach($rows as $row){
+
+                // remove key from key/value pair
+                foreach($row as $key => $value)
+                    $row_values[] = $value;
+
+                $productArray = $productHelper->getProductArray($row_values, $fields);
+
+                $product = Product::create($productArray);
+
+                if($product){
+                    $productCount++;
+                }
+            }
+
+            if($productCount > 0)
+                echo "Product added = " . $productCount;
+            else
+                echo "No products uploaded";
+        }
+        else
+            echo "Invalid excel file";
     }
 
     public function addProductToCategory()
@@ -38,24 +179,30 @@ class AdminProductController extends BaseController
         $product_id = Input::get('product_id');
         $category_id = Input::get('category_id');
 
-        if (isset($product_id) && is_int($product_id)) {
+        echo $this->associateProductToCategory($product_id, $category_id);
+    }
 
-            if (isset($category_id) && is_int($category_id)) {
+    public function associateProductToCategory($product_id, $category_id){
 
-                $categoryProduct = CategoryProduct();
+        if (isset($product_id)) {
+
+            if (isset($category_id)) {
+
+                $categoryProduct = new CategoryProduct();
 
                 $categoryProduct->product_id = $product_id;
                 $categoryProduct->category_id = $category_id;
+                $categoryProduct->update_type = 'created';
 
                 $categoryProduct->save();
 
-                echo "added";
+                return "added";
             }
             else
-                echo "invalid category";
+                return "invalid category";
         }
         else
-            echo "invalid product";
+            return "invalid product";
     }
 
     public function removeProductFromCategory()
@@ -98,43 +245,18 @@ class AdminProductController extends BaseController
             echo "invalid product";
     }
 
-    public function categoryProducts(){
-        return View::make('admin.category.categoryproducts');
-    }
-
-    public function getCategoryProducts(){
-
-        $category_id = Input::get('category_id');
-        $page = Input::get('category_id');
-        $records_to_pick = Input::get('count');
-
-        if(isset($page))
-            $page = 1;
-
-        if(isset($records_to_pick))
-            $records_to_pick = 20;
-
-        $skip_records = ($page-1)*20;
-
-        if(isset($id) && is_int($id)){
-            $products = Product::where('category_id', '=', $category_id)->where('status', '=', 'active')->take($records_to_pick)->skip($skip_records)->get();
-
-            return $products;
-        }
-        else
-            return NULL;
-    }
-
     public function editProduct($id){
 
         if(isset($id)){
 
-            $product = ProductHelper::getProduct($id);
+            $productHelper = new ProductHelper();
+
+            $product = $productHelper->getProduct($id);
 
             if($product){
                 Session::put('edit_product_id', $id);
 
-                return View::make('admin.product.editproduct')->with('product', $product);
+                return View::make('admin.product.edit')->with('product', $product);
             }
             else
                 return Redirect::to('manage-products');
@@ -151,7 +273,37 @@ class AdminProductController extends BaseController
 
             if ($product) {
 
-                Product::updateFormData(Input::except(array('id')));
+                $name = Input::get('name');
+                $sku = Input::get('sku');
+                $quantity = Input::get('quantity');
+                $price = Input::get('price');
+                $special_price = Input::get('special_price');
+                $pre_order = Input::get('pre_order');
+                $url_key = Input::get('url_key');
+                $description = Input::get('description');
+                $page_title = Input::get('page_title');
+                $custom_json_data = Input::get('custom_json_data');
+                $header_data = Input::get('header_data');
+                $status = Input::get('status');
+
+                $status = $status=="yes" ? "active" : "inactive";
+
+                $product->name = $name;
+                $product->sku = $sku;
+                $product->quantity = $quantity;
+                $product->price = $price;
+                $product->special_price = $special_price;
+                $product->pre_order = $pre_order;
+                $product->url_key = $url_key;
+                $product->description = $description;
+                $product->page_title = $page_title;
+                $product->custom_json_data = $custom_json_data;
+                $product->header_data = $header_data;
+                $product->status = $status;
+                $product->updated_at = date('Y-m-d h:i:s');
+                $product->update_type = 'updated';
+
+                $product->save();
 
                 echo "updated";
             }
@@ -299,6 +451,10 @@ class AdminProductController extends BaseController
         $page = Input::get('page');
         $count = Input::get('count');
         $category_id = Input::get('category_id');
+        $status = Input::get('status');
+
+        if(!isset($status))
+            $status = 'active';
 
         if(!isset($page))
             $page = 1;
@@ -314,16 +470,14 @@ class AdminProductController extends BaseController
         if($category_id==-1)
             $products = Product::where('status', '=', 'active')->take($count)->skip($skip)->get();
         else{
-            $products = Product::whereHas('categories', function($q) use ($category_id)
+            $products = Product::whereHas('categories', function($q) use ($category_id, $status)
             {
                 $q->where('category_id', $category_id);
-            })->where('status', 'active')
+            })->where('status', $status)
                 ->take($count)
                 ->skip($skip)
                 ->get();
         }
-
-        print_r($products);
 
         return $products;
     }

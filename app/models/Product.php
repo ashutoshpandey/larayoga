@@ -21,6 +21,8 @@ class Product extends Eloquent {
 
     public static $rules = array('name' => 'required|min:3');
 
+    protected $fillable = array('name', 'sku', 'quantity', 'price', 'special_price', 'pre_order', 'url_key', 'description', 'page_title', 'custom_json_data', 'header_data', 'update_type');
+
     public static function saveFormData($data)
     {
         $id = DB::table('products')->insertGetId($data);

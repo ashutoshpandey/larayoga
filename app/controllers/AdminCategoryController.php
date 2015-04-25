@@ -293,6 +293,29 @@ class AdminCategoryController extends BaseController {
     }
 
     public function categoryProducts(){
-        return View::make('admin.category.categoryproducts');
+        return View::make('admin.category.products');
+    }
+
+    public function getCategoryProducts(){
+
+        $category_id = Input::get('category_id');
+        $page = Input::get('category_id');
+        $records_to_pick = Input::get('count');
+
+        if(isset($page))
+            $page = 1;
+
+        if(isset($records_to_pick))
+            $records_to_pick = 20;
+
+        $skip_records = ($page-1)*20;
+
+        if(isset($id) && is_int($id)){
+            $products = Product::where('category_id', '=', $category_id)->where('status', '=', 'active')->take($records_to_pick)->skip($skip_records)->get();
+
+            return $products;
+        }
+        else
+            return NULL;
     }
 }

@@ -176,9 +176,9 @@ function bindTreeEvents(){
             var background = $(this).css('background-image');
 
             if(background.indexOf('closed')>-1)
-                $(this).css('background-image', "url('public/css/admin/category/open.gif')");
+                $(this).css('background-image', "url('public/css/site/admin/category/open.gif')");
             else
-                $(this).css('background-image', "url('public/css/admin/category/closed.gif')");
+                $(this).css('background-image', "url('public/css/site/admin/category/closed.gif')");
         }
 
         $(this).removeClass('non-selected-category');

@@ -1,2 +1,5 @@
 label{float:left; width:30%; min-width: 150px;}
 input[type='text']{float: left; width: 70%;}
+
+#category_to_add{font-size:1.5em; border-bottom: solid 1px #333; display: none; margin-bottom: 20px; padding-bottom: 10px;}
+#category_to_add .remove{padding: 5px; border-radius: 50%; background-color: #cccccc; color: #000; cursor: pointer; display: inline; width: 20px; height: 20px;}

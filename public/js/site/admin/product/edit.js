@@ -2,13 +2,15 @@ $(document).ready(function(){
 
     initializeLeftMenu();
 
+    $("input[name='btnupdateproduct']").click(updateProduct);
+
     $('#ifr').load(function(){
 
         $('.msg').html('');
 
         var result = $('#ifr').contents().find('body').html();
 
-        categoryUpdated(result);
+        productUpdated(result);
     });
 });
 
@@ -20,9 +22,7 @@ function updateProduct(){
 
     if(isValidProductForm()){
 
-        var id = $('.selected-product').attr('rel');
-
-        $("input[name='id']").val(id);
+        $('#frmproduct').attr('action', root + '/update-product');
 
         $('.msg').html('Updating product, please wait');
 

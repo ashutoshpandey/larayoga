@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
 
     initializeLeftMenu();
 
@@ -8,13 +8,36 @@ $(document).ready(function(){
 
     $('#ifr').load(function(){
 
-        $('.msg').html('');
+        $('.message').html('');
 
         var result = $('#ifr').contents().find('body').html();
 
         productAdded(result);
     });
+
+    bindKeyEvents();
 });
+
+function bindKeyEvents(){
+    $('#frmproduct').find("input").keydown(function(){
+        $('.message').html('');
+    });
+    $('#frmproduct').find("textarea").keydown(function(){
+        $('.message').html('');
+    });
+}
+
+function productAdded(result){
+
+    $('#frmproduct').find("input[type='text']").val('');
+    $('#frmproduct').find("input[type='file']").val('');
+    $('#frmproduct').find('textarea').val('');
+
+    if(result=='saved')
+        $('.message').html('Product created successfully');
+    else
+        $('.message').html('Something wrong with product data');
+}
 
 function isValidProductForm(){
     return true;
@@ -36,17 +59,6 @@ function saveProduct(){
     }
     else
         return false;
-}
-
-function productAdded(result){
-
-    $('#frmproduct').find("input[type='text']").val('');
-    $('#frmproduct').find("input[type='file']").val('');
-    $('#frmproduct').find('textarea').val('');
-}
-
-function setSelectedCategoryText(){
-    $('.sp_parent_product').text($('.selected-product').attr('name'));
 }
 
 function showTree(result){
@@ -71,7 +83,7 @@ function bindTreeEvents(){
     });
 
     $('.folder > li').click(function(e){
-        $('#tree').find('li').removeClass('selected-product');
+        $('#tree').find('li').removeClass('selected-category');
 
         if($(this).find('ul').length>0){
             $(this).find(">:first-child").toggle();
@@ -92,10 +104,25 @@ function bindTreeEvents(){
 
         e.stopPropagation();
     });
+}
 
-    $('#tree').find('li').first().addClass('selected-category');
+function setSelectedCategoryText(){
 
-    setSelectedCategoryText();
+    var category_name = $('.selected-category').attr('name');
+    var category_id = $('.selected-category').attr('rel');
+
+    $("input[name='category_id']").val(category_id);
+
+    var str = 'Product will be added to category : ' + category_name + " <div class='remove'>x</div>";
+
+    $('#category_to_add').html(str).show();
+
+    // product will not be added to any category
+    $('#category_to_add .remove').click(function(){
+        $('#category_to_add').html('').hide();
+        $("input[name='category_id']").val('');
+        $('#tree').find('li').removeClass('selected-category');
+    });
 }
 
 function initializeLeftMenu(){

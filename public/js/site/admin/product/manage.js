@@ -3,11 +3,22 @@ $(document).ready(function(){
     initializeLeftMenu();
 
     getCategoryTree(showTree);
+
+    $("input[name='active_filter']").click(function(){
+        loadProducts(1);
+    });
 });
 
-function loadProducts(page, category_id){
+function loadProducts(page){
 
-    var data = 'page=1&count=20&category_id=' + category_id;
+    var category_id = -1;
+
+    if($('.selected-category').length>0)
+        category_id = $('.selected-category').attr('rel');
+
+    var status = $("input[name='active_filter']:checked").val();
+
+    var data = 'page=1&count=20&category_id=' + category_id + '&status=' + status;
 
     jsonCall(root + '/load-products', 'get', data, productsLoaded);
 }
@@ -113,9 +124,7 @@ function showTree(result){
 
     bindTreeEvents();
 
-    var category_id = $('.selected-category').attr('rel');
-
-    loadProducts(1, category_id);
+    loadProducts(1);
 }
 function bindTreeEvents(){
 
@@ -157,8 +166,6 @@ function bindTreeEvents(){
     $('#tree').find('li').first().addClass('selected-category');
 
     $('#tree').find('li').click(function(){
-        var category_id = $('.selected-category').attr('rel');
-
-        loadProducts(1, category_id);
+        loadProducts(1);
     });
 }

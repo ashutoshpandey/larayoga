@@ -5,9 +5,9 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-        "maatwebsite/excel": "~2.0.0",
         "stripe/stripe-php" : "dev-master",
-        "fzaninotto/faker" : "dev-master"
+        "fzaninotto/faker" : "dev-master",
+        "phpoffice/phpexcel": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

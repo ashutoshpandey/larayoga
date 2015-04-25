@@ -13,18 +13,6 @@
                 </a>
             </li>
 
-            <li class="sub-menu product-menu">
-                <a href="{{$root}}/javascript:;" >
-                    <i class="fa fa-desktop"></i>
-                    <span>Product</span>
-                </a>
-                <ul class="sub">
-                    <li class='create-product'><a href="{{$root}}/create-product">Create</a></li>
-                    <li class='manage-products'><a href="{{$root}}/manage-products">Manage</a></li>
-                    <li class='import-products'><a href="{{$root}}/import-products">Import</a></li>
-                </ul>
-            </li>
-
             <li class="sub-menu category-menu">
                 <a href="{{$root}}/javascript:;" >
                     <i class="fa fa-cogs"></i>
@@ -36,6 +24,22 @@
                     <li class='category-products'><a href="{{$root}}/category-products">Products</a></li>
                 </ul>
             </li>
+
+            <li class="sub-menu product-menu">
+                <a href="{{$root}}/javascript:;" >
+                    <i class="fa fa-desktop"></i>
+                    <span>Product</span>
+                </a>
+                <ul class="sub">
+                    <li class='create-product'><a href="{{$root}}/create-product">Create</a></li>
+                    <li class='manage-products'><a href="{{$root}}/manage-products">Manage</a></li>
+                    <li class='import-products'><a href="{{$root}}/import-products">Import</a></li>
+                    <li class='associate-products'><a href="{{$root}}/import-products">Associate</a></li>
+                    <li class='similar-products'><a href="{{$root}}/import-products">Similar</a></li>
+                    <li class='package-products'><a href="{{$root}}/import-products">Package</a></li>
+                </ul>
+            </li>
+
             <li class="sub-menu">
                 <a href="{{$root}}/javascript:;" >
                     <i class="fa fa-book"></i>
