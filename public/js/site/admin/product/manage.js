@@ -82,12 +82,12 @@ function getProductTable(products){
         table += '<td>' + product.description + '</td>';
 
         table += "<td><input type='text' name='sort_order' rel='" + product.id + "' class='sort_order' maxlength='2' value='" + product.sort_order + "'/></td>";
-        table += "<td><a href='edit-product/" + product.id + "'>Edit</a> &nbsp;&nbsp; <span class='lnkremove' rel='" + product.id + "'>Remove</span></td>";
+        table += "<td><a href='" + root + "/edit-product/" + product.id + "'>Edit</a> &nbsp;&nbsp; <span class='lnkremove' rel='" + product.id + "'>Remove</span></td>";
 
         table += '</tr>';
     }
 
-    table += '</tbody></table>'
+    table += '</tbody></table>';
 
     return table;
 }

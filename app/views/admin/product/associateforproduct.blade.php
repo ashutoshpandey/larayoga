@@ -12,7 +12,7 @@
     @include('admin.includes.common_css')
     {{HTML::style(asset("/public/css/jquery.dataTables.css"))}}
     {{HTML::style(asset("/public/css/site/admin/common.css"))}}
-    {{HTML::style(asset("/public/css/site/admin/product/associate.css"))}}
+    {{HTML::style(asset("/public/css/site/admin/product/associateforproduct.css"))}}
 
     @include('admin.includes.common_js_top')
 </head>
@@ -43,9 +43,25 @@ MAIN CONTENT
 
 <div class="row">
 
+    <div><a href="{{$root}}/associate-products">Back</a></div>
+
+    <?php if($found){ ?>
+
+    <div>
+        Product : {{$product_name}} ( {{$product_id}} )
+    </div>
+
     <div id="associatedproductlist"></div>
 
+    <hr/>
+
     <div id="productlist"></div>
+
+    <?php } else{ ?>
+
+        <h4>Invalid product selected</h4>
+
+    <?php } ?>
 
 </div>
 </section>
@@ -60,7 +76,7 @@ MAIN CONTENT
 
 @include('admin.includes.common_js_bottom')
 {{HTML::script(asset("/public/js/jquery.dataTables.min.js"))}}
-{{HTML::script(asset("/public/js/site/admin/product/associate.js"))}}
+{{HTML::script(asset("/public/js/site/admin/product/associateforproduct.js"))}}
 
 </body>
 </html>

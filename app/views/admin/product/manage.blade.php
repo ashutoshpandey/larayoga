@@ -10,6 +10,7 @@
     <title>YOGASMOGA Manage Products</title>
 
     @include('admin.includes.common_css')
+    {{HTML::style(asset("/public/css/site/jquery.dataTables.css"))}}
     {{HTML::style(asset("/public/css/site/admin/product/manage.css"))}}
 
     @include('admin.includes.common_js_top')

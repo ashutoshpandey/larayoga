@@ -99,7 +99,7 @@ function getCategoryTable(categories){
         table += '</tr>';
     }
 
-    table += '</tbody></table>'
+    table += '</tbody></table>';
 
     return table;
 }

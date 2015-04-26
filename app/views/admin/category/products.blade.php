@@ -10,6 +10,7 @@
     <title>YOGASMOGA Create Category</title>
 
     @include('admin.includes.common_css')
+    {{HTML::style(asset("/public/css/jquery.dataTables.css"))}}
     {{HTML::style(asset("/public/css/site/admin/category/products.css"))}}
 
     @include('admin.includes.common_js_top')
@@ -73,6 +74,7 @@ MAIN CONTENT
 </section>
 
 @include('admin.includes.common_js_bottom')
+{{HTML::script(asset("/public/js/jquery.dataTables.min.js"))}}
 {{HTML::script(asset("/public/js/site/admin/category/products.js"))}}
 
 </body>

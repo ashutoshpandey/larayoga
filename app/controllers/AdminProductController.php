@@ -2,14 +2,16 @@
 
 class AdminProductController extends BaseController
 {
-    public function __construct(){
+    public function __construct()
+    {
 
-        $this->beforeFilter(function(){
+        $this->beforeFilter(function () {
             View::share('root', URL::to('/'));
         });
     }
 
-    public function createProduct(){
+    public function createProduct()
+    {
         return View::make('admin.product.create');
     }
 
@@ -19,82 +21,144 @@ class AdminProductController extends BaseController
 
         $validator = Validator::make($input, Product::$rules);
 
-        if($validator->passes()){
+        if ($validator->passes()) {
 
-            $name = Input::get('name');
             $sku = Input::get('sku');
-            $quantity = Input::get('quantity');
-            $price = Input::get('price');
-            $special_price = Input::get('special_price');
-            $pre_order = Input::get('pre_order');
-            $url_key = Input::get('url_key');
-            $description = Input::get('description');
-            $page_title = Input::get('page_title');
-            $custom_json_data = Input::get('custom_json_data');
-            $header_data = Input::get('header_data');
-            $status = Input::get('status');
 
-            $status = $status=="yes" ? "active" : "inactive";
+            $product = Product::where('sku', '=', $sku)->first();
 
-            $product = Product::create(
-                array(
-                    'name' => $name,
-                    'sku' => $sku,
-                    'quantity' => $quantity,
-                    'price' => $price,
-                    'special_price' => $special_price,
-                    'pre_order' => $pre_order,
-                    'url_key' => $url_key,
-                    'description' => $description,
-                    'page_title' => $page_title,
-                    'custom_json_data' => $custom_json_data,
-                    'header_data' => $header_data,
-                    'status' => $status,
-                    'created_at' => date('Y-m-d h:i:s'),
-                    'updated_at' => date('Y-m-d h:i:s'),
-                    'update_type' => 'created'
-                )
-            );
-
-            $category_id = Input::get('category_id');
-
-            $categoryPassed = isset($category_id);
-
-            if($categoryPassed){
-
-                $category = Category::find($category_id);
-
-                if(isset($category))
-                    $this->associateProductToCategory($product->id, $category_id);
+            if (isset($product)) {
             }
+            else {
+                $name = Input::get('name');
+                $quantity = Input::get('quantity');
+                $price = Input::get('price');
+                $special_price = Input::get('special_price');
+                $pre_order = Input::get('pre_order');
+                $url_key = Input::get('url_key');
+                $description = Input::get('description');
+                $page_title = Input::get('page_title');
+                $custom_json_data = Input::get('custom_json_data');
+                $header_data = Input::get('header_data');
+                $status = Input::get('status');
 
-            echo 'saved';
-        }
-        else
+                $status = $status == "yes" ? "active" : "inactive";
+
+                $product = Product::create(
+                    array(
+                        'name' => $name,
+                        'sku' => $sku,
+                        'quantity' => $quantity,
+                        'price' => $price,
+                        'special_price' => $special_price,
+                        'pre_order' => $pre_order,
+                        'url_key' => $url_key,
+                        'description' => $description,
+                        'page_title' => $page_title,
+                        'custom_json_data' => $custom_json_data,
+                        'header_data' => $header_data,
+                        'status' => $status,
+                        'created_at' => date('Y-m-d h:i:s'),
+                        'updated_at' => date('Y-m-d h:i:s'),
+                        'update_type' => 'created'
+                    )
+                );
+
+                $category_id = Input::get('category_id');
+
+                $categoryPassed = isset($category_id);
+
+                if ($categoryPassed) {
+
+                    $category = Category::find($category_id);
+
+                    if (isset($category))
+                        $this->associateProductToCategory($product->id, $category_id);
+                }
+
+                echo 'saved';
+            }
+        } else
             echo "validation failed";
     }
 
-    public function manageProducts(){
+    public function manageProducts()
+    {
         return View::make('admin.product.manage');
     }
 
-    public function importProducts(){
+    public function importProducts()
+    {
         return View::make('admin.product.import');
     }
 
-    public function similarProducts(){
+    public function similarProducts()
+    {
         return View::make('admin.product.similar');
     }
 
-    public function associateProducts(){
+    public function associateProducts()
+    {
         return View::make('admin.product.associate');
     }
 
-    public function packageProducts(){
+    public function associateForProduct($id)
+    {
+        $product = Product::find($id);
+
+        if(isset($product)){
+
+            Session::put('associate_parent_product_id', $id);
+
+            return View::make('admin.product.associateforproduct')->with('product_id', $id)->with('product_name', $product->name)->with('found', true);
+        }
+        else
+            return View::make('admin.product.associateforproduct')->with('found', false);
+    }
+
+    public function loadAssociatedProducts()
+    {
+        $page = Input::get('page');
+        $count = Input::get('count');
+        $product_id = Session::get('associate_parent_product_id');
+
+        if (!isset($status))
+            $status = 'active';
+
+        if (!isset($page))
+            $page = 1;
+
+        if (!isset($count))
+            $count = 20;
+
+        $skip = ($page - 1) * 20;
+
+        if(isset($product_id)){
+            $product = Product::where('id', '=', $product_id)->first();
+
+            if (isset($product)){
+                  $products = Product::where('status', '=', 'active')->take($count)->skip($skip)->get();
+
+//                $products = Product::whereHas('categories', function ($q) use ($category_id, $status) {
+//                    $q->where('category_id', $category_id);
+//                })->where('status', $status)
+//                    ->take($count)
+//                    ->skip($skip)
+//                    ->get();
+            }
+            return $products;
+        }
+        else
+            return null;
+    }
+
+    public function packageProducts()
+    {
         return View::make('admin.product.package');
     }
 
-    public function uploadProducts(){
+    public function uploadProducts()
+    {
 
         $file_uploaded = false;
 
@@ -111,7 +175,7 @@ class AdminProductController extends BaseController
             $file_uploaded = true;
         }
 
-        if($file_uploaded){
+        if ($file_uploaded) {
             $objPHPExcel = PHPExcel_IOFactory::load($file_path);
 
             $rows = $objPHPExcel->getActiveSheet()->toArray(null, null, true, true);
@@ -119,10 +183,10 @@ class AdminProductController extends BaseController
             // get column names
             $xlsFields = isset($rows[1]) ? $rows[1] : array();
 
-            if(!empty($xlsFields)) unset($rows[1]);
+            if (!empty($xlsFields)) unset($rows[1]);
 
             // remove key from key/value pair
-            foreach($xlsFields as $field)
+            foreach ($xlsFields as $field)
                 $fields[] = strtolower($field);
 
             $productHelper = new ProductHelper();
@@ -130,27 +194,34 @@ class AdminProductController extends BaseController
             // start reading rows
             $productCount = 0;
 
-            foreach($rows as $row){
+            foreach ($rows as $row) {
 
                 // remove key from key/value pair
-                foreach($row as $key => $value)
+                foreach ($row as $key => $value)
                     $row_values[] = $value;
 
                 $productArray = $productHelper->getProductArray($row_values, $fields);
 
-                $product = Product::create($productArray);
+                $sku = $productArray['sku'];
 
-                if($product){
-                    $productCount++;
+                $product = Product::where('sku', '=', $sku)->first();
+
+                if (isset($product)) {
+                }
+                else {
+
+                    $product = Product::create($productArray);
+
+                    if (isset($product))
+                        $productCount++;
                 }
             }
 
-            if($productCount > 0)
+            if ($productCount > 0)
                 echo "Product added = " . $productCount;
             else
                 echo "No products uploaded";
-        }
-        else
+        } else
             echo "Invalid excel file";
     }
 
@@ -162,7 +233,8 @@ class AdminProductController extends BaseController
         echo $this->associateProductToCategory($product_id, $category_id);
     }
 
-    public function associateProductToCategory($product_id, $category_id){
+    public function associateProductToCategory($product_id, $category_id)
+    {
 
         if (isset($product_id)) {
 
@@ -177,11 +249,9 @@ class AdminProductController extends BaseController
                 $categoryProduct->save();
 
                 return "added";
-            }
-            else
+            } else
                 return "invalid category";
-        }
-        else
+        } else
             return "invalid product";
     }
 
@@ -200,18 +270,16 @@ class AdminProductController extends BaseController
                     $categoryProduct->delete();
 
                     echo "removed";
-                }
-                else
+                } else
                     echo "not in category";
-            }
-            else
+            } else
                 echo "invalid category";
-        }
-        else
+        } else
             echo "invalid product";
     }
 
-    public function getProductCategories(){
+    public function getProductCategories()
+    {
 
         $product_id = Input::get('product_id');
 
@@ -220,25 +288,24 @@ class AdminProductController extends BaseController
             $categories = CategoryProduct::where('product_id', '=', $product_id)->get();
 
             return $categories;
-        }
-        else
+        } else
             echo "invalid product";
     }
 
-    public function editProduct($id){
+    public function editProduct($id)
+    {
 
-        if(isset($id)){
+        if (isset($id)) {
 
             $productHelper = new ProductHelper();
 
             $product = $productHelper->getProduct($id);
 
-            if($product){
+            if ($product) {
                 Session::put('edit_product_id', $id);
 
                 return View::make('admin.product.edit')->with('product', $product);
-            }
-            else
+            } else
                 return Redirect::to('manage-products');
         }
     }
@@ -266,7 +333,7 @@ class AdminProductController extends BaseController
                 $header_data = Input::get('header_data');
                 $status = Input::get('status');
 
-                $status = $status=="yes" ? "active" : "inactive";
+                $status = $status == "yes" ? "active" : "inactive";
 
                 $product->name = $name;
                 $product->sku = $sku;
@@ -286,11 +353,9 @@ class AdminProductController extends BaseController
                 $product->save();
 
                 echo "updated";
-            }
-            else
+            } else
                 echo "not found";
-        }
-        else
+        } else
             echo "invalid";
     }
 
@@ -320,11 +385,9 @@ class AdminProductController extends BaseController
                 }
 
                 echo "removed";
-            }
-            else
+            } else
                 echo "not found";
-        }
-        else
+        } else
             echo "invalid";
     }
 
@@ -361,11 +424,9 @@ class AdminProductController extends BaseController
                         $associatedProduct->save();
                     }
                 }
-            }
-            else
+            } else
                 echo "no associated";
-        }
-        else
+        } else
             echo "invalid product";
     }
 
@@ -380,11 +441,9 @@ class AdminProductController extends BaseController
                 $associatedProduct->delete();
 
                 echo "removed";
-            }
-            else
+            } else
                 echo "not found";
-        }
-        else
+        } else
             echo "invalid";
     }
 
@@ -402,8 +461,7 @@ class AdminProductController extends BaseController
             $preorderProduct->date_value = $date_value;
 
             $preorderProduct->save();
-        }
-        else
+        } else
             echo "invalid product";
     }
 
@@ -418,40 +476,37 @@ class AdminProductController extends BaseController
                 $preorderProduct->delete();
 
                 echo "removed";
-            }
-            else
+            } else
                 echo "not found";
-        }
-        else
+        } else
             echo "invalid";
     }
 
-    public function loadProducts(){
-
+    public function loadProducts()
+    {
         $page = Input::get('page');
         $count = Input::get('count');
         $category_id = Input::get('category_id');
         $status = Input::get('status');
 
-        if(!isset($status))
+        if (!isset($status))
             $status = 'active';
 
-        if(!isset($page))
+        if (!isset($page))
             $page = 1;
 
-        if(!isset($count))
+        if (!isset($count))
             $count = 20;
 
-        if(!isset($category_id))
+        if (!isset($category_id))
             $category_id = -1;
 
-        $skip = ($page-1)*20;
+        $skip = ($page - 1) * 20;
 
-        if($category_id==-1)
+        if ($category_id == -1)
             $products = Product::where('status', '=', 'active')->take($count)->skip($skip)->get();
-        else{
-            $products = Product::whereHas('categories', function($q) use ($category_id, $status)
-            {
+        else {
+            $products = Product::whereHas('categories', function ($q) use ($category_id, $status) {
                 $q->where('category_id', $category_id);
             })->where('status', $status)
                 ->take($count)

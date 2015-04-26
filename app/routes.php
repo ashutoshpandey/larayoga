@@ -39,6 +39,8 @@ Route::post('/upload-products', 'AdminProductController@uploadProducts');
 Route::get('/find-product', 'AdminProductController@findProduct');
 Route::get('/load-products', 'AdminProductController@loadProducts');
 Route::get('/associate-products', 'AdminProductController@associateProducts');
+Route::get('/associate-for-product/{id}', 'AdminProductController@associateForProduct');
+Route::get('/load-associated-products', 'AdminProductController@loadAssociatedProducts');
 Route::get('/similar-products', 'AdminProductController@similarProducts');
 Route::get('/package-products', 'AdminProductController@packageProducts');
 
