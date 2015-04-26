@@ -40,6 +40,8 @@ Route::get('/find-product', 'AdminProductController@findProduct');
 Route::get('/load-products', 'AdminProductController@loadProducts');
 Route::get('/associate-products', 'AdminProductController@associateProducts');
 Route::get('/associate-for-product/{id}', 'AdminProductController@associateForProduct');
+Route::post('/add-product-association', 'AdminProductController@addProductAssociation');
+Route::post('/update-product-association', 'AdminProductController@updateProductAssociation');
 Route::get('/load-associated-products', 'AdminProductController@loadAssociatedProducts');
 Route::get('/similar-products', 'AdminProductController@similarProducts');
 Route::get('/package-products', 'AdminProductController@packageProducts');

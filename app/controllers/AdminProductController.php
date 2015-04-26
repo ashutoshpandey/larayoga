@@ -196,11 +196,15 @@ class AdminProductController extends BaseController
 
             foreach ($rows as $row) {
 
+                $row_values = array();
+
                 // remove key from key/value pair
                 foreach ($row as $key => $value)
                     $row_values[] = $value;
 
                 $productArray = $productHelper->getProductArray($row_values, $fields);
+
+                unset($row_values);
 
                 $sku = $productArray['sku'];
 
@@ -210,11 +214,19 @@ class AdminProductController extends BaseController
                 }
                 else {
 
-                    $product = Product::create($productArray);
+                    $added_product = Product::create($productArray);
 
-                    if (isset($product))
+                    if (isset($added_product)){
                         $productCount++;
+
+                        unset($added_product);
+                    }
                 }
+
+                unset($product);
+                unset($productArray);
+                unset($sku);
+                unset($row);
             }
 
             if ($productCount > 0)
@@ -398,55 +410,6 @@ class AdminProductController extends BaseController
         return $product;
     }
 
-    public function addAssociatedProduct()
-    {
-        $product_id = Input::get('product_id');
-        $associated_product_ids = Input::get('associated_product_ids'); // will be an array
-
-        if (isset($product_id) && is_int($product_id)) {
-
-            if (isset($associated_product_ids) && is_array($associated_product_ids)) {
-
-                foreach ($associated_product_ids as $associated_product_id) {
-
-                    $tempAssociatedProduct = AssociatedProduct::where('product_id', '=', $product_id)
-                        ->where('associated_product_id', '=', $associated_product_id)
-                        ->first();
-
-                    if (isset($tempAssociatedProduct))
-                        $tempAssociatedProduct->delete();
-                    else {
-                        $associatedProduct = AssociatedProduct();
-
-                        $associatedProduct->product_id = $product_id;
-                        $associatedProduct->associated_product_id = $associated_product_id;
-
-                        $associatedProduct->save();
-                    }
-                }
-            } else
-                echo "no associated";
-        } else
-            echo "invalid product";
-    }
-
-    public function removeAssociatedProduct($id)
-    {
-        if ($id && is_int($id)) {
-
-            $associatedProduct = AssociatedProduct::find($id);
-
-            if ($associatedProduct) {
-
-                $associatedProduct->delete();
-
-                echo "removed";
-            } else
-                echo "not found";
-        } else
-            echo "invalid";
-    }
-
     public function setPreorderProduct()
     {
         $product_id = Input::get('product_id');
@@ -515,5 +478,69 @@ class AdminProductController extends BaseController
         }
 
         return $products;
+    }
+
+    public function addProductAssocation()
+    {
+        $product_id = Input::get('product_id');
+        $associated_product_ids = Input::get('associated_product_ids'); // will be an array
+
+        if (isset($product_id) && is_int($product_id)) {
+
+            if (isset($associated_product_ids) && is_array($associated_product_ids)) {
+
+                foreach ($associated_product_ids as $associated_product_id) {
+
+                    $tempAssociatedProduct = AssociatedProduct::where('product_id', '=', $product_id)
+                        ->where('associated_product_id', '=', $associated_product_id)
+                        ->first();
+
+                    if (isset($tempAssociatedProduct))
+                        $tempAssociatedProduct->delete();
+                    else {
+                        $associatedProduct = AssociatedProduct();
+
+                        $associatedProduct->product_id = $product_id;
+                        $associatedProduct->associated_product_id = $associated_product_id;
+
+                        $associatedProduct->save();
+                    }
+                }
+            } else
+                echo "no associated";
+        } else
+            echo "invalid product";
+    }
+
+    public function updateProductAssocation()
+    {
+        $product_id = Input::get('product_id');
+        $associated_product_ids = Input::get('associated_product_ids'); // will be an array
+
+        if (isset($product_id) && is_int($product_id)) {
+
+            if (isset($associated_product_ids) && is_array($associated_product_ids)) {
+
+                foreach ($associated_product_ids as $associated_product_id) {
+
+                    $tempAssociatedProduct = AssociatedProduct::where('product_id', '=', $product_id)
+                        ->where('associated_product_id', '=', $associated_product_id)
+                        ->first();
+
+                    if (isset($tempAssociatedProduct))
+                        $tempAssociatedProduct->delete();
+                    else {
+                        $associatedProduct = AssociatedProduct();
+
+                        $associatedProduct->product_id = $product_id;
+                        $associatedProduct->associated_product_id = $associated_product_id;
+
+                        $associatedProduct->save();
+                    }
+                }
+            } else
+                echo "no associated";
+        } else
+            echo "invalid product";
     }
 }

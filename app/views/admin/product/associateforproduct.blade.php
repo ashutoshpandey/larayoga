@@ -43,17 +43,13 @@ MAIN CONTENT
 
 <div class="row">
 
-    <div><a href="{{$root}}/associate-products">Back</a></div>
+    <div class="back"><a href="{{$root}}/associate-products">Back</a></div>
 
     <?php if($found){ ?>
 
-    <div>
-        Product : {{$product_name}} ( {{$product_id}} )
-    </div>
+    <h3>Product : <span>{{$product_name}} ( {{$product_id}} )</span></div>
 
     <div id="associatedproductlist"></div>
-
-    <hr/>
 
     <div id="productlist"></div>
 

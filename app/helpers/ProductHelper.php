@@ -13,6 +13,8 @@ class ProductHelper{
 
         $count = -1;
 
+        $productArray = array();
+
         foreach($fields as $field){
 
             ++$count;
