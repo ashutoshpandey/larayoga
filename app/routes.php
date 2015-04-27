@@ -44,6 +44,8 @@ Route::post('/add-product-association', 'AdminProductController@addProductAssoci
 Route::post('/update-product-association', 'AdminProductController@updateProductAssociation');
 Route::get('/load-associated-products', 'AdminProductController@loadAssociatedProducts');
 Route::get('/similar-products', 'AdminProductController@similarProducts');
+Route::get('/similar-for-product/{id}', 'AdminProductController@similarForProduct');
+Route::post('/update-similar-products', 'AdminProductController@updateSimilarProducts');
 Route::get('/package-products', 'AdminProductController@packageProducts');
 
 /*********************** admin category urls ************************/

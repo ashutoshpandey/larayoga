@@ -2,14 +2,16 @@ $(function(){
 
     initializeLeftMenu();
 
-    loadAssociatedProducts(1);
+    initTab();
+
+    loadSimilarProducts(1);
 
     loadProducts(1);
 });
 
 function initializeLeftMenu(){
     $('.product-menu > a').click();
-    $('.associate-products > a').addClass('selected-navigation-menu');
+    $('.similar-products > a').addClass('selected-navigation-menu');
 }
 
 function loadProducts(page){
@@ -40,45 +42,45 @@ function productsLoaded(products){
 
         $("#table_products").dataTable();
 
-        var str = '<input type="button" name="btnupdateassociation" value="Update Association"/>';
+        var str = '<input type="button" name="btnUpdateSimilarProducts" value="Update Association"/>';
 
         $("#productlist").append(str);
 
-        $("input[name='btnupdateassociation']").click(updateProductAssociation);
+        $("input[name='btnUpdateSimilarProducts']").click(updateSimilarProducts);
     }
     else
         $("#productlist").html("<h3 class='noproducts'>No products available</h3>");
 }
 
-function loadAssociatedProducts(page){
+function loadSimilarProducts(page){
 
     var data = 'page=1&count=20';
 
-    jsonCall(root + '/load-associated-products', 'get', data, associatedProductsLoaded);
+    jsonCall(root + '/load-associated-products', 'get', data, similarProductsLoaded);
 }
 
-function associatedProductsLoaded(products){
+function similarProductsLoaded(products){
 
-    $("#associatedproductlist").html("");
+    $("#similarproductlist").html("");
 
     if(products!=undefined && products.length>0){
 
-        var productTable = getAssociatedProductTable(products);
+        var productTable = getExistingSimilarProductsTable(products);
 
-        $("#associatedproductlist").append('<h4>Already associated products</h4>');
+        $("#similarproductlist").append('<h4>Similar products</h4>');
 
-        $("#associatedproductlist").append(productTable);
+        $("#similarproductlist").append(productTable);
 
         $("#table_associated_products").dataTable();
 
-        var str = '<input type="button" name="btnupdateexistingassociation" value="Update Association"/>';
+        var str = '<input type="button" name="btnUpdateExistingSimilarProducts" value="Update Association"/>';
 
-        $("#associatedproductlist").append(str);
+        $("#similarproductlist").append(str);
 
-        $("input[name='btnupdateexistingassociation']").click(updateAssociatedProductsAssociation);
+        $("input[name='btnUpdateExistingSimilarProducts']").click(updateExistingSimilarProducts);
     }
     else
-        $("#associatedproductlist").html("<h3 class='noproducts'>No products associated</h3>");
+        $("#similarproductlist").html("<h3 class='noproducts'>No products associated</h3>");
 }
 
 function getProductTable(products){
@@ -103,7 +105,7 @@ function getProductTable(products){
 
         var product = products[i];
 
-        table += '<td><input type="checkbox" name="chkassociated" rel="' + product.id + '"/></td>';
+        table += '<td><input type="checkbox" name="chkproduct" rel="' + product.id + '"/></td>';
         table += '<td>' + product.id + '</td>';
         table += '<td>' + product.name + '</td>';
         table += '<td>' + product.url_key + '</td>';
@@ -118,7 +120,7 @@ function getProductTable(products){
 }
 
 
-function getAssociatedProductTable(products){
+function getExistingSimilarProductsTable(products){
 
     var table = '<table id="table_associated_products"><thead>';
 
@@ -140,7 +142,7 @@ function getAssociatedProductTable(products){
 
         var product = products[i];
 
-        table += '<td><input type="checkbox" name="chkassociate" rel="' + product.id + '"/></td>';
+        table += '<td><input type="checkbox" name="chksimilar" rel="' + product.id + '"/></td>';
         table += '<td>' + product.id + '</td>';
         table += '<td>' + product.name + '</td>';
         table += '<td>' + product.url_key + '</td>';
@@ -154,7 +156,7 @@ function getAssociatedProductTable(products){
     return table;
 }
 
-function updateProductAssociation(){
+function updateSimilarProducts(){
 
     var str = 'ids=';
 
@@ -170,7 +172,7 @@ function updateProductAssociation(){
     ajaxCall('add-product-association', 'post', str, categoryGridUpdated);
 }
 
-function updateAssociatedProductsAssociation(){
+function updateExistingSimilarProducts(){
 
     var str = 'ids=';
 
@@ -183,12 +185,54 @@ function updateAssociatedProductsAssociation(){
     if(str.substr(str.length-1,1)==',')
         str = str.substr(0, str.length-1);
 
-    ajaxCall('update-product-association', 'post', str, associationUpdated);
+    ajaxCall('update-product-association', 'post', str, similarProductsUpdated);
 }
 
-function associationUpdated(){
+function similarProductsUpdated(){
 
-    loadAssociatedProducts(1);
+    loadSimilarProducts(1);
 
     loadProducts(1);
+}
+
+function initTab(){
+    var tabItems = $('.cd-tabs-navigation a'),
+        tabContentWrapper = $('.cd-tabs-content');
+
+    tabItems.on('click', function(event){
+        event.preventDefault();
+        var selectedItem = $(this);
+        if( !selectedItem.hasClass('selected') ) {
+            var selectedTab = selectedItem.data('content'),
+                selectedContent = tabContentWrapper.find('li[data-content="'+selectedTab+'"]'),
+                slectedContentHeight = selectedContent.innerHeight();
+
+            tabItems.removeClass('selected');
+            selectedItem.addClass('selected');
+            selectedContent.addClass('selected').siblings('li').removeClass('selected');
+            //animate tabContentWrapper height when content changes
+            tabContentWrapper.animate({
+                'height': slectedContentHeight
+            }, 200);
+        }
+    });
+
+    //hide the .cd-tabs::after element when tabbed navigation has scrolled to the end (mobile version)
+    checkScrolling($('.cd-tabs nav'));
+    $(window).on('resize', function(){
+        checkScrolling($('.cd-tabs nav'));
+        tabContentWrapper.css('height', 'auto');
+    });
+    $('.cd-tabs nav').on('scroll', function(){
+        checkScrolling($(this));
+    });
+}
+function checkScrolling(tabs){
+    var totalTabWidth = parseInt(tabs.children('.cd-tabs-navigation').width()),
+        tabsViewport = parseInt(tabs.width());
+    if( tabs.scrollLeft() >= totalTabWidth - tabsViewport) {
+        tabs.parent('.cd-tabs').addClass('is-ended');
+    } else {
+        tabs.parent('.cd-tabs').removeClass('is-ended');
+    }
 }
