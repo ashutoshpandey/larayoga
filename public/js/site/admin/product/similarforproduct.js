@@ -42,11 +42,11 @@ function productsLoaded(products){
 
         $("#table_products").dataTable();
 
-        var str = '<input type="button" name="btnUpdateSimilarProducts" value="Update Association"/>';
+        var str = '<input type="button" name="btnUpdateSimilarProducts" value="Add similar products"/>';
 
         $("#productlist").append(str);
 
-        $("input[name='btnUpdateSimilarProducts']").click(updateSimilarProducts);
+        $("input[name='btnUpdateSimilarProducts']").click(addSimilarProducts);
     }
     else
         $("#productlist").html("<h3 class='noproducts'>No products available</h3>");
@@ -56,7 +56,7 @@ function loadSimilarProducts(page){
 
     var data = 'page=1&count=20';
 
-    jsonCall(root + '/load-associated-products', 'get', data, similarProductsLoaded);
+    jsonCall(root + '/load-similar-products', 'get', data, similarProductsLoaded);
 }
 
 function similarProductsLoaded(products){
@@ -71,16 +71,16 @@ function similarProductsLoaded(products){
 
         $("#similarproductlist").append(productTable);
 
-        $("#table_associated_products").dataTable();
+        $("#table_similar_products").dataTable();
 
-        var str = '<input type="button" name="btnUpdateExistingSimilarProducts" value="Update Association"/>';
+        var str = '<input type="button" name="btnUpdateExistingSimilarProducts" value="Update similar products"/>';
 
         $("#similarproductlist").append(str);
 
         $("input[name='btnUpdateExistingSimilarProducts']").click(updateExistingSimilarProducts);
     }
     else
-        $("#similarproductlist").html("<h3 class='noproducts'>No products associated</h3>");
+        $("#similarproductlist").html("<h3 class='noproducts'>No similar products added</h3>");
 }
 
 function getProductTable(products){
@@ -119,10 +119,9 @@ function getProductTable(products){
     return table;
 }
 
-
 function getExistingSimilarProductsTable(products){
 
-    var table = '<table id="table_associated_products"><thead>';
+    var table = '<table id="table_similar_products"><thead>';
 
     table += '<tr>';
 
@@ -156,11 +155,11 @@ function getExistingSimilarProductsTable(products){
     return table;
 }
 
-function updateSimilarProducts(){
+function addSimilarProducts(){
 
     var str = 'ids=';
 
-    $("input[name='chkassociate']").each(function(){
+    $("input[name='chkproduct']").each(function(){
         var id = $(this).attr('rel');
 
         str = str + id + ',';
@@ -169,14 +168,21 @@ function updateSimilarProducts(){
     if(str.substr(str.length-1,1)==',')
         str = str.substr(0, str.length-1);
 
-    ajaxCall('add-product-association', 'post', str, categoryGridUpdated);
+    ajaxCall('add-similar-products', 'post', str, similarProductsAdded);
+}
+
+function similarProductsAdded(result){
+
+    loadSimilarProducts(1);
+
+    loadProducts(1);
 }
 
 function updateExistingSimilarProducts(){
 
     var str = 'ids=';
 
-    $("input[name='chkassociated']").each(function(){
+    $("input[name='chksimilar']").each(function(){
         var id = $(this).attr('rel');
 
         str = str + id + ',';
@@ -185,7 +191,7 @@ function updateExistingSimilarProducts(){
     if(str.substr(str.length-1,1)==',')
         str = str.substr(0, str.length-1);
 
-    ajaxCall('update-product-association', 'post', str, similarProductsUpdated);
+    ajaxCall('update-similar-products', 'post', str, similarProductsUpdated);
 }
 
 function similarProductsUpdated(){

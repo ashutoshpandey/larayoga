@@ -558,6 +558,42 @@ class AdminProductController extends BaseController
             return View::make('admin.product.similarforproduct')->with('found', false);
     }
 
+    public function loadSimilarProducts()
+    {
+        $page = Input::get('page');
+        $count = Input::get('count');
+        $product_id = Session::get('similar_parent_product_id');
+
+        if (!isset($status))
+            $status = 'active';
+
+        if (!isset($page))
+            $page = 1;
+
+        if (!isset($count))
+            $count = 20;
+
+        $skip = ($page - 1) * 20;
+
+        if(isset($product_id)){
+            $product = Product::where('id', '=', $product_id)->first();
+
+            if (isset($product)){
+                $products = Product::where('status', '=', 'active')->take($count)->skip($skip)->get();
+
+//                $products = Product::whereHas('categories', function ($q) use ($category_id, $status) {
+//                    $q->where('category_id', $category_id);
+//                })->where('status', $status)
+//                    ->take($count)
+//                    ->skip($skip)
+//                    ->get();
+            }
+            return $products;
+        }
+        else
+            return null;
+    }
+
     public function addSimilarProducts()
     {
         $product_id = Input::get('product_id');
