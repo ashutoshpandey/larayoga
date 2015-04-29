@@ -2,6 +2,8 @@ $(function(){
 
     initializeLeftMenu();
 
+    initTab();
+
     loadAssociatedProducts(1);
 
     loadProducts(1);
@@ -14,16 +16,9 @@ function initializeLeftMenu(){
 
 function loadProducts(page){
 
-    var category_id = -1;
+    var data = 'page=1&count=20';
 
-    if($('.selected-category').length>0)
-        category_id = $('.selected-category').attr('rel');
-
-    var status = $("input[name='active_filter']:checked").val();
-
-    var data = 'page=1&count=20&category_id=' + category_id + '&status=' + status;
-
-    jsonCall(root + '/load-products', 'get', data, productsLoaded);
+    jsonCall(root + '/load-products-for-associated-products', 'get', data, productsLoaded);
 }
 
 function productsLoaded(products){
@@ -71,7 +66,7 @@ function associatedProductsLoaded(products){
 
         $("#table_associated_products").dataTable();
 
-        var str = '<input type="button" name="btnupdateexistingassociation" value="Update Association"/>';
+        var str = '<input type="button" name="btnupdateexistingassociation" value="Remove associated products"/>';
 
         $("#associatedproductlist").append(str);
 
@@ -103,7 +98,7 @@ function getProductTable(products){
 
         var product = products[i];
 
-        table += '<td><input type="checkbox" name="chkassociated" rel="' + product.id + '"/></td>';
+        table += '<td><input type="checkbox" name="chkproduct" rel="' + product.id + '"/></td>';
         table += '<td>' + product.id + '</td>';
         table += '<td>' + product.name + '</td>';
         table += '<td>' + product.url_key + '</td>';
@@ -138,13 +133,13 @@ function getAssociatedProductTable(products){
 
         table += '<tr>';
 
-        var product = products[i];
+        var productObj = products[i];
 
-        table += '<td><input type="checkbox" name="chkassociate" rel="' + product.id + '"/></td>';
-        table += '<td>' + product.id + '</td>';
-        table += '<td>' + product.name + '</td>';
-        table += '<td>' + product.url_key + '</td>';
-        table += '<td>' + product.description + '</td>';
+        table += '<td><input type="checkbox" name="chkassociated" rel="' + productObj.id + '"/></td>';
+        table += '<td>' + productObj.product.id + '</td>';
+        table += '<td>' + productObj.product.name + '</td>';
+        table += '<td>' + productObj.product.url_key + '</td>';
+        table += '<td>' + productObj.product.description + '</td>';
 
         table += '</tr>';
     }
@@ -158,7 +153,7 @@ function updateProductAssociation(){
 
     var str = 'ids=';
 
-    $("input[name='chkassociate']").each(function(){
+    $("input[name='chkproduct']:checked").each(function(){
         var id = $(this).attr('rel');
 
         str = str + id + ',';
@@ -167,14 +162,14 @@ function updateProductAssociation(){
     if(str.substr(str.length-1,1)==',')
         str = str.substr(0, str.length-1);
 
-    ajaxCall('add-product-association', 'post', str, categoryGridUpdated);
+    ajaxCall(root + '/add-product-association', 'post', str, associationUpdated);
 }
 
 function updateAssociatedProductsAssociation(){
 
     var str = 'ids=';
 
-    $("input[name='chkassociated']").each(function(){
+    $("input[name='chkassociated']:checked").each(function(){
         var id = $(this).attr('rel');
 
         str = str + id + ',';
@@ -183,7 +178,7 @@ function updateAssociatedProductsAssociation(){
     if(str.substr(str.length-1,1)==',')
         str = str.substr(0, str.length-1);
 
-    ajaxCall('update-product-association', 'post', str, associationUpdated);
+    ajaxCall(root + '/update-product-association', 'post', str, associationUpdated);
 }
 
 function associationUpdated(){
@@ -191,4 +186,46 @@ function associationUpdated(){
     loadAssociatedProducts(1);
 
     loadProducts(1);
+}
+
+function initTab(){
+    var tabItems = $('.cd-tabs-navigation a'),
+        tabContentWrapper = $('.cd-tabs-content');
+
+    tabItems.on('click', function(event){
+        event.preventDefault();
+        var selectedItem = $(this);
+        if( !selectedItem.hasClass('selected') ) {
+            var selectedTab = selectedItem.data('content'),
+                selectedContent = tabContentWrapper.find('li[data-content="'+selectedTab+'"]'),
+                slectedContentHeight = selectedContent.innerHeight();
+
+            tabItems.removeClass('selected');
+            selectedItem.addClass('selected');
+            selectedContent.addClass('selected').siblings('li').removeClass('selected');
+            //animate tabContentWrapper height when content changes
+            tabContentWrapper.animate({
+                'height': slectedContentHeight
+            }, 200);
+        }
+    });
+
+    //hide the .cd-tabs::after element when tabbed navigation has scrolled to the end (mobile version)
+    checkScrolling($('.cd-tabs nav'));
+    $(window).on('resize', function(){
+        checkScrolling($('.cd-tabs nav'));
+        tabContentWrapper.css('height', 'auto');
+    });
+    $('.cd-tabs nav').on('scroll', function(){
+        checkScrolling($(this));
+    });
+}
+function checkScrolling(tabs){
+    var totalTabWidth = parseInt(tabs.children('.cd-tabs-navigation').width()),
+        tabsViewport = parseInt(tabs.width());
+    if( tabs.scrollLeft() >= totalTabWidth - tabsViewport) {
+        tabs.parent('.cd-tabs').addClass('is-ended');
+    } else {
+        tabs.parent('.cd-tabs').removeClass('is-ended');
+    }
 }

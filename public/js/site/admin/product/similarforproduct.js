@@ -25,7 +25,7 @@ function loadProducts(page){
 
     var data = 'page=1&count=20&category_id=' + category_id + '&status=' + status;
 
-    jsonCall(root + '/load-products', 'get', data, productsLoaded);
+    jsonCall(root + '/load-products-for-similar-products', 'get', data, productsLoaded);
 }
 
 function productsLoaded(products){
@@ -73,11 +73,11 @@ function similarProductsLoaded(products){
 
         $("#table_similar_products").dataTable();
 
-        var str = '<input type="button" name="btnUpdateExistingSimilarProducts" value="Update similar products"/>';
+        var str = '<input type="button" name="btnUpdateExistingSimilarProducts" value="Remove similar products"/>';
 
         $("#similarproductlist").append(str);
 
-        $("input[name='btnUpdateExistingSimilarProducts']").click(updateExistingSimilarProducts);
+        $("input[name='btnUpdateExistingSimilarProducts']").click(removeExistingSimilarProducts);
     }
     else
         $("#similarproductlist").html("<h3 class='noproducts'>No similar products added</h3>");
@@ -139,13 +139,13 @@ function getExistingSimilarProductsTable(products){
 
         table += '<tr>';
 
-        var product = products[i];
+        var productObj = products[i];
 
-        table += '<td><input type="checkbox" name="chksimilar" rel="' + product.id + '"/></td>';
-        table += '<td>' + product.id + '</td>';
-        table += '<td>' + product.name + '</td>';
-        table += '<td>' + product.url_key + '</td>';
-        table += '<td>' + product.description + '</td>';
+        table += '<td><input type="checkbox" name="chksimilar" rel="' + productObj.id + '"/></td>';
+        table += '<td>' + productObj.product.id + '</td>';
+        table += '<td>' + productObj.product.name + '</td>';
+        table += '<td>' + productObj.product.url_key + '</td>';
+        table += '<td>' + productObj.product.description + '</td>';
 
         table += '</tr>';
     }
@@ -157,9 +157,9 @@ function getExistingSimilarProductsTable(products){
 
 function addSimilarProducts(){
 
-    var str = 'ids=';
+    var str = 'similar_product_ids=';
 
-    $("input[name='chkproduct']").each(function(){
+    $("input[name='chkproduct']:checked").each(function(){
         var id = $(this).attr('rel');
 
         str = str + id + ',';
@@ -168,7 +168,7 @@ function addSimilarProducts(){
     if(str.substr(str.length-1,1)==',')
         str = str.substr(0, str.length-1);
 
-    ajaxCall('add-similar-products', 'post', str, similarProductsAdded);
+    ajaxCall(root + '/add-similar-products', 'post', str, similarProductsAdded);
 }
 
 function similarProductsAdded(result){
@@ -178,11 +178,11 @@ function similarProductsAdded(result){
     loadProducts(1);
 }
 
-function updateExistingSimilarProducts(){
+function removeExistingSimilarProducts(){
 
     var str = 'ids=';
 
-    $("input[name='chksimilar']").each(function(){
+    $("input[name='chksimilar']:checked").each(function(){
         var id = $(this).attr('rel');
 
         str = str + id + ',';
@@ -191,7 +191,7 @@ function updateExistingSimilarProducts(){
     if(str.substr(str.length-1,1)==',')
         str = str.substr(0, str.length-1);
 
-    ajaxCall('update-similar-products', 'post', str, similarProductsUpdated);
+    ajaxCall(root + '/update-similar-products', 'post', str, similarProductsUpdated);
 }
 
 function similarProductsUpdated(){

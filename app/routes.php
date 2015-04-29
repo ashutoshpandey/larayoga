@@ -38,13 +38,18 @@ Route::get('/import-products', 'AdminProductController@importProducts');
 Route::post('/upload-products', 'AdminProductController@uploadProducts');
 Route::get('/find-product', 'AdminProductController@findProduct');
 Route::get('/load-products', 'AdminProductController@loadProducts');
+
 Route::get('/associate-products', 'AdminProductController@associateProducts');
 Route::get('/associate-for-product/{id}', 'AdminProductController@associateForProduct');
 Route::post('/add-product-association', 'AdminProductController@addProductAssociation');
 Route::post('/update-product-association', 'AdminProductController@updateProductAssociation');
 Route::get('/load-associated-products', 'AdminProductController@loadAssociatedProducts');
+Route::get('/load-products-for-associated-products', 'AdminProductController@loadProductsForAssociatedProducts');
+
 Route::get('/similar-products', 'AdminProductController@similarProducts');
+Route::post('/add-similar-products', 'AdminProductController@addSimilarProducts');
 Route::get('/load-similar-products', 'AdminProductController@loadSimilarProducts');
+Route::get('/load-products-for-similar-products', 'AdminProductController@loadProductsForSimilarProducts');
 Route::get('/similar-for-product/{id}', 'AdminProductController@similarForProduct');
 Route::post('/update-similar-products', 'AdminProductController@updateSimilarProducts');
 Route::get('/package-products', 'AdminProductController@packageProducts');

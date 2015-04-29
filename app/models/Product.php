@@ -35,6 +35,11 @@ class Product extends Eloquent {
         return DB::table('products')->update($data);
     }
 
+    public function similarProducts()
+    {
+        return $this->hasMany('SimilarProduct');
+    }
+
     public function categories() {
         return $this->belongsToMany('Category', 'category_products', 'product_id', 'category_id');
     }

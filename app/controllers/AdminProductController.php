@@ -108,7 +108,7 @@ class AdminProductController extends BaseController
 
         if(isset($product)){
 
-            Session::put('associate_parent_product_id', $id);
+            Session::put('associated_parent_product_id', $id);
 
             return View::make('admin.product.associateforproduct')->with('product_id', $id)->with('product_name', $product->name)->with('found', true);
         }
@@ -137,16 +137,12 @@ class AdminProductController extends BaseController
             $product = Product::where('id', '=', $product_id)->first();
 
             if (isset($product)){
-                  $products = Product::where('status', '=', 'active')->take($count)->skip($skip)->get();
+                $associated_products = AssociatedProduct::where('parent_product_id', '=', $product_id)->with('Product')->get();
 
-//                $products = Product::whereHas('categories', function ($q) use ($category_id, $status) {
-//                    $q->where('category_id', $category_id);
-//                })->where('status', $status)
-//                    ->take($count)
-//                    ->skip($skip)
-//                    ->get();
+                return $associated_products;
             }
-            return $products;
+            else
+                return null;
         }
         else
             return null;
@@ -480,67 +476,62 @@ class AdminProductController extends BaseController
         return $products;
     }
 
-    public function addProductAssocation()
+    public function addProductAssociation()
     {
-        $product_id = Input::get('product_id');
-        $associated_product_ids = Input::get('associated_product_ids'); // will be an array
+        $parent_product_id = Session::get('associated_parent_product_id');
+        $associated_product_ids = Input::get('ids'); // will be an array
 
-        if (isset($product_id) && is_int($product_id)) {
+        if (isset($parent_product_id)) {
 
-            if (isset($associated_product_ids) && is_array($associated_product_ids)) {
+            if (isset($associated_product_ids)) {
 
-                foreach ($associated_product_ids as $associated_product_id) {
+                $ar_ids = explode(',', $associated_product_ids);
 
-                    $tempAssociatedProduct = AssociatedProduct::where('product_id', '=', $product_id)
-                        ->where('associated_product_id', '=', $associated_product_id)
-                        ->first();
+                if(isset($ar_ids)){
 
-                    if (isset($tempAssociatedProduct))
-                        $tempAssociatedProduct->delete();
-                    else {
-                        $associatedProduct = AssociatedProduct();
+                    foreach($ar_ids as $id){
 
-                        $associatedProduct->product_id = $product_id;
-                        $associatedProduct->associated_product_id = $associated_product_id;
+                        $associatedProduct = new AssociatedProduct();
+
+                        $associatedProduct->parent_product_id = $parent_product_id;
+                        $associatedProduct->associated_product_id = $id;
+                        $associatedProduct->created_at = date('Y-m-d h:i:s');
+                        $associatedProduct->updated_at = date('Y-m-d h:i:s');
+                        $associatedProduct->status = 'active';
+                        $associatedProduct->update_type = 'created';
 
                         $associatedProduct->save();
                     }
+
+                    echo 'done';
                 }
-            } else
-                echo "no associated";
-        } else
-            echo "invalid product";
+            }
+            else
+                echo 'no associated';
+        }
+        else
+            echo 'invalid product';
     }
 
-    public function updateProductAssocation()
+    public function updateProductAssociation()
     {
-        $product_id = Input::get('product_id');
-        $associated_product_ids = Input::get('associated_product_ids'); // will be an array
+        $associated_ids = Input::get('ids'); // comma separated ids, to be removed
 
-        if (isset($product_id) && is_int($product_id)) {
+        if (isset($associated_ids)) {
 
-            if (isset($associated_product_ids) && is_array($associated_product_ids)) {
+            $ar_ids = explode(',', $associated_ids);
 
-                foreach ($associated_product_ids as $associated_product_id) {
+            if(isset($ar_ids)){
 
-                    $tempAssociatedProduct = AssociatedProduct::where('product_id', '=', $product_id)
-                        ->where('associated_product_id', '=', $associated_product_id)
-                        ->first();
+                foreach($ar_ids as $id){
 
-                    if (isset($tempAssociatedProduct))
-                        $tempAssociatedProduct->delete();
-                    else {
-                        $associatedProduct = AssociatedProduct();
-
-                        $associatedProduct->product_id = $product_id;
-                        $associatedProduct->associated_product_id = $associated_product_id;
-
-                        $associatedProduct->save();
-                    }
+                    AssociatedProduct::where('id', '=', $id)->delete();
                 }
-            } else
-                echo "no associated";
-        } else
+
+                echo 'done';
+            }
+        }
+        else
             echo "invalid product";
     }
 
@@ -579,16 +570,83 @@ class AdminProductController extends BaseController
             $product = Product::where('id', '=', $product_id)->first();
 
             if (isset($product)){
-                $products = Product::where('status', '=', 'active')->take($count)->skip($skip)->get();
 
-//                $products = Product::whereHas('categories', function ($q) use ($category_id, $status) {
-//                    $q->where('category_id', $category_id);
-//                })->where('status', $status)
-//                    ->take($count)
-//                    ->skip($skip)
-//                    ->get();
+                $similar_products = SimilarProduct::where('parent_product_id', '=', $product_id)->with('Product')->get();
+
+                return $similar_products;
             }
-            return $products;
+            else
+                return null;
+        }
+        else
+            return null;
+    }
+
+    public function loadProductsForSimilarProducts()
+    {
+        $page = Input::get('page');
+        $count = Input::get('count');
+        $product_id = Session::get('similar_parent_product_id');
+
+        if (!isset($status))
+            $status = 'active';
+
+        if (!isset($page))
+            $page = 1;
+
+        if (!isset($count))
+            $count = 20;
+
+        $skip = ($page - 1) * 20;
+
+        if(isset($product_id)){
+            $product = Product::where('id', '=', $product_id)->first();
+
+            if (isset($product)){
+
+                $similar_products = Product::whereNotIn('id', function ($q) use ($product_id) {
+                    $q->from('similar_products')->selectRaw('similar_product_id')->where('parent_product_id', '=', $product_id);
+                })->get();
+
+                return $similar_products;
+            }
+            else
+                return null;
+        }
+        else
+            return null;
+    }
+
+    public function loadProductsForAssociatedProducts()
+    {
+        $page = Input::get('page');
+        $count = Input::get('count');
+        $product_id = Session::get('associated_parent_product_id');
+
+        if (!isset($status))
+            $status = 'active';
+
+        if (!isset($page))
+            $page = 1;
+
+        if (!isset($count))
+            $count = 20;
+
+        $skip = ($page - 1) * 20;
+
+        if(isset($product_id)){
+            $product = Product::where('id', '=', $product_id)->first();
+
+            if (isset($product)){
+
+                $similar_products = Product::whereNotIn('id', function ($q) use ($product_id) {
+                    $q->from('associated_products')->selectRaw('associated_product_id')->where('parent_product_id', '=', $product_id);
+                })->get();
+
+                return $similar_products;
+            }
+            else
+                return null;
         }
         else
             return null;
@@ -596,65 +654,57 @@ class AdminProductController extends BaseController
 
     public function addSimilarProducts()
     {
-        $product_id = Input::get('product_id');
-        $associated_product_ids = Input::get('associated_product_ids'); // will be an array
+        $parent_product_id = Session::get('similar_parent_product_id');
+        $similar_ids = Input::get('similar_product_ids'); // comma seperated ids
 
-        if (isset($product_id) && is_int($product_id)) {
+        if (isset($parent_product_id) && isset($similar_ids)) {
 
-            if (isset($associated_product_ids) && is_array($associated_product_ids)) {
+            $product = Product::find($parent_product_id);
 
-                foreach ($associated_product_ids as $associated_product_id) {
+            if(isset($product)){
 
-                    $tempAssociatedProduct = AssociatedProduct::where('product_id', '=', $product_id)
-                        ->where('associated_product_id', '=', $associated_product_id)
-                        ->first();
+                $ar_ids = explode(',', $similar_ids);
 
-                    if (isset($tempAssociatedProduct))
-                        $tempAssociatedProduct->delete();
-                    else {
-                        $associatedProduct = AssociatedProduct();
+                if(isset($ar_ids)){
 
-                        $associatedProduct->product_id = $product_id;
-                        $associatedProduct->associated_product_id = $associated_product_id;
+                    foreach($ar_ids as $id){
 
-                        $associatedProduct->save();
+                        $similarProduct = new SimilarProduct();
+
+                        $similarProduct->parent_product_id = $parent_product_id;
+                        $similarProduct->similar_product_id = $id;
+                        $similarProduct->created_at = date('Y-m-d h:i:s');
+                        $similarProduct->updated_at = date('Y-m-d h:i:s');
+                        $similarProduct->status = 'active';
+                        $similarProduct->update_type = 'created';
+
+                        $similarProduct->save();
                     }
                 }
-            } else
-                echo "no associated";
-        } else
+            }
+
+        }
+        else
             echo "invalid product";
     }
 
     public function updateSimilarProducts()
     {
-        $product_id = Input::get('product_id');
-        $associated_product_ids = Input::get('associated_product_ids'); // will be an array
+        $similar_ids = Input::get('ids'); // comma separated ids, to be removed
 
-        if (isset($product_id) && is_int($product_id)) {
+        if (isset($similar_ids)) {
 
-            if (isset($associated_product_ids) && is_array($associated_product_ids)) {
+            $ar_ids = explode(',', $similar_ids);
 
-                foreach ($associated_product_ids as $associated_product_id) {
+            if(isset($ar_ids)){
 
-                    $tempAssociatedProduct = AssociatedProduct::where('product_id', '=', $product_id)
-                        ->where('associated_product_id', '=', $associated_product_id)
-                        ->first();
+                foreach($ar_ids as $id){
 
-                    if (isset($tempAssociatedProduct))
-                        $tempAssociatedProduct->delete();
-                    else {
-                        $associatedProduct = AssociatedProduct();
-
-                        $associatedProduct->product_id = $product_id;
-                        $associatedProduct->associated_product_id = $associated_product_id;
-
-                        $associatedProduct->save();
-                    }
+                    SimilarProduct::where('id', '=', $id)->delete();
                 }
-            } else
-                echo "no associated";
-        } else
+            }
+        }
+        else
             echo "invalid product";
     }
 }

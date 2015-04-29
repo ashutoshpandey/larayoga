@@ -1,0 +1,4 @@
+--------------- Get Last Query -----------------
+$queries = DB::getQueryLog();
+$last_query = end($queries);
+print_r($last_query);

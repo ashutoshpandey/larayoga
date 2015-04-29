@@ -3,14 +3,14 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class AssociatedProduct extends Eloquent {
+class SimilarProduct extends Eloquent {
 
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'associated_products';
+	protected $table = 'similar_products';
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -26,6 +26,6 @@ class AssociatedProduct extends Eloquent {
 
     public function product()
     {
-        return $this->belongsTo('Product', 'associated_product_id');
+        return $this->belongsTo('Product', 'similar_product_id');
     }
 }
