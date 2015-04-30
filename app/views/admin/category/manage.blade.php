@@ -9,7 +9,8 @@
 
     <title>YOGASMOGA Manage Categories</title>
 
-      @include('admin.includes.common_css')
+    @include('admin.includes.common_css')
+    {{HTML::style(asset("/public/css/jquery.dataTables.css"))}}
     {{HTML::style(asset("/public/css/site/admin/category/manage.css"))}}
 
       @include('admin.includes.common_js_top')
@@ -63,6 +64,7 @@
   </section>
 
   @include('admin.includes.common_js_bottom')
+  {{HTML::script(asset("/public/js/jquery.dataTables.min.js"))}}
   {{HTML::script(asset("/public/js/site/admin/category/manage.js"))}}
 
   </body>

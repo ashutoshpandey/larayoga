@@ -36,7 +36,7 @@ Route::get('/remove-product', 'AdminProductController@removeProduct');
 Route::get('/manage-products', 'AdminProductController@manageProducts');
 Route::get('/import-products', 'AdminProductController@importProducts');
 Route::post('/upload-products', 'AdminProductController@uploadProducts');
-Route::get('/find-product', 'AdminProductController@findProduct');
+Route::get('/find-product/{id}', 'AdminProductController@findProduct');
 Route::get('/load-products', 'AdminProductController@loadProducts');
 
 Route::get('/associate-products', 'AdminProductController@associateProducts');

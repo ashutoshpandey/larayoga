@@ -69,7 +69,7 @@ function categoryGridUpdated(result){
 
 function getCategoryTable(categories){
 
-    var table = '<table id="table_category display"><thead>';
+    var table = '<table id="table_category" class="display"><thead>';
 
     table += '<tr>';
 

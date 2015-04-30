@@ -4,7 +4,7 @@ class AdminCategoryController extends BaseController {
 
     public function createCategory(){
 
-        return View::make('admin.category.createcategory');
+        return View::make('admin.category.create');
     }
 
     public function getCategoryTree(){
@@ -17,7 +17,7 @@ class AdminCategoryController extends BaseController {
     }
 
     public function manageCategories(){
-        return View::make('admin.category.managecategories');
+        return View::make('admin.category.manage');
     }
 
     public function saveCategory(){
@@ -86,9 +86,9 @@ class AdminCategoryController extends BaseController {
         $category = Category::find($id);
 
         if($category)
-            return View::make('admin.category.editcategory')->with('category', $category)->with('found', true);
+            return View::make('admin.category.edit')->with('category', $category)->with('found', true);
         else
-            return View::make('admin.category.editcategory')->with('found', false);
+            return View::make('admin.category.edit')->with('found', false);
     }
 
     public function updateCategory(){

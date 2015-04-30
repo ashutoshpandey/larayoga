@@ -11,7 +11,6 @@
 
     @include('admin.includes.common_css')
     {{HTML::style(asset("/public/css/jquery.dataTables.css"))}}
-    {{HTML::style(asset("/public/css/site/admin/common.css"))}}
     {{HTML::style(asset("/public/css/site/admin/product/similar.css"))}}
 
     @include('admin.includes.common_js_top')

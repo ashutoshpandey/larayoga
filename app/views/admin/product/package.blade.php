@@ -10,6 +10,8 @@
     <title>YOGASMOGA Import Products</title>
 
     @include('admin.includes.common_css')
+    {{HTML::style(asset("/public/css/tab.css"))}}
+    {{HTML::style(asset("/public/css/jquery.dataTables.css"))}}
     {{HTML::style(asset("/public/css/site/admin/product/package.css"))}}
 
     @include('admin.includes.common_js_top')
@@ -35,28 +37,37 @@ MAIN SIDEBAR MENU
 <!-- **********************************************************************************************************************************************************
 MAIN CONTENT
 *********************************************************************************************************************************************************** -->
-<!--main content start-->
-<section id="main-content">
-<section class="wrapper">
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
 
-<div class="row">
+            <div class="row">
 
-<div class="col-lg-9 main-chart">
+            <div class="cd-tabs">
+                <nav>
+                    <ul class="cd-tabs-navigation">
+                        <li><a data-content="inbox" class="selected" href="#0">Existing packages</a></li>
+                        <li><a data-content="new" href="#0">All products</a></li>
+                    </ul> <!-- cd-tabs-navigation -->
+                </nav>
 
+                <ul class="cd-tabs-content">
 
-</div><!-- /col-lg-9 END SECTION MIDDLE -->
+                    <li data-content="inbox" class="selected">
+                        <div id="packagelist"></div>
+                    </li>
 
+                    <li data-content="new">
+                        <div id="productlist"></div>
+                    </li>
+                </ul> <!-- cd-tabs-content -->
+            </div>
 
-<!-- **********************************************************************************************************************************************************
-RIGHT SIDEBAR CONTENT
-*********************************************************************************************************************************************************** -->
+            </div>
+        </section>
+    </section>
 
-
-</div>
-</section>
-</section>
-
-<!--main content end-->
+    <!--main content end-->
 <!--footer start-->
 <footer class="site-footer">
 </footer>
@@ -64,6 +75,7 @@ RIGHT SIDEBAR CONTENT
 </section>
 
 @include('admin.includes.common_js_bottom')
+{{HTML::script(asset("/public/js/jquery.dataTables.min.js"))}}
 {{HTML::script(asset("/public/js/site/admin/product/package.js"))}}
 
 </body>

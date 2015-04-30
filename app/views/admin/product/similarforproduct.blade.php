@@ -11,7 +11,6 @@
 
     @include('admin.includes.common_css')
     {{HTML::style(asset("/public/css/jquery.dataTables.css"))}}
-    {{HTML::style(asset("/public/css/site/admin/common.css"))}}
     {{HTML::style(asset("/public/css/tab.css"))}}
     {{HTML::style(asset("/public/css/site/admin/product/similarforproduct.css"))}}
 
@@ -45,7 +44,7 @@
             <div class="row">
 
 
-                <div class="back"><a href="{{$root}}/associate-products">Back</a></div>
+                <div class="back"><a href="{{$root}}/similar-products">Back</a></div>
 
                 <?php if($found){ ?>
 

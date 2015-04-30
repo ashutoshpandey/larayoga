@@ -52,20 +52,23 @@ MAIN CONTENT
                         <form id='frmcategory' action='{{$root}}/update-category' method='post' enctype='multipart/form-data'
                               target='ifr' onsubmit='return updateCategory()'>
                             <div class="formrow">
-                                Name
+                                <label>Name</label>
                                 <input type="text" name="name" value="{{$category->name}}"/>
+                                <div class='clearfix'></div>
                             </div>
                             <div class="formrow">
-                                URL Key
+                                <label>URL Key</label>
                                 <input type="text" name="url_key" value="{{$category->url_key}}"/>
+                                <div class='clearfix'></div>
                             </div>
                             <div class="formrow">
-                                Image
+                                <label>Image</label>
                                 <input type="file" name="image"/>
                             </div>
                             <div class="formrow">
-                                Description
+                                <label>Description</label>
                                 <textarea name="description">{{$category->description}}</textarea>
+                                <div class='clearfix'></div>
                             </div>
                             <div class="formrow">
                                 <img id='category_image' src="{{$root}}/public/images/categories/{{$category->image_saved_name}}"/>
