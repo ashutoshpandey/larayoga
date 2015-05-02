@@ -52,7 +52,18 @@ Route::get('/load-similar-products', 'AdminProductController@loadSimilarProducts
 Route::get('/load-products-for-similar-products', 'AdminProductController@loadProductsForSimilarProducts');
 Route::get('/similar-for-product/{id}', 'AdminProductController@similarForProduct');
 Route::post('/update-similar-products', 'AdminProductController@updateSimilarProducts');
+
 Route::get('/package-products', 'AdminProductController@packageProducts');
+Route::get('/load-packages', 'AdminProductController@loadPackages');
+Route::post('/remove-packages', 'AdminProductController@removePackages');
+Route::post('/remove-package/{id}', 'AdminProductController@removePackage');
+Route::post('/create-package', 'AdminProductController@createPackage');
+Route::get('/edit-package/{id}', 'AdminProductController@editPackage');
+Route::get('/load-package-products', 'AdminProductController@loadPackageProducts');
+Route::get('/remove-package-product/{id}', 'AdminProductController@removePackageProduct');
+Route::post('/remove-package-products', 'AdminProductController@removePackageProducts');
+Route::post('/add-products-to-package', 'AdminProductController@addProductsToPackage');
+Route::get('/load-products-for-package', 'AdminProductController@loadProductsForPackage');
 
 /*********************** admin category urls ************************/
 

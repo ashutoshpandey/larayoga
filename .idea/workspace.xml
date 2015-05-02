@@ -12,13 +12,13 @@
     <file path="/footer.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1427137428030" ignored="false" />
     <file path="/StaticController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1428379953882" ignored="false" />
     <file path="/adminproduct.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1427167322108" ignored="false" />
-    <file path="/AdminProductController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430281965308" ignored="false" />
+    <file path="/AdminProductController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430550560038" ignored="false" />
     <file path="/admincategory.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1427166617563" ignored="false" />
     <file path="/AdminCategoryController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429550958460" ignored="false" />
     <file path="/createproduct.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429761454326" ignored="false" />
     <file path="/create.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429752519553" ignored="false" />
     <file path="/createproduct.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429756288222" ignored="false" />
-    <file path="/routes.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430275077908" ignored="false" />
+    <file path="/routes.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430550592112" ignored="false" />
     <file path="/manageproducts.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429762472300" ignored="false" />
     <file path="/manageproducts.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429762833739" ignored="false" />
     <file path="/columns.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1427220105237" ignored="false" />
@@ -46,7 +46,7 @@
     <file path="/Order.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1428374097130" ignored="false" />
     <file path="/createcategory.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429672700272" ignored="false" />
     <file path="/createcategory.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429497745562" ignored="false" />
-    <file path="/common.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429752613722" ignored="false" />
+    <file path="/common.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430446094636" ignored="false" />
     <file path="$PROJECT_DIR$/../oops/js/oops.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1428820177091" ignored="false" />
     <file path="/oops.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1428820136989" ignored="false" />
     <file path="$PROJECT_DIR$/../oops/index.htm" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1428819366712" ignored="false" />
@@ -93,7 +93,7 @@
     <file path="/products.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430048225555" ignored="false" />
     <file path="/associate.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430048546391" ignored="false" />
     <file path="/menu.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429982819014" ignored="false" />
-    <file path="/package.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430360472228" ignored="false" />
+    <file path="/package.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430543663384" ignored="false" />
     <file path="/similar.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430101322973" ignored="false" />
     <file path="/reportinfo.ctp" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430014072176" ignored="false" />
     <file path="$PROJECT_DIR$/../smart/app/View/Report/reportinfo.ctp" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430014205644" ignored="false" />
@@ -122,6 +122,13 @@
     <file path="/SimilarProduct.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430278841779" ignored="false" />
     <file path="/Laravel Info" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430279493805" ignored="false" />
     <file path="/package.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430359878882" ignored="false" />
+    <file path="/Package.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430415012423" ignored="false" />
+    <file path="/PackageProduct.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430415742262" ignored="false" />
+    <file path="/editpackage.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430544434301" ignored="false" />
+    <file path="/edit-package.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430546876369" ignored="false" />
+    <file path="/edit-package.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430551055059" ignored="false" />
+    <file path="/edit-package.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430547041915" ignored="false" />
+    <file path="$PROJECT_DIR$/app/storage/logs/laravel.log" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430550833363" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,11 +148,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="package.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin/product/package.blade.php">
+      <file leaf-file-name="edit-package.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/product/edit-package.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="48" selection-start="473" selection-end="473" vertical-scroll-proportion="25.2">
+            <state line="11" column="0" selection-start="383" selection-end="383" vertical-scroll-proportion="-7.7">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit-package.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/site/admin/product/edit-package.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="23" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit-package.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/site/admin/product/edit-package.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="144" column="8" selection-start="3772" selection-end="3772" vertical-scroll-proportion="0.7805755">
+              <folding>
+                <element signature="n#!!block;n#loadPackageProducts#0" expanded="false" />
+                <element signature="n#!!block;n#getProductTable#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,16 +181,25 @@
       <file leaf-file-name="package.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/site/admin/product/package.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="31" selection-start="1458" selection-end="1458" vertical-scroll-proportion="0.0">
+            <state line="79" column="0" selection-start="2196" selection-end="2196" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="common.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/site/admin/common.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="25" selection-start="790" selection-end="790" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="26" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.3555018">
+            <state line="60" column="33" selection-start="3052" selection-end="3052" vertical-scroll-proportion="-12.6">
               <folding />
             </state>
           </provider>
@@ -171,16 +208,16 @@
       <file leaf-file-name="AdminProductController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/AdminProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="401" column="20" selection-start="11754" selection-end="11754" vertical-scroll-proportion="-10.333333">
+            <state line="196" column="33" selection-start="5489" selection-end="5489" vertical-scroll-proportion="-19.366667">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="similarforproduct.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/site/admin/product/similarforproduct.css">
+      <file leaf-file-name="SimilarProduct.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/SimilarProduct.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="29" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
+            <state line="20" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="-13.3">
               <folding />
             </state>
           </provider>
@@ -189,7 +226,7 @@
       <file leaf-file-name="package.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/site/admin/product/package.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="8" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0">
+            <state line="1" column="13" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -198,7 +235,7 @@
       <file leaf-file-name="similarforproduct.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/product/similarforproduct.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="489" selection-end="489" vertical-scroll-proportion="-9.1">
+            <state line="13" column="0" selection-start="489" selection-end="489" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -214,22 +251,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/css/site/admin/product/similarforproduct.css" />
-        <option value="$PROJECT_DIR$/app/views/admin/product/associateforproduct.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/AdminProductController.php" />
-        <option value="$PROJECT_DIR$/public/js/site/admin/product/associateforproduct.js" />
-        <option value="$PROJECT_DIR$/public/js/site/admin/product/similarforproduct.js" />
-        <option value="$PROJECT_DIR$/app/views/admin/includes/header.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/admin/category/manage.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/site/admin/category/manage.js" />
         <option value="$PROJECT_DIR$/app/controllers/AdminCategoryController.php" />
         <option value="$PROJECT_DIR$/app/views/admin/category/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/views/admin/product/similar.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/site/admin/product/package.css" />
         <option value="$PROJECT_DIR$/app/views/admin/product/similarforproduct.blade.php" />
         <option value="$PROJECT_DIR$/app/views/admin/product/package.blade.php" />
+        <option value="$PROJECT_DIR$/app/models/PackageProduct.php" />
+        <option value="$PROJECT_DIR$/app/models/Package.php" />
+        <option value="$PROJECT_DIR$/public/css/site/admin/product/package.css" />
+        <option value="$PROJECT_DIR$/public/css/site/admin/common.css" />
         <option value="$PROJECT_DIR$/public/js/site/admin/product/package.js" />
+        <option value="$PROJECT_DIR$/app/views/admin/product/editpackage.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/admin/product/edit-package.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/site/admin/product/edit-package.css" />
+        <option value="$PROJECT_DIR$/app/controllers/AdminProductController.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/public/js/site/admin/product/edit-package.js" />
       </list>
     </option>
   </component>
@@ -270,7 +307,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -671,18 +707,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="larayoga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="larayoga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
     <property name="options.searchVisible" value="true" />
@@ -690,9 +745,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp1.8\htdocs\larayoga\public\js\site\admin\product" />
       <recent name="C:\xampp1.8\htdocs\larayoga\app\models" />
       <recent name="C:\xampp1.8\htdocs\larayoga\public\css" />
-      <recent name="C:\xampp1.8\htdocs\larayoga\public\js\site\admin\product" />
       <recent name="C:\xampp1.8\htdocs\larayoga\public\css\site\admin\product" />
       <recent name="C:\xampp1.8\htdocs\larayoga\app\views\admin\product" />
     </key>
@@ -752,7 +807,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27510685" sideWeight="0.67118645" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25213677" sideWeight="0.67118645" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -838,115 +893,110 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/site/admin/category/manage.js">
+    <entry file="file://$PROJECT_DIR$/app/models/PackageProduct.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="51" selection-start="1812" selection-end="1812" vertical-scroll-proportion="0.4229858">
-          <folding />
-        </state>
+        <state line="5" column="20" selection-start="114" selection-end="114" vertical-scroll-proportion="0.104477614" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/product/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/js/site/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.96068794">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdminCategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="50" selection-start="2835" selection-end="2835" vertical-scroll-proportion="-15.233334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/category/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="51" selection-start="2466" selection-end="2466" vertical-scroll-proportion="-18.2">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/category/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="52" selection-start="3011" selection-end="3011" vertical-scroll-proportion="-11.2">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/product/similar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="562" selection-end="562" vertical-scroll-proportion="-9.8">
-          <folding />
-        </state>
+        <state line="6" column="9" selection-start="74" selection-end="74" vertical-scroll-proportion="0.1470245" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/site/admin/product/similarforproduct.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="0" selection-start="3364" selection-end="3364" vertical-scroll-proportion="0.7304551">
-          <folding />
-        </state>
+        <state line="172" column="0" selection-start="4323" selection-end="4323" vertical-scroll-proportion="0.92648774" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/includes/menu.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/models/Package.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.541769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/site/admin/product/similarforproduct.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="29" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="20" column="0" selection-start="351" selection-end="351" vertical-scroll-proportion="0.48246676" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/site/admin/product/package.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="8" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0">
+        <state line="1" column="13" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/product/similarforproduct.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/css/site/admin/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="489" selection-end="489" vertical-scroll-proportion="-9.1">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/includes/common_css.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="47" column="25" selection-start="790" selection-end="790" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/product/package.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="48" selection-start="473" selection-end="473" vertical-scroll-proportion="25.2">
+        <state line="31" column="55" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.5159705">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdminProductController.php">
+    <entry file="file://$PROJECT_DIR$/app/views/admin/product/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="401" column="20" selection-start="11754" selection-end="11754" vertical-scroll-proportion="-10.333333">
+        <state line="73" column="0" selection-start="2971" selection-end="2971" vertical-scroll-proportion="0.74336284">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/site/admin/product/create.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="94" selection-end="94" vertical-scroll-proportion="0.07673569">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/product/edit-package.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="383" selection-end="383" vertical-scroll-proportion="-7.7">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/SimilarProduct.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="-13.3">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/site/admin/product/edit-package.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="23" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/site/admin/product/package.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="31" selection-start="1458" selection-end="1458" vertical-scroll-proportion="0.0">
+        <state line="79" column="0" selection-start="2196" selection-end="2196" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AdminProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="196" column="33" selection-start="5489" selection-end="5489" vertical-scroll-proportion="-19.366667">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="26" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.3555018">
+        <state line="60" column="33" selection-start="3052" selection-end="3052" vertical-scroll-proportion="-12.6">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/site/admin/product/edit-package.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="8" selection-start="3772" selection-end="3772" vertical-scroll-proportion="0.7805755">
+          <folding>
+            <element signature="n#!!block;n#loadPackageProducts#0" expanded="false" />
+            <element signature="n#!!block;n#getProductTable#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

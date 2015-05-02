@@ -44,3 +44,6 @@ ul#tree a:hover {
 #category_image{display: none;}
 
 .message{color: red;}
+
+.link{ cursor: pointer; }
+.link:HOVER{ font-weight: 400; }

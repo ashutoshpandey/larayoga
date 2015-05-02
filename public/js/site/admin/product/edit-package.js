@@ -4,7 +4,7 @@ $(function(){
 
     initTab();
 
-    loadPackages(1);
+    loadPackageProducts(1);
 
     loadProducts(1);
 });
@@ -25,7 +25,7 @@ function loadProducts(page){
 
     var data = 'page=1&count=20&category_id=' + category_id + '&status=' + status;
 
-    jsonCall(root + '/load-products', 'get', data, productsLoaded);
+    jsonCall(root + '/load-products-for-package', 'get', data, productsLoaded);
 }
 
 function productsLoaded(products){
@@ -36,23 +36,19 @@ function productsLoaded(products){
 
         var productTable = getProductTable(products);
 
-        $("#productlist").html('<h4>Tick products to create a package</h4>');
+        $("#productlist").html('<h4>Tick products to add them to package</h4>');
 
         $("#productlist").append(productTable);
 
-        $("#table_products").dataTable();
-
         $("#productlist").append("<div class='product_display_area'></div>");
 
-        $("#productlist").append("<div class='package_name'>Name : <input type='text' name='name'/></div>");
-        $("#productlist").append("<div class='package_description'>Description : <textarea name='description' rows='4'></textarea></div>");
-        $("#productlist").append("<input type='button' name='btncreatepackage' value='Create package'/>");
+        $("#productlist").append("<input type='button' name='btnAddProductsToPackage' value='Add products to package'/>");
 
-        $("input[name='btncreatepackage']").hide();
-        $(".package_name").hide();
-        $(".package_description").hide();
+        $("input[name='btnAddProductsToPackage']").click(addProductsToPackage);
 
-        $("input[name='btncreatepackage']").click(createPackage);
+        $("input[name='btnAddProductsToPackage']").hide();
+
+        $("#table_products").dataTable();
 
         $("input[name='chkproduct']").click(function(){
             var id = $(this).attr('rel');
@@ -65,31 +61,6 @@ function productsLoaded(products){
         $("#productlist").html("<h3 class='noproducts'>No products available</h3>");
 }
 
-function createPackage(){
-
-    var str = 'ids=';
-
-    $('.product_display_area').find('.product_box').each(function(){
-        var id = $(this).attr('rel');
-
-        str = str + id + ',';
-    });
-
-    if(str.substr(str.length-1,1)==',')
-        str = str.substr(0, str.length-1);
-
-    var name = $("input[name='name']").val();
-    var description = $("textarea[name='description']").val();
-
-    str = str + '&name=' + name + '&description=' + description;
-
-    ajaxCall(root + '/create-package', 'post', str, packageCreated);
-}
-
-function packageCreated(result){
-    loadPackages(1);
-}
-
 function updateProductDisplay(id, selected){
 
     if(selected){
@@ -100,7 +71,7 @@ function updateProductDisplay(id, selected){
         $('.product_display_area').find('.product_' + id).remove();
 
         if($('.product_display_area').children().length==0)
-            $("input[name='btncreatepackage']").hide();
+            $("input[name='btnAddProductsToPackage']").hide();
     }
 }
 
@@ -114,48 +85,82 @@ function showProductInDisplayArea(product){
 
         $('.product_display_area').append(str);
 
-        $("input[name='btncreatepackage']").show();
-        $(".package_name").show();
-        $(".package_description").show();
+        $("input[name='btnAddProductsToPackage']").show();
     }
 }
 
-function loadPackages(page){
+function addProductsToPackage(){
+
+    var str = 'ids=';
+
+    $('.product_display_area').find('.product_box').each(function(){
+        var id = $(this).attr('rel');
+
+        str = str + id + ',';
+    });
+
+    if(str.substr(str.length-1,1)==',')
+        str = str.substr(0, str.length-1);
+
+    ajaxCall(root + '/add-products-to-package', 'post', str, productsAddedToPackage);
+}
+
+function productsAddedToPackage(){
+
+    $("input[name='btnAddProductsToPackage']").hide();
+
+    $('.product_display_area').html('');
+
+    loadProducts(1);
+
+    loadPackageProducts(1);
+}
+
+function loadPackageProducts(page){
 
     var data = 'page=1&count=20';
 
-    jsonCall(root + '/load-packages', 'get', data, packagesLoaded);
+    jsonCall(root + '/load-package-products', 'get', data, packageProductsLoaded);
 }
 
-function packagesLoaded(packages){
+function packageProductsLoaded(products){
 
-    $("#packagelist").html("");
+    $("#packageproductlist").html("");
 
-    if(packages!=undefined && packages.length>0){
+    if(products!=undefined && products.length>0){
 
-        var packageTable = getPackageTable(packages);
+        var productTable = getPackageProductTable(products);
 
-        $("#packagelist").append('<h4>Existing packages</h4>');
+        $("#packageproductlist").html('<h4>Tick products to create a package</h4>');
 
-        $("#packagelist").append(packageTable);
+        $("#packageproductlist").append(productTable);
 
-        $("#table_packages").dataTable();
+        $("#table_package_products").dataTable();
 
-        var str = '<input type="button" name="btnRemovePackages" value="Remove packages"/>';
+        $("#packageproductlist").append("<input type='button' name='btnRemovePackageProducts' value='Remove products from package'/>");
 
-        $("#packagelist").append(str);
+        $("input[name='btnRemovePackageProducts']").click(removePackageProducts);
 
-        $("input[name='btnRemovePackages']").click(removeExistingPackages);
-
-        $(".remove_package").click(function(){
-
+        $("input[name='btnRemovePackageProducts']").hide();
+        
+        $(".remove_package_product").click(function(){
             var id = $(this).attr('rel');
-
-            removePackage(id);
+            removePackageProduct(id);
         });
+
+        $("input[name='chkpackageproduct']").click(function(){
+
+            var selected_checkboxes = $("input[name='chkpackageproduct']:checked").length;
+
+            if(selected_checkboxes>0)
+                $("input[name='btnRemovePackageProducts']").show();
+            else
+                $("input[name='btnRemovePackageProducts']").hide();
+        });
+
     }
     else
-        $("#packagelist").html("<h3 class='noproducts'>No packages created</h3>");
+        $("#packageproductlist").html("<h3 class='noproducts'>No products available</h3>");
 }
 
 function getProductTable(products){
@@ -194,14 +199,13 @@ function getProductTable(products){
     return table;
 }
 
-function getPackageTable(packages){
+function getPackageProductTable(packages){
 
-    var table = '<table id="table_packages"><thead>';
+    var table = '<table id="table_package_products"><thead>';
 
     table += '<tr>';
 
     table += '<td></td>';
-    table += '<td>Id</td>';
     table += '<td>Name</td>';
     table += '<td>Description</td>';
     table += '<td>Action</td>';
@@ -216,11 +220,10 @@ function getPackageTable(packages){
 
         var packageObj = packages[i];
 
-        table += '<td><input type="checkbox" name="chkpackage" rel="' + packageObj.id + '"/></td>';
-        table += '<td>' + packageObj.id + '</td>';
-        table += '<td>' + packageObj.name + '</td>';
-        table += '<td>' + packageObj.description + '</td>';
-        table += "<td><a href='" + root + "/edit-package/" + packageObj.id + "'>Edit</a> &nbsp;&nbsp; <span class='link remove_package' rel='" + packageObj.id + "'>Remove</span></td>";
+        table += '<td><input type="checkbox" name="chkpackageproduct" rel="' + packageObj.id + '"/></td>';
+        table += '<td>' + packageObj.product.name + '</td>';
+        table += '<td>' + packageObj.product.description + '</td>';
+        table += "<td><span class='link remove_package_product' rel='" + packageObj.id + "'>Remove</span></td>";
 
         table += '</tr>';
     }
@@ -230,22 +233,23 @@ function getPackageTable(packages){
     return table;
 }
 
-function removePackage(id){
+function removePackageProduct(id){
 
-    var str = 'id=' + id;
-
-    ajaxCall(root + '/remove-package', 'post', str, packageRemoved);
+    ajaxCall(root + '/remove-package-product/' + id, 'get', '', packageProductRemoved);
 }
 
-function packageRemoved(){
-    loadPackages(1);
+function packageProductRemoved(){
+
+    loadPackageProducts(1);
+
+    loadProducts(1);
 }
 
-function removeExistingPackages(){
+function removePackageProducts(){
 
     var str = 'ids=';
 
-    $("input[name='chkpackage']:checked").each(function(){
+    $("input[name='chkpackageproduct']:checked").each(function(){
         var id = $(this).attr('rel');
 
         str = str + id + ',';
@@ -254,12 +258,12 @@ function removeExistingPackages(){
     if(str.substr(str.length-1,1)==',')
         str = str.substr(0, str.length-1);
 
-    ajaxCall(root + '/update-packages', 'post', str, packagesUpdated);
+    ajaxCall(root + '/remove-package-products', 'post', str, packageProductsRemoved);
 }
 
-function packagesUpdated(){
+function packageProductsRemoved(){
 
-    loadPackages(1);
+    loadPackageProducts(1);
 
     loadProducts(1);
 }

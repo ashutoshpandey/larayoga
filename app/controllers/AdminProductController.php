@@ -153,9 +153,207 @@ class AdminProductController extends BaseController
         return View::make('admin.product.package');
     }
 
+    public function loadPackages(){
+
+        $status = Input::get('status');
+
+        if(!isset($status))
+            $status = 'active';
+
+        $packages = Package::where('status','=',$status)->get();
+
+        return $packages;
+    }
+
+    public function loadPackageProducts(){
+
+        $id = Session::get('edit_package_id');
+
+        $package_products = PackageProduct::where('package_id', '=', $id)->with('Product')->get();
+
+        return $package_products;
+    }
+
+    public function loadProductsForPackage()
+    {
+        $page = Input::get('page');
+        $count = Input::get('count');
+        $package_id = Session::get('edit_package_id');
+
+        if (!isset($status))
+            $status = 'active';
+
+        if (!isset($page))
+            $page = 1;
+
+        if (!isset($count))
+            $count = 20;
+
+        $skip = ($page - 1) * 20;
+
+        if(isset($package_id)){
+            $package = Package::where('id', '=', $package_id)->first();
+
+            if (isset($package)){
+
+                $products = Product::whereNotIn('id', function ($q) use ($package_id) {
+                    $q->from('package_products')->selectRaw('product_id')->where('package_id', '=', $package_id);
+                })->get();
+
+                return $products;
+            }
+            else
+                return null;
+        }
+        else
+            return null;
+    }
+
+    public function removePackageProduct($id)
+    {
+        $packageProduct = PackageProduct::find($id);
+
+        if(isset($packageProduct)){
+            PackageProduct::where('id', '=', $id)->delete();
+
+            echo 'removed';
+        }
+        else
+            echo 'invalid';
+    }
+
+    public function removePackageProducts()
+    {
+        $package_product_ids = Input::get('ids'); // comma separated ids, to be removed
+
+        if (isset($package_product_ids)) {
+
+            $ar_ids = explode(',', $package_product_ids);
+
+            if(isset($ar_ids)){
+
+                foreach($ar_ids as $id){
+
+                    PackageProduct::where('id', '=', $id)->delete();
+                }
+            }
+        }
+        else
+            echo "invalid id";
+    }
+
+    public function addProductsToPackage(){
+
+        $package_id = Session::get('edit_package_id');
+
+        $product_ids = Input::get('ids');
+
+        $ar_ids = explode(',', $product_ids);
+
+        if(isset($ar_ids)){
+
+            foreach($ar_ids as $id){
+
+                $packageProduct = new PackageProduct();
+
+                $packageProduct->product_id = $id;
+                $packageProduct->package_id = $package_id;
+                $packageProduct->created_at = date('Y-m-d h:i:s');
+                $packageProduct->updated_at = date('Y-m-d h:i:s');
+                $packageProduct->update_type = 'created';
+                $packageProduct->status = 'active';
+
+                $packageProduct->save();
+            }
+        }
+    }
+
+    public function removePackage($id)
+    {
+        $package = Package::find($id);
+
+        if(isset($package)){
+            Package::where('id', '=', $id)->delete();
+
+            echo 'removed';
+        }
+        else
+            echo 'invalid';
+    }
+
+    public function removePackages()
+    {
+        $package_ids = Input::get('ids'); // comma separated ids, to be removed
+
+        if (isset($package_ids)) {
+
+            $ar_ids = explode(',', $package_ids);
+
+            if(isset($ar_ids)){
+
+                foreach($ar_ids as $id){
+
+                    Package::where('id', '=', $id)->delete();
+                }
+            }
+        }
+        else
+            echo "invalid id";
+    }
+
+    public function createPackage()
+    {
+        $product_ids = Input::get('ids'); // comma separated ids, to be removed
+        $name = Input::get('name');
+        $description = Input::get('description');
+
+        if (isset($product_ids)) {
+
+            $package = new Package();
+
+            $package->name = $name;
+            $package->description = $description;
+            $package->created_at = date('Y-m-d h:i:s');
+            $package->updated_at = date('Y-m-d h:i:s');
+            $package->update_type = 'created';
+            $package->status = 'active';
+
+            $package->save();
+
+            $ar_ids = explode(',', $product_ids);
+
+            if(isset($ar_ids)){
+
+                foreach($ar_ids as $id){
+
+                    $packageProduct = new PackageProduct();
+
+                    $packageProduct->product_id = $id;
+                    $packageProduct->package_id = $package->id;
+                    $packageProduct->created_at = date('Y-m-d h:i:s');
+                    $packageProduct->updated_at = date('Y-m-d h:i:s');
+                    $packageProduct->update_type = 'created';
+                    $packageProduct->status = 'active';
+
+                    $packageProduct->save();
+                }
+            }
+        }
+        else
+            echo "invalid id";
+    }
+
+    public function editPackage($id)
+    {
+        $package = Package::find($id);
+
+        Session::put('edit_package_id', $id);
+
+        return View::make('admin.product.edit-package')->with('package', $package);
+    }
+
     public function uploadProducts()
     {
-
         $file_uploaded = false;
 
         if (Input::file('file')->isValid()) {
