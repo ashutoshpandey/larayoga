@@ -123,7 +123,7 @@ MAIN CONTENT
 </section>
 
 @include('admin.includes.common_js_bottom')
-{{HTML::script(asset("/public/js/site/admin/category/createcategory.js"))}}
+{{HTML::script(asset("/public/js/site/admin/category/create.js"))}}
 
 </body>
 </html>

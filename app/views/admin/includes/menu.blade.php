@@ -7,7 +7,7 @@
             <h5 class="centered">Marcel Newman</h5>
 
             <li class="mt">
-                <a class="active" href="{{$root}}/index.html">
+                <a class="active" href="{{$root}}/admin-section">
                     <i class="fa fa-dashboard"></i>
                     <span>Dashboard</span>
                 </a>
@@ -85,4 +85,3 @@
         <!-- sidebar menu end-->
     </div>
 </aside>
-<span style="visibility: hidden" id='root' rel="{{$root}}"></span>

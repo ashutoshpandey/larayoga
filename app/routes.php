@@ -23,7 +23,9 @@ Route::get('/category', 'CategoryController@category');
 
 /*********************** admin urls ************************/
 
-Route::get('/admin', 'AdminController@index');
+Route::get('/admin-login', 'AuthenticationController@adminLogin');
+Route::post('/is-valid-admin', 'AuthenticationController@isValidAdmin');
+Route::get('/admin-section', 'AdminController@adminSection');
 Route::get('/admin-logout', 'AdminController@logout');
 
 /*********************** admin product urls ************************/
@@ -45,6 +47,7 @@ Route::post('/add-product-association', 'AdminProductController@addProductAssoci
 Route::post('/update-product-association', 'AdminProductController@updateProductAssociation');
 Route::get('/load-associated-products', 'AdminProductController@loadAssociatedProducts');
 Route::get('/load-products-for-associated-products', 'AdminProductController@loadProductsForAssociatedProducts');
+Route::get('/remove-associated-product/{id}', 'AdminProductController@removeAssociatedProduct');
 
 Route::get('/similar-products', 'AdminProductController@similarProducts');
 Route::post('/add-similar-products', 'AdminProductController@addSimilarProducts');
@@ -52,6 +55,7 @@ Route::get('/load-similar-products', 'AdminProductController@loadSimilarProducts
 Route::get('/load-products-for-similar-products', 'AdminProductController@loadProductsForSimilarProducts');
 Route::get('/similar-for-product/{id}', 'AdminProductController@similarForProduct');
 Route::post('/update-similar-products', 'AdminProductController@updateSimilarProducts');
+Route::get('/remove-similar-product/{id}', 'AdminProductController@removeSimilarProduct');
 
 Route::get('/package-products', 'AdminProductController@packageProducts');
 Route::get('/load-packages', 'AdminProductController@loadPackages');
@@ -101,7 +105,7 @@ Route::get('/create-order', 'OrderController@createCustomer');
 
 /*********************** authentication urls ************************/
 
-Route::get('/is-valid-customer', 'AuthenticationController@isValidCustomer');
+Route::post('/is-valid-customer', 'AuthenticationController@isValidCustomer');
 Route::get('/is-duplicate-customer', 'AuthenticationController@isDuplicateCustomer');
 Route::get('/logout', 'AuthenticationController@logout');
 

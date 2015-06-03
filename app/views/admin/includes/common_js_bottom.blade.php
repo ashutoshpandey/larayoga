@@ -7,3 +7,4 @@
 
 {{HTML::script(asset("/public/js/site/common.js"))}}
 {{HTML::script(asset("/public/js/site/admin/common.js"))}}
+<span style="visibility: hidden" id='root' rel="{{$root}}"></span>

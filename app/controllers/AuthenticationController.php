@@ -2,6 +2,10 @@
 
 class AuthenticationController extends BaseController {
 
+    public function adminLogin(){
+        return View::make('admin-login');
+    }
+
     public function isValidCustomer(){
         $email = Input::get('email');
         $password = Input::get('password');

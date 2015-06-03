@@ -48,7 +48,7 @@
 
                 <?php if($found){ ?>
 
-                <h3>Product : <span>{{$product_name}} ( {{$product_id}} )</span></div>
+                <h3>Product : <span>{{$product_name}} ( {{$product_id}} )</span></h3>
 
                 <div class="cd-tabs">
                     <nav>

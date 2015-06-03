@@ -10,10 +10,7 @@
     <title>YOGASMOGA Import Products</title>
 
     @include('admin.includes.common_css')
-    {{HTML::style(asset("/public/css/jquery.dataTables.css"))}}
     {{HTML::style(asset("/public/css/site/admin/common.css"))}}
-    {{HTML::style(asset("/public/css/tab.css"))}}
-    {{HTML::style(asset("/public/css/site/admin/product/associateforproduct.css"))}}
 
     @include('admin.includes.common_js_top')
 </head>
@@ -44,40 +41,6 @@
 
             <div class="row">
 
-
-                <div class="back"><a href="{{$root}}/associate-products">Back</a></div>
-
-                <?php if($found){ ?>
-
-                <h3>Product : <span>{{$product_name}} ( {{$product_id}} )</span></h3>
-
-            <div class="cd-tabs">
-                <nav>
-                    <ul class="cd-tabs-navigation">
-                        <li><a data-content="inbox" class="selected" href="#0">Existing associated products</a></li>
-                        <li><a data-content="new" href="#0">All products</a></li>
-                    </ul> <!-- cd-tabs-navigation -->
-                </nav>
-
-                <ul class="cd-tabs-content">
-
-                    <li data-content="inbox" class="selected">
-                        <div id="associatedproductlist"></div>
-                    </li>
-
-                    <li data-content="new">
-                        <div id="productlist"></div>
-                    </li>
-                </ul> <!-- cd-tabs-content -->
-            </div>
-
-
-            <?php } else{ ?>
-
-                <h4>Invalid product selected</h4>
-
-            <?php } ?>
-
             </div>
         </section>
     </section>
@@ -90,9 +53,6 @@
 </section>
 
 @include('admin.includes.common_js_bottom')
-{{HTML::script(asset("/public/js/jquery.dataTables.min.js"))}}
-{{HTML::script(asset("/public/js/modernizr.js"))}}
-{{HTML::script(asset("/public/js/site/admin/product/associateforproduct.js"))}}
 
 </body>
 </html>

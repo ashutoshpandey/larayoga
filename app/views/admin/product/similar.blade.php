@@ -42,6 +42,8 @@
 
             <div class="row">
 
+                <h3>Manage similar products</h3>
+
                 <div id="productlist"></div>
 
             </div>

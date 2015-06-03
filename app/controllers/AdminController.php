@@ -2,16 +2,9 @@
 
 class AdminController extends BaseController
 {
-    public function index()
+    public function adminSection()
     {
-        return View::make('admin.index');
-/*
-        $admin = Session::read('admin');
-
-        if(isset($admin))
-            return View::make('admin.index');
-        else
-            return redirect('/');*/
+        return View::make('admin.admin-section');
     }
 
     public function logout(){

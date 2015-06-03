@@ -1,3 +1,5 @@
+body, #container{ background: #fff !important; }
+
 .formrow{
     margin-bottom: 15px;
 }

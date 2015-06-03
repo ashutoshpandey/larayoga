@@ -142,7 +142,7 @@ function packageProductsLoaded(products){
         $("input[name='btnRemovePackageProducts']").click(removePackageProducts);
 
         $("input[name='btnRemovePackageProducts']").hide();
-        
+
         $(".remove_package_product").click(function(){
             var id = $(this).attr('rel');
             removePackageProduct(id);

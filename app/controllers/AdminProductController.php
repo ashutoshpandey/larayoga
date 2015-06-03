@@ -120,7 +120,7 @@ class AdminProductController extends BaseController
     {
         $page = Input::get('page');
         $count = Input::get('count');
-        $product_id = Session::get('associate_parent_product_id');
+        $product_id = Session::get('associated_parent_product_id');
 
         if (!isset($status))
             $status = 'active';
@@ -747,6 +747,19 @@ class AdminProductController extends BaseController
             return View::make('admin.product.similarforproduct')->with('found', false);
     }
 
+    public function removeSimilarProduct($id)
+    {
+        $similarProduct = SimilarProduct::find($id);
+
+        if(isset($similarProduct)){
+            SimilarProduct::where('id', '=', $id)->delete();
+
+            echo 'removed';
+        }
+        else
+            echo 'invalid';
+    }
+
     public function loadSimilarProducts()
     {
         $page = Input::get('page');
@@ -815,6 +828,19 @@ class AdminProductController extends BaseController
             return null;
     }
 
+    public function removeAssociatedProduct($id)
+    {
+        $associatedProduct = AssociatedProduct::find($id);
+
+        if(isset($associatedProduct)){
+            AssociatedProduct::where('id', '=', $id)->delete();
+
+            echo 'removed';
+        }
+        else
+            echo 'invalid';
+    }
+
     public function loadProductsForAssociatedProducts()
     {
         $page = Input::get('page');
@@ -837,11 +863,11 @@ class AdminProductController extends BaseController
 
             if (isset($product)){
 
-                $similar_products = Product::whereNotIn('id', function ($q) use ($product_id) {
+                $associated_products = Product::whereNotIn('id', function ($q) use ($product_id) {
                     $q->from('associated_products')->selectRaw('associated_product_id')->where('parent_product_id', '=', $product_id);
                 })->get();
 
-                return $similar_products;
+                return $associated_products;
             }
             else
                 return null;

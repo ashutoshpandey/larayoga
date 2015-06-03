@@ -70,10 +70,27 @@ function associatedProductsLoaded(products){
 
         $("#associatedproductlist").append(str);
 
+        $(".remove_associated_product").click(function(){
+            var id = $(this).attr('rel');
+            removeAssociatedProduct(id);
+        });
+
         $("input[name='btnupdateexistingassociation']").click(updateAssociatedProductsAssociation);
     }
     else
         $("#associatedproductlist").html("<h3 class='noproducts'>No products associated</h3>");
+}
+
+function removeAssociatedProduct(id){
+
+    ajaxCall(root + '/remove-associated-product/' + id, 'get', '', associatedProductRemoved);
+}
+
+function associatedProductRemoved(){
+
+    loadAssociatedProducts(1);
+
+    loadProducts(1);
 }
 
 function getProductTable(products){
@@ -83,7 +100,7 @@ function getProductTable(products){
     table += '<tr>';
 
     table += '<td></td>';
-    table += '<td>Id</td>';
+    table += '<td>Sku</td>';
     table += '<td>Name</td>';
     table += '<td>Url Key</td>';
     table += '<td>Description</td>';
@@ -99,7 +116,7 @@ function getProductTable(products){
         var product = products[i];
 
         table += '<td><input type="checkbox" name="chkproduct" rel="' + product.id + '"/></td>';
-        table += '<td>' + product.id + '</td>';
+        table += '<td>' + product.sku + '</td>';
         table += '<td>' + product.name + '</td>';
         table += '<td>' + product.url_key + '</td>';
         table += '<td>' + product.description + '</td>';
@@ -120,10 +137,11 @@ function getAssociatedProductTable(products){
     table += '<tr>';
 
     table += '<td></td>';
-    table += '<td>Id</td>';
+    table += '<td>Sku</td>';
     table += '<td>Name</td>';
     table += '<td>Url Key</td>';
     table += '<td>Description</td>';
+    table += '<td>Action</td>';
 
     table += '</tr>';
 
@@ -136,10 +154,11 @@ function getAssociatedProductTable(products){
         var productObj = products[i];
 
         table += '<td><input type="checkbox" name="chkassociated" rel="' + productObj.id + '"/></td>';
-        table += '<td>' + productObj.product.id + '</td>';
+        table += '<td>' + productObj.product.sku + '</td>';
         table += '<td>' + productObj.product.name + '</td>';
         table += '<td>' + productObj.product.url_key + '</td>';
         table += '<td>' + productObj.product.description + '</td>';
+        table += '<td><span class="link remove_associated_product" rel="' + productObj.id + '">Remove</span></td>';
 
         table += '</tr>';
     }

@@ -77,10 +77,27 @@ function similarProductsLoaded(products){
 
         $("#similarproductlist").append(str);
 
+        $(".remove_similar_product").click(function(){
+            var id = $(this).attr('rel');
+            removeSimilarProduct(id);
+        });
+
         $("input[name='btnUpdateExistingSimilarProducts']").click(removeExistingSimilarProducts);
     }
     else
         $("#similarproductlist").html("<h3 class='noproducts'>No similar products added</h3>");
+}
+
+function removeSimilarProduct(id){
+
+    ajaxCall(root + '/remove-similar-product/' + id, 'get', '', similarProductRemoved);
+}
+
+function similarProductRemoved(){
+
+    loadSimilarProducts(1);
+
+    loadProducts(1);
 }
 
 function getProductTable(products){
@@ -130,6 +147,7 @@ function getExistingSimilarProductsTable(products){
     table += '<td>Name</td>';
     table += '<td>Url Key</td>';
     table += '<td>Description</td>';
+    table += '<td>Action</td>';
 
     table += '</tr>';
 
@@ -146,6 +164,7 @@ function getExistingSimilarProductsTable(products){
         table += '<td>' + productObj.product.name + '</td>';
         table += '<td>' + productObj.product.url_key + '</td>';
         table += '<td>' + productObj.product.description + '</td>';
+        table += '<td><span class="link remove_similar_product" rel="' + productObj.id + '">Remove</span></td>';
 
         table += '</tr>';
     }

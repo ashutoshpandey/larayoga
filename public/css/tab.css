@@ -66,6 +66,7 @@
 
 .cd-tabs-navigation {
   width: 360px;
+  background-color: #5E5D5A;
 }
 .cd-tabs-navigation:after {
   content: "";
@@ -81,7 +82,7 @@
   height: 60px;
   width: 60px;
   text-align: center;
-  font-size: 12px;
+  font-size: 12px !important;
   font-size: 0.75rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -151,6 +152,7 @@
     /* move the nav to the left on medium sized devices */
     width: 80px;
     float: left;
+    background-color: #5E5D5A;
   }
   .cd-tabs-navigation a {
     height: 80px;
@@ -168,7 +170,7 @@
   .cd-tabs-navigation {
     /* tabbed on top on big devices */
     width: auto;
-    background-color: #f8f7ee;
+    background-color: #5E5D5A;
     box-shadow: inset 0 -2px 3px rgba(203, 196, 130, 0.06);
   }
   .cd-tabs-navigation a {

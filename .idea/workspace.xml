@@ -12,13 +12,13 @@
     <file path="/footer.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1427137428030" ignored="false" />
     <file path="/StaticController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1428379953882" ignored="false" />
     <file path="/adminproduct.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1427167322108" ignored="false" />
-    <file path="/AdminProductController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430550560038" ignored="false" />
+    <file path="/AdminProductController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430573167765" ignored="false" />
     <file path="/admincategory.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1427166617563" ignored="false" />
     <file path="/AdminCategoryController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429550958460" ignored="false" />
     <file path="/createproduct.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429761454326" ignored="false" />
     <file path="/create.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429752519553" ignored="false" />
     <file path="/createproduct.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429756288222" ignored="false" />
-    <file path="/routes.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430550592112" ignored="false" />
+    <file path="/routes.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1433301041295" ignored="false" />
     <file path="/manageproducts.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429762472300" ignored="false" />
     <file path="/manageproducts.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429762833739" ignored="false" />
     <file path="/columns.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1427220105237" ignored="false" />
@@ -40,13 +40,13 @@
     <file path="/CustomerController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1427633170223" ignored="false" />
     <file path="/CartController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1428900161875" ignored="false" />
     <file path="/cart.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1427774227233" ignored="false" />
-    <file path="/AuthenticationController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1427928046107" ignored="false" />
+    <file path="/AuthenticationController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1433300450516" ignored="false" />
     <file path="/CategoryHelper.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429160376475" ignored="false" />
     <file path="/Category.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429543199970" ignored="false" />
     <file path="/Order.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1428374097130" ignored="false" />
     <file path="/createcategory.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429672700272" ignored="false" />
     <file path="/createcategory.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429497745562" ignored="false" />
-    <file path="/common.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430446094636" ignored="false" />
+    <file path="/common.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430568496487" ignored="false" />
     <file path="$PROJECT_DIR$/../oops/js/oops.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1428820177091" ignored="false" />
     <file path="/oops.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1428820136989" ignored="false" />
     <file path="$PROJECT_DIR$/../oops/index.htm" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1428819366712" ignored="false" />
@@ -73,7 +73,7 @@
     <file path="/categoryproducts.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429585758306" ignored="false" />
     <file path="/categoryproducts.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429583615094" ignored="false" />
     <file path="/header.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430282199331" ignored="false" />
-    <file path="/AdminController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429672073209" ignored="false" />
+    <file path="/AdminController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1433300212642" ignored="false" />
     <file path="/HomeController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429672157331" ignored="false" />
     <file path="/home.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429672193827" ignored="false" />
     <file path="/importproducts.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429849743121" ignored="false" />
@@ -85,14 +85,14 @@
     <file path="/import.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429982117206" ignored="false" />
     <file path="/YogaController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429949965303" ignored="false" />
     <file path="/associate.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430049106374" ignored="false" />
-    <file path="/similar.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430106676283" ignored="false" />
+    <file path="/similar.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430574002793" ignored="false" />
     <file path="/create.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429975071552" ignored="false" />
     <file path="/edit.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430356182219" ignored="false" />
     <file path="/manage.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430048146898" ignored="false" />
     <file path="/package.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430357987123" ignored="false" />
     <file path="/products.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430048225555" ignored="false" />
     <file path="/associate.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430048546391" ignored="false" />
-    <file path="/menu.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1429982819014" ignored="false" />
+    <file path="/menu.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1433300070715" ignored="false" />
     <file path="/package.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430543663384" ignored="false" />
     <file path="/similar.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430101322973" ignored="false" />
     <file path="/reportinfo.ctp" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430014072176" ignored="false" />
@@ -113,11 +113,11 @@
     <file path="$PROJECT_DIR$/../smart/app/Model/Order.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430030488205" ignored="false" />
     <file path="$PROJECT_DIR$/../smart/app/Model/Report.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430030540000" ignored="false" />
     <file path="/manage.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430355656939" ignored="false" />
-    <file path="/associateforproduct.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430281395040" ignored="false" />
-    <file path="/associateforproduct.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430281872805" ignored="false" />
+    <file path="/associateforproduct.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430569214429" ignored="false" />
+    <file path="/associateforproduct.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430573338254" ignored="false" />
     <file path="/associateforproduct.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430067599781" ignored="false" />
-    <file path="/similarforproduct.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430357167716" ignored="false" />
-    <file path="/similarforproduct.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430278990448" ignored="false" />
+    <file path="/similarforproduct.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430569192309" ignored="false" />
+    <file path="/similarforproduct.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430572771072" ignored="false" />
     <file path="/similarforproduct.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430280935003" ignored="false" />
     <file path="/SimilarProduct.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430278841779" ignored="false" />
     <file path="/Laravel Info" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430279493805" ignored="false" />
@@ -128,7 +128,66 @@
     <file path="/edit-package.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430546876369" ignored="false" />
     <file path="/edit-package.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430551055059" ignored="false" />
     <file path="/edit-package.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430547041915" ignored="false" />
-    <file path="$PROJECT_DIR$/app/storage/logs/laravel.log" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430550833363" ignored="false" />
+    <file path="/tab.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430568901779" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/input_definition_4.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/input_option_3.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/stack/builder/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/input_definition_3.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/css-selector/Symfony/Component/CssSelector/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/process/Symfony/Component/Process/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/patchwork/utf8/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/nonvalidroute.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/laravel/framework/phpunit.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/null_values.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/finder/Symfony/Component/Finder/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/input_argument_3.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/nonvalidnode.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/validpattern.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/missing_path.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/input_option_4.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/application_1.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/namespaceprefix.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/filesystem/Symfony/Component/Filesystem/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/validresource.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/translation/Symfony/Component/Translation/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/input_definition_1.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/laravel/framework/src/Illuminate/Workbench/stubs/phpunit.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/nonvalid.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/withdoctype.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/application_2.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/foo1.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/security-core/Symfony/Component/Security/Core/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/input_argument_1.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/input_option_2.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/foo.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/input_option_1.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/monolog/monolog/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/missing_id.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/css-selector/Symfony/Component/CssSelector/Tests/XPath/Fixtures/lang.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/nesbot/carbon/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/command_1.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/browser-kit/Symfony/Component/BrowserKit/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/phpseclib/phpseclib/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/console/Symfony/Component/Console/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/phpseclib/phpseclib/build/build.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/routing/Symfony/Component/Routing/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/phpseclib/phpseclib/build/code-sniffer-ruleset.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/phpseclib/phpseclib/build/code-sniffer-ruleset-tests.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/dom-crawler/Symfony/Component/DomCrawler/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/jeremeamia/SuperClosure/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/debug/Symfony/Component/Debug/phpunit.xml.dist" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/input_definition_2.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/routing/Symfony/Component/Routing/Loader/schema/routing/routing-1.0.xsd" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/translation/Symfony/Component/Translation/Loader/schema/dic/xliff-core/xml.xsd" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/command_2.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/translation/Symfony/Component/Translation/Loader/schema/dic/xliff-core/xliff-core-1.2-strict.xsd" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="$PROJECT_DIR$/../activetask/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/input_argument_2.xml" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1430628637683" ignored="false" />
+    <file path="/admin-login.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1433300786197" ignored="false" />
+    <file path="/admin-login.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1433300793414" ignored="false" />
+    <file path="/Admin.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1433301149346" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,94 +207,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="edit-package.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin/product/edit-package.blade.php">
+      <file leaf-file-name="Admin.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="383" selection-end="383" vertical-scroll-proportion="-7.7">
+            <state line="17" column="0" selection-start="266" selection-end="266" vertical-scroll-proportion="-11.9">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit-package.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/site/admin/product/edit-package.css">
+      <file leaf-file-name="larayoga.sql" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/database/larayoga.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="23" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit-package.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/js/site/admin/product/edit-package.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="8" selection-start="3772" selection-end="3772" vertical-scroll-proportion="0.7805755">
-              <folding>
-                <element signature="n#!!block;n#loadPackageProducts#0" expanded="false" />
-                <element signature="n#!!block;n#getProductTable#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/site/admin/product/package.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="0" selection-start="2196" selection-end="2196" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/site/admin/common.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="25" selection-start="790" selection-end="790" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="33" selection-start="3052" selection-end="3052" vertical-scroll-proportion="-12.6">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminProductController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/AdminProductController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="196" column="33" selection-start="5489" selection-end="5489" vertical-scroll-proportion="-19.366667">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimilarProduct.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/SimilarProduct.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="-13.3">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/site/admin/product/package.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="13" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="similarforproduct.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin/product/similarforproduct.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="489" selection-end="489" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -251,22 +235,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/AdminCategoryController.php" />
-        <option value="$PROJECT_DIR$/app/views/admin/category/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/admin/product/similar.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/admin/product/similarforproduct.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/admin/product/package.blade.php" />
-        <option value="$PROJECT_DIR$/app/models/PackageProduct.php" />
-        <option value="$PROJECT_DIR$/app/models/Package.php" />
-        <option value="$PROJECT_DIR$/public/css/site/admin/product/package.css" />
-        <option value="$PROJECT_DIR$/public/css/site/admin/common.css" />
-        <option value="$PROJECT_DIR$/public/js/site/admin/product/package.js" />
-        <option value="$PROJECT_DIR$/app/views/admin/product/editpackage.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/admin/product/edit-package.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/site/admin/product/edit-package.css" />
         <option value="$PROJECT_DIR$/app/controllers/AdminProductController.php" />
+        <option value="$PROJECT_DIR$/public/js/site/admin/product/associateforproduct.js" />
+        <option value="$PROJECT_DIR$/app/views/admin/product/similar.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/admin/category/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/admin/product/manage.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/admin/admin-section.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/AdminController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/AuthenticationController.php" />
+        <option value="$PROJECT_DIR$/app/views/admin-login.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/site/admin-login.js" />
+        <option value="$PROJECT_DIR$/app/views/admin/includes/menu.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/admin/includes/common_js_bottom.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/includes/common_css.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/includes/common_js_bottom.blade.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
-        <option value="$PROJECT_DIR$/public/js/site/admin/product/edit-package.js" />
+        <option value="$PROJECT_DIR$/app/models/Admin.php" />
       </list>
     </option>
   </component>
@@ -367,210 +351,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="product" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="category" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="product" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -608,88 +388,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="product" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="includes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="larayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="category" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -725,7 +427,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -738,18 +440,18 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="editor.preferences.appearance" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../activetask" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp1.8\htdocs\larayoga\public\js\site\admin\product" />
+      <recent name="C:\xampp1.8\htdocs\larayoga\app\database" />
       <recent name="C:\xampp1.8\htdocs\larayoga\app\models" />
-      <recent name="C:\xampp1.8\htdocs\larayoga\public\css" />
-      <recent name="C:\xampp1.8\htdocs\larayoga\public\css\site\admin\product" />
-      <recent name="C:\xampp1.8\htdocs\larayoga\app\views\admin\product" />
+      <recent name="C:\xampp1.8\htdocs\larayoga\app\database\migrations" />
+      <recent name="C:\xampp1.8\htdocs\larayoga\app\views\includes" />
+      <recent name="C:\xampp1.8\htdocs\larayoga\public\js\site\admin\product" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp1.8\htdocs\larayoga\public\js" />
@@ -800,14 +502,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25213677" sideWeight="0.67118645" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26175213" sideWeight="0.67118645" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -893,110 +595,121 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/PackageProduct.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="20" selection-start="114" selection-end="114" vertical-scroll-proportion="0.104477614" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/site/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="9" selection-start="74" selection-end="74" vertical-scroll-proportion="0.1470245" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/site/admin/product/similarforproduct.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="0" selection-start="4323" selection-end="4323" vertical-scroll-proportion="0.92648774" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Package.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="351" selection-end="351" vertical-scroll-proportion="0.48246676" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/site/admin/product/package.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="13" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/site/admin/common.css">
+    <entry file="file://$PROJECT_DIR$/public/js/site/admin-login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="25" selection-start="790" selection-end="790" vertical-scroll-proportion="0.0">
+        <state line="10" column="36" selection-start="197" selection-end="197" vertical-scroll-proportion="0.24504083">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/product/package.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/admin-login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="55" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.5159705">
+        <state line="27" column="57" selection-start="745" selection-end="745" vertical-scroll-proportion="-18.9">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/product/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/admin/includes/menu.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="0" selection-start="2971" selection-end="2971" vertical-scroll-proportion="0.74336284">
+        <state line="86" column="8" selection-start="3886" selection-end="3886" vertical-scroll-proportion="-23.933332">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/site/admin/product/create.css">
+    <entry file="file://$PROJECT_DIR$/app/views/admin/includes/common_js_bottom.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="94" selection-end="94" vertical-scroll-proportion="0.07673569">
+        <state line="9" column="66" selection-start="477" selection-end="477" vertical-scroll-proportion="0.22853687">
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/includes/common_css.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.050785974">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/product/edit-package.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/includes/common_js_top.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="383" selection-end="383" vertical-scroll-proportion="-7.7">
+        <state line="6" column="12" selection-start="334" selection-end="334" vertical-scroll-proportion="0.15235792">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/SimilarProduct.php">
+    <entry file="file://$PROJECT_DIR$/public/js/common-scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="-13.3">
-          <folding />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.343602">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/site/admin/product/edit-package.css">
+    <entry file="file://$PROJECT_DIR$/app/views/includes/common_js_bottom.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="23" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/site/admin/product/package.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="0" selection-start="2196" selection-end="2196" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdminProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="196" column="33" selection-start="5489" selection-end="5489" vertical-scroll-proportion="-19.366667">
+        <state line="1" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="0.025392987">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="33" selection-start="3052" selection-end="3052" vertical-scroll-proportion="-12.6">
+        <state line="107" column="11" selection-start="5799" selection-end="5799" vertical-scroll-proportion="0.36517534">
+          <folding>
+            <element signature="e#7#392#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_03_29_024338_CreateAdminTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/site/admin/product/edit-package.js">
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_03_29_024338_CreateCustomerTable.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="8" selection-start="3772" selection-end="3772" vertical-scroll-proportion="0.7805755">
-          <folding>
-            <element signature="n#!!block;n#loadPackageProducts#0" expanded="false" />
-            <element signature="n#!!block;n#getProductTable#0" expanded="false" />
-          </folding>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_03_29_024627_CreateCategoryTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_03_29_024702_CreateOrderTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="266" selection-end="266" vertical-scroll-proportion="-11.9">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/larayoga.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
